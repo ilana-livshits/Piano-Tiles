@@ -1,6 +1,6 @@
 class LoadingScreen{
-  String username = "";
-  float speed = 0;
+  static String username = "";
+  static float speed = 0;
 
   void introScreen(){
     background(250, 218, 221);  //set background to a light pink
@@ -27,11 +27,12 @@ class LoadingScreen{
     text("Click 's' to start the game. Have fun!", width/2, height/2 + 250);
   }
 
-  keyPressed(){
-    if(key == ' '){
-      
+    //if user clicks to the right of username, allow the user to write in a username and save it to the variable username
+    void mouseClicked(){
+      if(mouseX > 100 && mouseX < 300 && mouseY > 30 && mouseY < 60){
+        username = "";
+      }
     }
-  }
   
   //method that
   
