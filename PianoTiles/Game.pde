@@ -41,9 +41,11 @@ class Game {
       }
       fill(shade);
       noStroke();
-
-      // top left at left line and height of top bar
       rect(col, yPosition.get(i), width/4, height/4 + 1);
     }
+  }
+
+  void draw() {
+    drawTiles();
   }
 }

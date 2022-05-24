@@ -8,8 +8,8 @@ void setup() {
   size(500, 900);
   background(255);
 }
-void draw() {
-}
+//void draw() {
+//}
 void keyPressed() {
 }
 void mouseClicked() {

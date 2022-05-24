@@ -56,9 +56,9 @@ class Blocks {
 
   void move() {
   }
-  
-  void display(){
+
+  void display() {
     fill(c);
-    rect(x,y, tileWidth, tileLength);
+    rect(x, y, tileWidth, tileLength);
   }
 }
