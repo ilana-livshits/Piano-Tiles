@@ -4,11 +4,13 @@ static float time;
 static int count;
 static String audioName;
 static String path; //what is path?
-setup() {
+void setup() {
+  size(500, 900);
+  background(255);
 }
-draw() {
+void draw() {
 }
-keyPressed() {
+void keyPressed() {
 }
-mouseClicked() {
+void mouseClicked() {
 }
