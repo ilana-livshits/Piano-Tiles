@@ -34,7 +34,13 @@ class LoadingScreen{
       }
     }
   
-  //method that
+    //if user clicks to the right of speed, allow the user to write in a speed and save it to the variable speed
+    // must be between 1 and 5
+    void mouseClicked2(){
+      if(mouseX > 1020 && mouseX < 1090 && mouseY > 30 && mouseY < 60){
+        speed = 0;
+      }
+    }
   
   display(){  
     introScreen();
