@@ -12,8 +12,8 @@ class LoadingScreen{
     text("Be careful not to tap on the white tiles!", width/2, height/2 + 50);
     text("To select the difficulty, choose a number from 1 to 5", width/2, height/2 + 100);
     text("1 = easy, 2 = medium, 3 = hard, 4 = very hard, 5 = impossible", width/2, height/2 + 150);
-    text("Type in the speed", width/2, height/2 + 200);}
-
+    text("Type in a username and click enter", width/2, height/2 + 200);
+    text("Click 's' to start the game. Have fun!", width/2, height/2 + 250);
   }
 
   keyPressed(){
