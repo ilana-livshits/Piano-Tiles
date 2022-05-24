@@ -9,7 +9,12 @@ class LoadingScreen{
         text("Username:", 10, 30);
         textSize(20);
         text(username, 100, 30);
-    
+        
+    // have a space for the speed at the top right of the screen
+        textSize(30);
+        text("Speed:", 1020, 30);
+        textSize(20);
+        text(speed, 1090, 30);
     
     //write the instructions in the middle of the screen 
     fill(255);
