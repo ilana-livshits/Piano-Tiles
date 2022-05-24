@@ -48,7 +48,7 @@ class Blocks {
   }
 
   float getBottom() {
-    return -1;
+    return x+tileLength;
   }
 
   void createBlock() {

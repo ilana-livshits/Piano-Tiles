@@ -6,9 +6,11 @@ class Game {
   float row2 = width/4;
   float row3 = width/4 * 2;
   float row4 = width/4 * 3;
-  // Blocks [] block = new Blocks[];
-  
-  float randRow(){
+  ArrayList<Blocks> pendingBlocks = new ArrayList<Blocks>();
+  ArrayList<Integer> blackTiles;
+  ArrayList<Boolean> clickedTiles;
+  ArrayList<Float> yPosition;
+  float randRow() {
     int r = (int)(Math.random() * 4) * 1;
     if ( r == 1) 
       return row1;
@@ -18,5 +20,30 @@ class Game {
       return row3;
     else
       return row4;
+  }
+
+  void randomTiles() {
+    blackTiles = new ArrayList<Integer>();
+    clickedTiles = new ArrayList<Boolean>();
+    for (int i = 0; i < yPosition.size(); i++) {
+      blackTiles.add((int)(random(0, 4)));
+      clickedTiles.add(false);
+    }
+  }
+
+  void drawTiles() {
+    for (int i = 0; i < blackTiles.size(); i++) {
+      int col = blackTiles.get(i);
+      col *= width/4;
+      int shade = 0;
+      if (clickedTiles.get(i)) {
+        shade = 209;
+      }
+      fill(shade);
+      noStroke();
+
+      // top left at left line and height of top bar
+      rect(col, yPosition.get(i), width/4, height/4 + 1);
+    }
   }
 }
