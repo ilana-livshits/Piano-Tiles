@@ -1,9 +1,17 @@
 class Blocks {
-  private float tileWidth;
-  private float tileLength;
-  private int c; //black is 0, gray is 209
+  private float tileWidth = width/4;
+  private float tileLength = (float) Math.random()* 100.0 +100.0;
+  private int c = 0; //black is 0, gray is 209
+  
   void setColor() {
+    if (c == 0) {
+      c = 209;
+    }
+    else if (c == 209){
+      c = 0;
+    }
   }
+  
   int getColor() {
     return -1;
   }
