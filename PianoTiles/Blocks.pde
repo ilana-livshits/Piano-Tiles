@@ -35,11 +35,12 @@ class Blocks {
 
   void createBlock() {
   }
+  
   float getTileWidth() {
-    return -1;
+    return tileWidth;
   }
   float getTileLength() {
-    return -1;
+    return tileLength;
   }
   float getBottom() {
     return -1;
