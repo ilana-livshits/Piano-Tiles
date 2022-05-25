@@ -17,17 +17,16 @@ class LoadingScreen{
         textSize(30);
         text("Speed:", 10, 80);
         textSize(20);
-        fill(0);
+        fill(144, 238, 144);
         rect(150, 60, 200, 30);
-        fill(0);
+        fill(0, 100, 0);
         rect(150, 100, 200, 30);
-        fill(0);
+        fill(199, 163, 23);
         rect(150, 140, 200, 30);
-        fill(0);
+        fill(253, 88, 0);
         rect(150, 180, 200, 30);
-        fill(0);
+        fill(255, 0, 0);
         rect(150, 220, 200, 30);
-        fill(0);
     
     //write the instructions in the middle of the screen 
     fill(255);
