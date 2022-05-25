@@ -38,6 +38,18 @@ class LoadingScreen{
         text += key;
       }
     }
+    
+    //user input for the speed. use the keyTyped method to get the speed and store it in the speed variable
+    // stop and store the speed in the speed variable when the user presses enter
+    void keyTyped() {
+      if (key == '\n') {
+        speed = text;
+        text = "";
+      }
+      else {
+        text += key;
+      }
+    }
 
     //if user clicks to the right of username, allow the user to write in a username and save it to the variable username
     void mouseClicked(){
