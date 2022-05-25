@@ -94,5 +94,18 @@ void init() {
 
 void keyPressed() {
 }
-void mouseClicked() {
+
+void mousePressed() {
+  begin = true;
+  notDead = true;
+  int index = getFirstNotclickedTiles();
+  if (index != -1) {
+    int l = (blackTiles.get(index) * width/4);
+    int r = (blackTiles.get(index) + 1) * width/4;
+    if (mouseX <= r && mouseX >= l && mouseY >= yPosition.get(index) && (mouseY <= yPosition.get(index) + height/4 || (get(mouseX, mouseY) != -1 && get(mouseX, mouseY) != -16777216))) {
+      setclickedTiles(index);
+    } else if (get(mouseX, mouseY) != -10197916) {
+      notDead = false;
+    }
+  }
 }
