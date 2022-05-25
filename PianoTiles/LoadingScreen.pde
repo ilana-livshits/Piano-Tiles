@@ -15,7 +15,7 @@ class LoadingScreen{
     // have a space for the speed at the top right of the screen
     //display 5 boxes with the numbers 1-5 in it next to the speed
         textSize(30);
-        text("Speed:" + speed, 10, 80);
+        text("Speed:" + speed , 10, 80);
         textSize(20);
         fill(144, 238, 144);
         rect(150, 60, 200, 30);
