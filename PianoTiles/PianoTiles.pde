@@ -36,6 +36,15 @@ void drawblackTiles() {
   }
 }
 
+public int getFirstNotclickedTiles() {
+  for (int i = clickedTiles.size()-1; i >= 0; i--) {
+    if (!clickedTiles.get(i)) {
+      return i;
+    }
+  }
+  return -1;
+}
+
 void moveDown() {
   for (int i = 0; i < yPosition.size(); i++) {
     if (yPosition.get(i) >= height) {
