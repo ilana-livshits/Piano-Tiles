@@ -1,16 +1,10 @@
-static float accelerate = 1; //need to set these equal to some value
-static String username;
-static float time;
-static int count;
-static String audioName;
-static String path; //what is path?
-boolean started = false;
-boolean notLost = false;
-
+ArrayList<Float> yPosition;
 ArrayList<Integer> blackTiles;
 ArrayList<Boolean> clickedTiles;
-ArrayList<Float> yPosition;
-
+float speed;
+float acceleration;
+boolean notDead = false;
+boolean begin = false;
 
 void yPos() {
   yPosition = new ArrayList<Float>();
