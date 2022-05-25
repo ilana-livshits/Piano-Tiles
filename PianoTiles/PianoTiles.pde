@@ -22,7 +22,7 @@ void randomTiles() {
   }
 }
 
-void drawTiles() {
+void drawBlackTiles() {
   for (int i = 0; i < blackTiles.size(); i++) {
     int col = blackTiles.get(i);
     col *= width/4;
@@ -62,13 +62,18 @@ void down(){
 void setup() {
   size(500, 900);
   background(255);
+  init();
 }
+
 void draw() {
-  yPos();
-  randomTiles();
-  drawTiles();
-  down();
+  background(255);
+  drawblackTiles();
+  if (begin && notDead) {
+    moveDown();
+    speed += acceleration;
+  }
 }
+
 void keyPressed() {
 }
 void mouseClicked() {
