@@ -11,9 +11,9 @@ class LoadingScreen{
         textSize(20);
         text(username, 100, 30);
      */
+     
     // have a space for the speed at the top right of the screen
-         //display 5 boxes with the numbers 1-5 in it next to the speed
-
+    //display 5 boxes with the numbers 1-5 in it next to the speed
         textSize(30);
         text("Speed:", 10, 80);
         textSize(20);
@@ -39,49 +39,6 @@ class LoadingScreen{
     text("Click 's' to start the game. Have fun!", width/2, height/2 + 250);
   }
   
-    //user input for the username. use the keyTyped method to get the username and store it in the username variable
-    // stop and store the username in the username variable when the user presses enter
-    /*
-    void keyTyped() {
-      if (key == '\n') {
-        username = text;
-        text = "";
-      }
-      else {
-        text += key;
-      }
-    }
-    */
-    
-    //user input for the speed. use the keyTyped method to get the speed and store it in the speed variable
-    // stop and store the speed in the speed variable when the user presses enter
-    void keyTyped() {
-      if (key == '\n') {
-        speed = text;
-        text = "";
-      }
-      else {
-        text += key;
-      }
-    }
-
-    //if user clicks to the right of username, allow the user to write in a username and save it to the variable username
-    void mouseClicked(){
-      if(mouseX > 100 && mouseX < 300 && mouseY > 30 && mouseY < 60){
-        username = "";
-      }
-    }
   
-    //if user clicks to the right of speed, allow the user to write in a speed and save it to the variable speed
-    // must be between 1 and 5
-    void mouseClicked2(){
-      if(mouseX > 1020 && mouseX < 1090 && mouseY > 30 && mouseY < 60){
-        speed = 0;
-      }
-    }
-  
-  display(){  
-    introScreen();
-  }
 
 }
