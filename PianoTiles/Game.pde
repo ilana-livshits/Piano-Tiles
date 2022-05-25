@@ -22,6 +22,14 @@ class Game {
       return row4;
   }
 
+
+  void yPos() {
+    yPosition = new ArrayList<Float>();
+    for (int i = -1; i < 4; i++) {
+      yPosition.add((float)(i * height/4));
+    }
+  }
+
   void randomTiles() {
     blackTiles = new ArrayList<Integer>();
     clickedTiles = new ArrayList<Boolean>();
