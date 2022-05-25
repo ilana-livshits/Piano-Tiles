@@ -1,11 +1,11 @@
-static float accelerate; //need to set these equal to some value
+static float accelerate = 1; //need to set these equal to some value
 static String username;
 static float time;
 static int count;
 static String audioName;
 static String path; //what is path?
 boolean started = false;
-boolean lost = false;
+boolean notLost = false;
 
 ArrayList<Integer> blackTiles;
 ArrayList<Boolean> clickedTiles;
@@ -42,6 +42,29 @@ void drawTiles() {
   }
 }
 
+void down(){
+  for (int i = 0; i < yPosition.size(); i++){
+    if (yPosition.get(i) >= height){
+      if (!clickedTiles.get(i)){
+        notLost = false;
+      }
+      else {
+        yPosition.remove(i);
+        blackTiles.remove(i);
+        clickedTiles.remove(i);
+        yPosition.add(0, -height/4 + yPosition.get(0));
+        blackTiles.add(0, int(random(0, 4)));
+        clickedTiles.add(0, false);
+      }
+    }
+    else{
+      yPosition.set(i, (float)(yPosition.get(i) + accelerate));
+    }
+  }
+}
+
+
+
 void setup() {
   size(500, 900);
   background(255);
@@ -50,6 +73,7 @@ void draw() {
   yPos();
   randomTiles();
   drawTiles();
+  down();
 }
 void keyPressed() {
 }
