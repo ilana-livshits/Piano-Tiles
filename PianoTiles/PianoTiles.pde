@@ -74,6 +74,15 @@ void draw() {
   }
 }
 
+void init() {
+  speed = 2;
+  acceleration = 0.002;
+  resetyPosition();
+  randomizeblackTiles();
+  notDead = true;
+  begin = false;
+}
+
 void keyPressed() {
 }
 void mouseClicked() {
