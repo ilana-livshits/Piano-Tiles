@@ -4,12 +4,53 @@ static float time;
 static int count;
 static String audioName;
 static String path; //what is path?
+boolean started = false;
+boolean lost = false;
+
+ArrayList<Integer> blackTiles;
+ArrayList<Boolean> clickedTiles;
+ArrayList<Float> yPosition;
+
+
+void yPos() {
+  yPosition = new ArrayList<Float>();
+  for (int i = -1; i < 4; i++) {
+    yPosition.add((float)(i * height/4));
+  }
+}
+
+void randomTiles() {
+  blackTiles = new ArrayList<Integer>();
+  clickedTiles = new ArrayList<Boolean>();
+  for (int i = 0; i < yPosition.size(); i++) {
+    blackTiles.add((int)(random(0, 4)));
+    clickedTiles.add(false);
+  }
+}
+
+void drawTiles() {
+  for (int i = 0; i < blackTiles.size(); i++) {
+    int col = blackTiles.get(i);
+    col *= width/4;
+    int shade = 0;
+    if (clickedTiles.get(i)) {
+      shade = 209;
+    }
+    fill(shade);
+    noStroke();
+    rect(col, yPosition.get(i), width/4, height/4 + 1);
+  }
+}
+
 void setup() {
   size(500, 900);
   background(255);
 }
-//void draw() {
-//}
+void draw() {
+  yPos();
+  randomTiles();
+  drawTiles();
+}
 void keyPressed() {
 }
 void mouseClicked() {
