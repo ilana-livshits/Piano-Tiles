@@ -5,16 +5,29 @@ class LoadingScreen{
   void introScreen(){
     background(250, 218, 221);  //set background to a light pink
     // have a space for the username at the top left of the screen
+    /*
         textSize(30);
         text("Username:", 10, 30);
         textSize(20);
         text(username, 100, 30);
-        
+     */
     // have a space for the speed at the top right of the screen
+         //display 5 boxes with the numbers 1-5 in it next to the speed
+
         textSize(30);
-        text("Speed:", 1020, 30);
+        text("Speed:", 10, 80);
         textSize(20);
-        text(speed, 1090, 30);
+        fill(0);
+        rect(150, 60, 200, 30);
+        fill(0);
+        rect(150, 100, 200, 30);
+        fill(0);
+        rect(150, 140, 200, 30);
+        fill(0);
+        rect(150, 180, 200, 30);
+        fill(0);
+        rect(150, 220, 200, 30);
+        fill(0);
     
     //write the instructions in the middle of the screen 
     fill(255);
@@ -29,6 +42,7 @@ class LoadingScreen{
   
     //user input for the username. use the keyTyped method to get the username and store it in the username variable
     // stop and store the username in the username variable when the user presses enter
+    /*
     void keyTyped() {
       if (key == '\n') {
         username = text;
@@ -38,6 +52,7 @@ class LoadingScreen{
         text += key;
       }
     }
+    */
     
     //user input for the speed. use the keyTyped method to get the speed and store it in the speed variable
     // stop and store the speed in the speed variable when the user presses enter
