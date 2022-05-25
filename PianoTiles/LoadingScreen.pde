@@ -26,6 +26,18 @@ class LoadingScreen{
     text("Type in a username and click enter", width/2, height/2 + 200);
     text("Click 's' to start the game. Have fun!", width/2, height/2 + 250);
   }
+  
+    //user input for the username. use the keyTyped method to get the username and store it in the username variable
+    // stop and store the username in the username variable when the user presses enter
+    void keyTyped() {
+      if (key == '\n') {
+        username = text;
+        text = "";
+      }
+      else {
+        text += key;
+      }
+    }
 
     //if user clicks to the right of username, allow the user to write in a username and save it to the variable username
     void mouseClicked(){
