@@ -38,7 +38,22 @@ class LoadingScreen{
     text("Type in a username and click enter", width/2, height/2 + 200);
     text("Click 's' to start the game. Have fun!", width/2, height/2 + 250);
   }
-  
-  
-
+   void mouseClicked(){
+     //if mouse is on the colors above, set the speed to that number
+      if (mouseX > 150 && mouseX < 350 && mouseY > 60 && mouseY < 90) {
+        speed = 1;
+      }
+      if (mouseX > 150 && mouseX < 350 && mouseY > 100 && mouseY < 130) {
+        speed = 2;
+      }
+      if (mouseX > 150 && mouseX < 350 && mouseY > 140 && mouseY < 170) {
+        speed = 3;
+      }
+      if (mouseX > 150 && mouseX < 350 && mouseY > 180 && mouseY < 210) {
+        speed = 4;
+      }
+      if (mouseX > 150 && mouseX < 350 && mouseY > 220 && mouseY < 250) {
+        speed = 5;
+      }
+   }
 }

@@ -7,8 +7,9 @@ static String path; //what is path?
 setup() {
 }
 draw() {
+  introScreen();
 }
-keyPressed() {
-}
-mouseClicked() {
-}
+//keyPressed() {
+//}
+//mouseClicked() {
+//}
