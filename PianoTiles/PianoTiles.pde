@@ -45,6 +45,10 @@ public int getFirstNotclickedTiles() {
   return -1;
 }
 
+void setclickedTiles(int n) {
+  clickedTiles.set(n, true);
+}
+
 void moveDown() {
   for (int i = 0; i < yPosition.size(); i++) {
     if (yPosition.get(i) >= height) {
