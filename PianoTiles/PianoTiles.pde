@@ -19,6 +19,12 @@ void resetyPosition() {
   }
 }
 
+void setupNotes(){
+  notes.add(note1);
+  notes.add(note2);
+  notes.add(note3);
+  notes.add(note4);
+}
 
 void randomizeblackTiles() {
   blackTiles = new ArrayList<Integer>();
@@ -83,6 +89,7 @@ void setup() {
   note2 = new SoundFile(this, "key06.wav");
   note3 = new SoundFile(this, "key14.wav");
   note4 = new SoundFile(this, "key20.wav");
+  setupNotes();
 }
 
 void draw() {
@@ -120,6 +127,6 @@ void mousePressed() {
     }
   }
   if (notDead) {
-    note1.play();
+    notes.get((int)Math.random()*5).play();
   }
 }
