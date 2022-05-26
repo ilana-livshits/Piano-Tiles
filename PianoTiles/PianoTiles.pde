@@ -5,6 +5,7 @@ float speed;
 float acceleration;
 boolean notDead = false;
 boolean begin = false;
+LoadingScreen introscreen;
 
 void resetyPosition() {
   yPosition = new ArrayList<Float>();
@@ -71,16 +72,22 @@ void moveDown() {
 
 void setup() {
   size(500, 900);
+  introscreen = new LoadingScreen();
   background(255);
   init();
 }
 
 void draw() {
-  background(255);
-  drawblackTiles();
-  if (begin && notDead) {
-    moveDown();
-    speed += acceleration;
+   background(255);
+  // set up introScreen
+    if (!begin) {
+        introscreen.introScreen();
+    }else{
+     drawblackTiles();
+    }
+     if (begin && notDead) {
+        moveDown();
+        speed += acceleration;
   }
 }
 
