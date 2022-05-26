@@ -6,15 +6,18 @@ Our final project follows a Piano Tiles configuration of a 4 column board of bla
 **Google Doc Link:** https://docs.google.com/document/d/1o1WsvxEHCIpvZJGfSCGDGlKxMInxzNGv7OTZE-fzk_U/edit?usp=sharing
 
 # Daily Log
-**5/24/22**
-*Ilana Livshits:*
-*Salvina Sharipova: I branched (name: salvinaLoadingScreen1) and worked on LoadingScreen seperately. Created an intro screen with a difficulty setter that the user can input using mouseClicked() and instructions. Did not go into aesthetics. Attempted to add username with an input from user that would be stored throughout the game but it is proven to be very difficult so I scrapped that idea for now.*
-**5/25/22**
-*Ilana Livshits:*
-*Salvina Sharipova:*
-**5/26/22**
-*Ilana Livshits:*
-*Salvina Sharipova:*
-**5/27/22**
-*Ilana Livshits:*
-*Salvina Sharipova:*
+**5/23/22** <br />
+*Ilana Livshits:* I was absent with Covid and couldn't work on the lab. <br />
+*Salvina Sharipova:* I watched videos and followed documentation on how to branch and merge. <br />
+**5/24/22** <br />
+*Ilana Livshits:* I created a new branch (name: ilanaBlocks1) and worked on a Blocks class separately, creating constructors that took in tile length, width, and x and y coordinates. Although I disregarded this idea by the end of the coding session, I made set and get methods that would allows the attributes of the tiles to be accessed and moved down the screen. The idea was ultimately not used due to issues with storing the y coordinates of the tiles so that the tiles move down the screen. <br />
+*Salvina Sharipova:* I branched (name: salvinaLoadingScreen1) and worked on LoadingScreen seperately. Created an intro screen with a difficulty setter that the user can input using mouseClicked() and instructions. Did not go into aesthetics. Attempted to add username with an input from user that would be stored throughout the game but it is proven to be very difficult so I scrapped that idea for now. <br />
+**5/25/22** <br />
+*Ilana Livshits:* I continued working on the branch made yesterday (name: ilanaBlocks1) and merged with the main at the end of the session. I created three arraylists to keep track of the tiles created, tiles presses, and the y coordinates of the tiles. This was done to replace the Blocks class. At present, the display is randomized black tiles moving down the screen, but all other user interaction does not yet work. <br />
+*Salvina Sharipova:* <br />
+**5/26/22** <br />
+*Ilana Livshits:* <br />
+*Salvina Sharipova:* <br />
+**5/27/22** <br />
+*Ilana Livshits:* <br />
+*Salvina Sharipova:* <br />
