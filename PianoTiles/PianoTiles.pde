@@ -12,10 +12,7 @@ void resetyPosition() {
     yPosition.add((float)(i * height/4));
   }
 }
-<<<<<<< HEAD
-draw() {
-  
-=======
+
 
 void randomizeblackTiles() {
   blackTiles = new ArrayList<Integer>();
@@ -24,7 +21,6 @@ void randomizeblackTiles() {
     blackTiles.add((int)(random(0, 4)));
     clickedTiles.add(false);
   }
->>>>>>> b8cc9e8c2d833bbcecd101c22a5e310a73e7c801
 }
 
 void drawblackTiles() {
