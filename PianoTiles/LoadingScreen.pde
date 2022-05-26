@@ -1,6 +1,6 @@
 class LoadingScreen{
-  static String username = "";
-  static float speed = 0;
+  String username = "";
+  float speed = 0;
 
   void introScreen(){
     background(250, 218, 221);  //set background to a light pink
