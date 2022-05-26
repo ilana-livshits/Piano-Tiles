@@ -8,7 +8,7 @@ Our final project follows a Piano Tiles configuration of a 4 column board of bla
 # Daily Log
 **5/24/22**
 *Ilana Livshits:*
-*Salvina Sharipova:*
+*Salvina Sharipova: I branched (name: salvinaLoadingScreen1) and worked on LoadingScreen seperately. Created an intro screen with a difficulty setter that the user can input using mouseClicked() and instructions. Did not go into aesthetics. Attempted to add username with an input from user that would be stored throughout the game but it is proven to be very difficult so I scrapped that idea for now.*
 **5/25/22**
 *Ilana Livshits:*
 *Salvina Sharipova:*
