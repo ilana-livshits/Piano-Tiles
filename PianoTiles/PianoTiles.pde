@@ -127,6 +127,7 @@ void mousePressed() {
     }
   }
   if (notDead) {
-    notes.get((int)Math.random()*5).play();
+    int i = (int)Math.random() * 4;
+    notes.get(i).play();
   }
 }
