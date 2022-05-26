@@ -29,14 +29,17 @@ class LoadingScreen{
         rect(150, 220, 200, 30);
     
     //write the instructions in the middle of the screen 
-    fill(255);
-    textSize(50);
-    text("tap on the black tiles (in order) as they appear on the screen", width/2, height/2);
-    text("Be careful not to tap on the white tiles!", width/2, height/2 + 50);
-    text("To select the difficulty, choose a number from 1 to 5", width/2, height/2 + 100);
-    text("1 = easy, 2 = medium, 3 = hard, 4 = very hard, 5 = impossible", width/2, height/2 + 150);
-    text("Type in a username and click enter", width/2, height/2 + 200);
-    text("Click 's' to start the game. Have fun!", width/2, height/2 + 250);
+    int allwidth = 500;
+    int allheight = 900;
+    fill(0);
+    textSize(30);
+    text("Tap on the black tiles (in order)", 30, 300);
+    text("as they appear on the screen", 30, 335);
+    text("Be careful not to tap on the", 30, 385);
+    text("white tiles! To select the difficulty, choose a number from 1 to 5", 30, allheight/2 + 100);
+    text("1 = easy, 2 = medium, 3 = hard, 4 = very hard, 5 = impossible", 30, allheight/2 + 150);
+    text("Type in a username and click enter", 30, allheight/2 + 200);
+    text("Click 's' to start the game. Have fun!", 30, allheight/2 + 250);
   }
    void mouseClicked(){
      //if mouse is on the colors above, set the speed to that number

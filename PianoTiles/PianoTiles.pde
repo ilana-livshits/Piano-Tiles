@@ -101,6 +101,10 @@ void init() {
 }
 
 void keyPressed() {
+  if (key == 's') {
+        init();
+        begin = true;
+    }
 }
 
 void mousePressed() {
