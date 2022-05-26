@@ -17,8 +17,8 @@ class LoadingScreen{
      textSize(69);
      text("PIANO TILES", 50, 100);
      textSize(30);
-     text("Made by: Ilana Livshits", 80, 140);
-     text("& Salvina Sharipova", 100, 175);
+     text("Made by: Ilana Livshits", 80, 150);
+     text("& Salvina Sharipova", 100, 185);
      
     
     //write the instructions in the middle of the screen 
@@ -38,34 +38,44 @@ class LoadingScreen{
     // have a space for the speed at the top right of the screen
     //display 5 boxes with the numbers 1-5 in it next to the speed
     textSize(30);
-    text("Difficulty (speed) :" + speed , 30, 650);
-    textSize(20);
+    text("Difficulty (speed) : " + (int)speed , 30, 650);
+    textSize(23);
     fill(144, 238, 144);
-    rect(150, 60, 200, 30);
-    fill(0, 100, 0);
-    rect(150, 100, 200, 30);
+    rect(150, 670, 200, 30);
+    fill(0);
+    text("1 = easy", 200, 694);
+    
+    fill(90, 100, 0);
+    rect(150, 710, 200, 30);
+    fill(0);
+    text("2 = medium", 190, 734);
+    
     fill(199, 163, 23);
-    rect(150, 140, 200, 30);
+    rect(150, 750, 200, 30);
+    fill(0);
+    text("3 = hard", 200, 774);
+    
     fill(253, 88, 0);
-    rect(150, 180, 200, 30);
+    rect(150, 790, 200, 30);
+    fill(0);
+    text("4 = very hard", 180, 814);
+    
     fill(255, 0, 0);
-    rect(150, 220, 200, 30);
+    rect(150, 830, 200, 30);
+    fill(0);
+    text("5 = impossible", 170, 854);
   }
    void mouseClicked(){
      //if mouse is on the colors above, set the speed to that number
-      if (mouseX > 150 && mouseX < 350 && mouseY > 60 && mouseY < 90) {
+      if (mouseX > 150 && mouseX < 350 && mouseY > 670 && mouseY < 700) {
         speed = 1;
-      }
-      if (mouseX > 150 && mouseX < 350 && mouseY > 100 && mouseY < 130) {
+      } else if (mouseX > 150 && mouseX < 350 && mouseY > 710 && mouseY < 740) {
         speed = 2;
-      }
-      if (mouseX > 150 && mouseX < 350 && mouseY > 140 && mouseY < 170) {
+      } else if (mouseX > 150 && mouseX < 350 && mouseY > 750 && mouseY < 780) {
         speed = 3;
-      }
-      if (mouseX > 150 && mouseX < 350 && mouseY > 180 && mouseY < 210) {
+      } else if (mouseX > 150 && mouseX < 350 && mouseY > 790 && mouseY < 820) {
         speed = 4;
-      }
-      if (mouseX > 150 && mouseX < 350 && mouseY > 220 && mouseY < 250) {
+      } else if (mouseX > 150 && mouseX < 350 && mouseY > 830 && mouseY < 860) {
         speed = 5;
       }
    }
