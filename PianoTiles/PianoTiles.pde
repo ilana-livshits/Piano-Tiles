@@ -3,6 +3,7 @@ SoundFile note1;
 SoundFile note2;
 SoundFile note3;
 SoundFile note4;
+ArrayList<SoundFile> notes = new ArrayList<SoundFile>();
 ArrayList<Float> yPosition;
 ArrayList<Integer> blackTiles;
 ArrayList<Boolean> clickedTiles;
@@ -78,10 +79,10 @@ void setup() {
   size(500, 900);
   background(255);
   init();
-  note1 = new SoundFile(this,"key01.mp3");
-  note2 = new SoundFile(this,"key06.mp3");
-  note3 = new SoundFile(this,"key14.mp3");
-  note4 = new SoundFile(this,"key20.mp3");
+  note1 = new SoundFile(this, "key01.wav");
+  note2 = new SoundFile(this, "key06.wav");
+  note3 = new SoundFile(this, "key14.wav");
+  note4 = new SoundFile(this, "key20.wav");
 }
 
 void draw() {
@@ -117,5 +118,8 @@ void mousePressed() {
     } else if (get(mouseX, mouseY) != -10197916) {
       notDead = false;
     }
+  }
+  if (notDead) {
+    note1.play();
   }
 }
