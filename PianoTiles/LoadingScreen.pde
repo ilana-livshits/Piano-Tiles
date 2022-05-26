@@ -36,10 +36,11 @@ class LoadingScreen{
     text("Tap on the black tiles (in order)", 30, 300);
     text("as they appear on the screen", 30, 335);
     text("Be careful not to tap on the", 30, 385);
-    text("white tiles! To select the difficulty, choose a number from 1 to 5", 30, allheight/2 + 100);
-    text("1 = easy, 2 = medium, 3 = hard, 4 = very hard, 5 = impossible", 30, allheight/2 + 150);
-    text("Type in a username and click enter", 30, allheight/2 + 200);
-    text("Click 's' to start the game. Have fun!", 30, allheight/2 + 250);
+    text("white tiles!", 30, 420);
+    text("To select the difficulty, choose", 30, 470);
+    text("a number from 1 to 5.", 30, 505); //1 = easy, 2 = medium, 3 = hard, 4 = very hard, 5 = impossible
+    text("Click 's' to start the game.", 30, 555); //Type in a username and click enter
+    text("Have fun!", 30, 590);
   }
    void mouseClicked(){
      //if mouse is on the colors above, set the speed to that number
