@@ -140,14 +140,11 @@ void mouseClicked() {
       notDead = false;
     }
   }
-<<<<<<< HEAD
   }
-=======
   if (notDead) {
     int i = (int)Math.random() * 4;
     notes.get(i).play();
   }
   if (!notDead)
     notes.get(0).play();
->>>>>>> 343472291638c0bcb752eb0f1096ff3f058aa71f
 }
