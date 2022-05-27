@@ -16,8 +16,8 @@ Our final project follows a Piano Tiles configuration of a 4 column board of bla
 *Ilana Livshits:* I continued working on the branch made yesterday (name: ilanaBlocks1) and merged with the main at the end of the session. I created three arraylists to keep track of the tiles created, tiles presses, and the y coordinates of the tiles. This was done to replace the Blocks class. At present, the display is randomized black tiles moving down the screen, but all other user interaction does not yet work. <br />
 *Salvina Sharipova:* I continued with yesterday's branch (name: salvinaLoadingScreen1). I continued with my attempt to find a way to store an input username, however it seems that it requires a usage of the library and dense coding in java, so I am dropping that idea for now. Instead, I worked on merging and finishing the interactive difficulty setter. I had a merge conflict, but was able to pull Ilana's work that she merged into the main. <br />
 **5/26/22** <br />
-*Ilana Livshits:* <br />
+*Ilana Livshits:* <br /> Each tile now plays a sound when pressed. However, there are issues with randomizing the piano notes played.
 *Salvina Sharipova:* <br />
 **5/27/22** <br />
-*Ilana Livshits:* <br />
+*Ilana Livshits:* <br /> A score counter has been implemented.
 *Salvina Sharipova:* <br />
