@@ -12,6 +12,7 @@ float acceleration;
 boolean notDead = false;
 boolean begin = false;
 LoadingScreen introscreen;
+int counter = 0;
 
 void resetyPosition() {
   yPosition = new ArrayList<Float>();
@@ -20,7 +21,7 @@ void resetyPosition() {
   }
 }
 
-void setupNotes(){
+void setupNotes() {
   notes.add(note1);
   notes.add(note2);
   notes.add(note3);
@@ -95,16 +96,18 @@ void setup() {
 }
 
 void draw() {
-   background(255);
+  background(255);
   // set up introScreen
-    if (!begin) {
-        introscreen.introScreen();
-    }else{
-     drawblackTiles();
-    }
-     if (begin && notDead) {
-        moveDown();
-        speed += acceleration;
+  if (!begin) {
+    introscreen.introScreen();
+  } else {
+    drawblackTiles();
+    textSize(20);
+    text("score: " + counter, 5, 20);
+  }
+  if (begin && notDead) {
+    moveDown();
+    speed += acceleration;
   }
 }
 
@@ -119,31 +122,32 @@ void init() {
 
 void keyPressed() {
   if (key == 's') {
-        init();
-        begin = true;
-    }
+    init();
+    begin = true;
+  }
 }
 
 void mouseClicked() {
-  if(begin == false){
+  if (begin == false) {
     introscreen.mouseClicked();
-  }else{
-  begin = true;
-  notDead = true;
-  int index = getFirstNotclickedTiles();
-  if (index != -1) {
-    int l = (blackTiles.get(index) * width/4);
-    int r = (blackTiles.get(index) + 1) * width/4;
-    if (mouseX <= r && mouseX >= l && mouseY >= yPosition.get(index) && (mouseY <= yPosition.get(index) + height/4 || (get(mouseX, mouseY) != -1 && get(mouseX, mouseY) != -16777216))) {
-      setclickedTiles(index);
-    } else if (get(mouseX, mouseY) != -10197916) {
-      notDead = false;
+  } else {
+    begin = true;
+    notDead = true;
+    int index = getFirstNotclickedTiles();
+    if (index != -1) {
+      int l = (blackTiles.get(index) * width/4);
+      int r = (blackTiles.get(index) + 1) * width/4;
+      if (mouseX <= r && mouseX >= l && mouseY >= yPosition.get(index) && (mouseY <= yPosition.get(index) + height/4 || (get(mouseX, mouseY) != -1 && get(mouseX, mouseY) != -16777216))) {
+        setclickedTiles(index);
+      } else if (get(mouseX, mouseY) != -10197916) {
+        notDead = false;
+      }
     }
-  }
   }
   if (notDead) {
     int i = (int)Math.random() * 4;
-    notes.get(i).play();
+    notes.get(3).play();
+    counter++;
   }
   if (!notDead)
     notes.get(0).play();
