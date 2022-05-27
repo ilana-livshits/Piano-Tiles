@@ -13,7 +13,7 @@ boolean notDead = false;
 boolean begin = false;
 LoadingScreen introscreen;
 int counter = 0;
-
+String mode = "";
 void resetyPosition() {
   yPosition = new ArrayList<Float>();
   for (int i = -1; i < 4; i++) {
