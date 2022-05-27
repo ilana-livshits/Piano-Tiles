@@ -130,4 +130,6 @@ void mousePressed() {
     int i = (int)Math.random() * 4;
     notes.get(i).play();
   }
+  if (!notDead)
+    notes.get(0).play();
 }
