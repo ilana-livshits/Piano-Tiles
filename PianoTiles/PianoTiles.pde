@@ -1,3 +1,9 @@
+import processing.sound.*;
+SoundFile note1;
+SoundFile note2;
+SoundFile note3;
+SoundFile note4;
+ArrayList<SoundFile> notes = new ArrayList<SoundFile>();
 ArrayList<Float> yPosition;
 ArrayList<Integer> blackTiles;
 ArrayList<Boolean> clickedTiles;
@@ -14,6 +20,12 @@ void resetyPosition() {
   }
 }
 
+void setupNotes(){
+  notes.add(note1);
+  notes.add(note2);
+  notes.add(note3);
+  notes.add(note4);
+}
 
 void randomizeblackTiles() {
   blackTiles = new ArrayList<Integer>();
@@ -75,6 +87,11 @@ void setup() {
   introscreen = new LoadingScreen();
   background(255);
   init();
+  note1 = new SoundFile(this, "key01.wav");
+  note2 = new SoundFile(this, "key06.wav");
+  note3 = new SoundFile(this, "key14.wav");
+  note4 = new SoundFile(this, "key20.wav");
+  setupNotes();
 }
 
 void draw() {
@@ -123,5 +140,14 @@ void mouseClicked() {
       notDead = false;
     }
   }
+<<<<<<< HEAD
   }
+=======
+  if (notDead) {
+    int i = (int)Math.random() * 4;
+    notes.get(i).play();
+  }
+  if (!notDead)
+    notes.get(0).play();
+>>>>>>> 343472291638c0bcb752eb0f1096ff3f058aa71f
 }
