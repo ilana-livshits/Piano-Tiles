@@ -92,7 +92,7 @@ void draw() {
 }
 
 void init() {
-  speed = 2;
+  speed = introscreen.speed * 2;
   acceleration = 0.002;
   resetyPosition();
   randomizeblackTiles();
@@ -107,7 +107,10 @@ void keyPressed() {
     }
 }
 
-void mousePressed() {
+void mouseClicked() {
+  if(begin == false){
+    introscreen.mouseClicked();
+  }else{
   begin = true;
   notDead = true;
   int index = getFirstNotclickedTiles();
@@ -119,5 +122,6 @@ void mousePressed() {
     } else if (get(mouseX, mouseY) != -10197916) {
       notDead = false;
     }
+  }
   }
 }

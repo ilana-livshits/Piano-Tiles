@@ -65,6 +65,7 @@ class LoadingScreen{
     fill(0);
     text("5 = impossible", 170, 854);
   }
+  
    void mouseClicked(){
      //if mouse is on the colors above, set the speed to that number
       if (mouseX > 150 && mouseX < 350 && mouseY > 670 && mouseY < 700) {
@@ -79,4 +80,5 @@ class LoadingScreen{
         speed = 5;
       }
    }
+   
 }
