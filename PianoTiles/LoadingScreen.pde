@@ -81,4 +81,12 @@ class LoadingScreen{
       }
    }
    
+   void winningScreen(){
+    fill(0);
+    textSize(30);
+    text("You won!", 50, 50);
+    text(PianoTiles.counter + " tiles were tapped", 50, 100);
+    text("Click 'h' to return to the home screen", 50, 150);
+  }
+   
 }

@@ -12,7 +12,7 @@ float acceleration;
 boolean notDead = false;
 boolean begin = false;
 LoadingScreen introscreen;
-int counter = 0;
+static int counter = 0;
 
 void resetyPosition() {
   yPosition = new ArrayList<Float>();
