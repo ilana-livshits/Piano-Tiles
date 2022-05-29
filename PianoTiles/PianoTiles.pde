@@ -154,6 +154,7 @@ void setup() {
   note22 = new SoundFile(this, "key22.wav");
   note23 = new SoundFile(this, "key23.wav");
   note24 = new SoundFile(this, "key24.wav");
+  end = new SoundFile(this, "endNote.wav");
   setupNotes();
 }
 int time;
@@ -167,7 +168,8 @@ void draw() {
     drawblackTiles();
     textSize(20);
     text("score: " + counter, 5, 20);
-    text("time: " + (countdown - millis() / 1000 + time), 5, 40);
+    if (mode.equals("zen") && notDead)
+      text("time: " + (countdown - millis() / 1000 + time), 5, 40);
   }
   if (begin && notDead) {
     moveDown();
@@ -222,5 +224,5 @@ void mouseClicked() {
     counter++;
   }
   if (!notDead)
-    notes.get(0).play();
+    end.play();
 }
