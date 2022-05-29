@@ -3,6 +3,27 @@ SoundFile note1;
 SoundFile note2;
 SoundFile note3;
 SoundFile note4;
+SoundFile note5;
+SoundFile note6;
+SoundFile note7;
+SoundFile note8;
+SoundFile note9;
+SoundFile note10;
+SoundFile note11;
+SoundFile note12;
+SoundFile note13;
+SoundFile note14;
+SoundFile note15;
+SoundFile note16;
+SoundFile note17;
+SoundFile note18;
+SoundFile note19;
+SoundFile note20;
+SoundFile note21;
+SoundFile note22;
+SoundFile note23;
+SoundFile note24;
+SoundFile end;
 ArrayList<SoundFile> notes = new ArrayList<SoundFile>();
 ArrayList<Float> yPosition;
 ArrayList<Integer> blackTiles;
@@ -27,6 +48,26 @@ void setupNotes() {
   notes.add(note2);
   notes.add(note3);
   notes.add(note4);
+  notes.add(note5);
+  notes.add(note6);
+  notes.add(note7);
+  notes.add(note8);
+  notes.add(note9);
+  notes.add(note10);
+  notes.add(note11);
+  notes.add(note12);
+  notes.add(note13);
+  notes.add(note14);
+  notes.add(note15);
+  notes.add(note16);
+  notes.add(note17);
+  notes.add(note18);
+  notes.add(note19);
+  notes.add(note20);
+  notes.add(note21);
+  notes.add(note22);
+  notes.add(note23);
+  notes.add(note24);
 }
 
 void randomizeblackTiles() {
@@ -90,9 +131,29 @@ void setup() {
   background(255);
   init();
   note1 = new SoundFile(this, "key01.wav");
-  note2 = new SoundFile(this, "key06.wav");
-  note3 = new SoundFile(this, "key14.wav");
-  note4 = new SoundFile(this, "key20.wav");
+  note2 = new SoundFile(this, "key02.wav");
+  note3 = new SoundFile(this, "key03.wav");
+  note4 = new SoundFile(this, "key04.wav");
+  note5 = new SoundFile(this, "key05.wav");
+  note6 = new SoundFile(this, "key06.wav");
+  note7 = new SoundFile(this, "key07.wav");
+  note8 = new SoundFile(this, "key08.wav");
+  note9 = new SoundFile(this, "key09.wav");
+  note10 = new SoundFile(this, "key10.wav");
+  note11 = new SoundFile(this, "key11.wav");
+  note12 = new SoundFile(this, "key12.wav");
+  note13 = new SoundFile(this, "key13.wav");
+  note14 = new SoundFile(this, "key14.wav");
+  note15 = new SoundFile(this, "key15.wav");
+  note16 = new SoundFile(this, "key16.wav");
+  note17 = new SoundFile(this, "key17.wav");
+  note18 = new SoundFile(this, "key18.wav");
+  note19 = new SoundFile(this, "key19.wav");
+  note20 = new SoundFile(this, "key20.wav");
+  note21 = new SoundFile(this, "key21.wav");
+  note22 = new SoundFile(this, "key22.wav");
+  note23 = new SoundFile(this, "key23.wav");
+  note24 = new SoundFile(this, "key24.wav");
   setupNotes();
 }
 int time;
@@ -112,11 +173,11 @@ void draw() {
     moveDown();
     speed += acceleration;
   }
-      if (mode.equals("zen") && notDead) {
-      if ((countdown - millis() / 1000 + time) < 0) {
-        notDead = false;
-      }
+  if (mode.equals("zen") && notDead) {
+    if ((countdown - millis() / 1000 + time) < 0) {
+      notDead = false;
     }
+  }
 }
 
 void init() {
