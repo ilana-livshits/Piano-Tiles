@@ -82,6 +82,7 @@ class LoadingScreen{
    }
    
    void endScreen(){
+    background(250, 218, 221);
     fill(0);
     textSize(30);
     text("Good try!", 50, 50);
@@ -90,6 +91,7 @@ class LoadingScreen{
   }
    
    void winningScreen(){
+    background(250, 218, 221);
     fill(0);
     textSize(30);
     text("You won!", 50, 50);

@@ -11,7 +11,7 @@ float speed;
 float acceleration;
 boolean notDead = false;
 boolean begin = false;
-LoadingScreen introscreen;
+LoadingScreen introendscreen;
 static int counter = 0;
 
 void resetyPosition() {
@@ -85,7 +85,7 @@ void moveDown() {
 
 void setup() {
   size(500, 900);
-  introscreen = new LoadingScreen();
+  introendscreen = new LoadingScreen();
   background(255);
   init();
   note1 = new SoundFile(this, "key01.wav");
@@ -97,9 +97,9 @@ void setup() {
 
 void draw() {
   background(255);
-  // set up introScreen
+  // set up introendscreen
   if (!begin) {
-    introscreen.introScreen();
+    introendscreen.introScreen();
   } else {
     drawblackTiles();
     textSize(20);
@@ -109,10 +109,17 @@ void draw() {
     moveDown();
     speed += acceleration;
   }
+  if(!notDead){
+    introendscreen.endScreen();
+    if(key == 'h'){ 
+      begin = false;
+      introendscreen.introScreen();
+    }
+  }
 }
 
 void init() {
-  speed = introscreen.speed * 2;
+  speed = introendscreen.speed * 2;
   acceleration = 0.002;
   resetyPosition();
   randomizeblackTiles();
@@ -125,11 +132,15 @@ void keyPressed() {
     init();
     begin = true;
   }
+  else if(key == 'h'){
+    begin = false;
+    introendscreen.introScreen();
+  } 
 }
 
 void mouseClicked() {
   if (begin == false) {
-    introscreen.mouseClicked();
+    introendscreen.mouseClicked();
   } else {
     begin = true;
     notDead = true;
@@ -146,7 +157,7 @@ void mouseClicked() {
   }
   if (notDead) {
     int i = (int)Math.random() * 4;
-    notes.get(3).play();
+    notes.get(i).play();
     counter++;
   }
   if (!notDead)
