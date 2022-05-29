@@ -12,8 +12,9 @@ float acceleration;
 boolean notDead = false;
 boolean begin = false;
 LoadingScreen introscreen;
-int counter = 0;
-String mode = "";
+int counter;
+String mode;
+int countdown;
 void resetyPosition() {
   yPosition = new ArrayList<Float>();
   for (int i = -1; i < 4; i++) {
@@ -94,16 +95,18 @@ void setup() {
   note4 = new SoundFile(this, "key20.wav");
   setupNotes();
 }
-
+int time;
 void draw() {
   background(255);
   // set up introScreen
   if (!begin) {
     introscreen.introScreen();
+    time = millis() / 1000;
   } else {
     drawblackTiles();
     textSize(20);
     text("score: " + counter, 5, 20);
+    text("time: " + (countdown - millis() / 1000 + time), 5, 40);
   }
   if (begin && notDead) {
     moveDown();
@@ -118,6 +121,9 @@ void init() {
   randomizeblackTiles();
   notDead = true;
   begin = false;
+  mode = "";
+  counter = 0;
+  countdown = 30;
 }
 
 void keyPressed() {

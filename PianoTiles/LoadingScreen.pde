@@ -95,7 +95,7 @@ class LoadingScreen{
       } else if (mouseX > 300 && mouseX < 425 && mouseY > 670 && mouseY < 700) {
         mode = "arcade";
       } else if (mouseX > 300 && mouseX < 425 && mouseY > 710 && mouseY < 740) {
-        mode = "arcade";
+        mode = "zen";
       } 
    }
    
