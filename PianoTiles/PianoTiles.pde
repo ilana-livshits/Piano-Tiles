@@ -112,6 +112,11 @@ void draw() {
     moveDown();
     speed += acceleration;
   }
+      if (mode.equals("zen") && notDead) {
+      if ((countdown - millis() / 1000 + time) < 0) {
+        notDead = false;
+      }
+    }
 }
 
 void init() {
@@ -151,8 +156,8 @@ void mouseClicked() {
     }
   }
   if (notDead) {
-    int i = (int)Math.random() * 4;
-    notes.get(3).play();
+    int i = (int)random(4);
+    notes.get(i).play();
     counter++;
   }
   if (!notDead)
