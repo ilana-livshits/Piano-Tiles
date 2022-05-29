@@ -37,48 +37,66 @@ class LoadingScreen{
     
     // have a space for the speed at the top right of the screen
     //display 5 boxes with the numbers 1-5 in it next to the speed
-    textSize(30);
-    text("Difficulty (speed) : " + (int)speed , 30, 650);
+    textSize(25);
+    text("Difficulty (speed): " + (int)speed , 20, 650);
     textSize(23);
     fill(144, 238, 144);
-    rect(150, 670, 200, 30);
+    rect(20, 670, 170, 30);
     fill(0);
-    text("1 = easy", 200, 694);
+    text("1 = easy", 50, 694);
     
     fill(90, 100, 0);
-    rect(150, 710, 200, 30);
+    rect(20, 710, 170, 30);
     fill(0);
-    text("2 = medium", 190, 734);
+    text("2 = medium", 29, 734);
     
     fill(199, 163, 23);
-    rect(150, 750, 200, 30);
+    rect(20, 750, 170, 30);
     fill(0);
-    text("3 = hard", 200, 774);
+    text("3 = hard", 45, 774);
     
     fill(253, 88, 0);
-    rect(150, 790, 200, 30);
+    rect(20, 790, 170, 30);
     fill(0);
-    text("4 = very hard", 180, 814);
+    text("4 = very hard", 25, 814);
     
     fill(255, 0, 0);
-    rect(150, 830, 200, 30);
+    rect(20, 830, 170, 30);
     fill(0);
-    text("5 = impossible", 170, 854);
+    text("5 = impossible", 20, 854);
+    
+    
+    textSize(25);
+    text("Mode: " + mode , 300, 650);
+    textSize(23);
+    fill(252, 199, 215);
+    rect(300, 670, 125, 30);
+    fill(0);
+    text("arcade", 325, 694);
+    
+    fill(250, 107, 150);
+    rect(300, 710, 125, 30);
+    fill(0);
+    text("zen", 340, 734);
   }
   
    void mouseClicked(){
      //if mouse is on the colors above, set the speed to that number
-      if (mouseX > 150 && mouseX < 350 && mouseY > 670 && mouseY < 700) {
+      if (mouseX > 20 && mouseX < 190 && mouseY > 670 && mouseY < 700) {
         speed = 1;
-      } else if (mouseX > 150 && mouseX < 350 && mouseY > 710 && mouseY < 740) {
+      } else if (mouseX > 20 && mouseX < 190 && mouseY > 710 && mouseY < 740) {
         speed = 2;
-      } else if (mouseX > 150 && mouseX < 350 && mouseY > 750 && mouseY < 780) {
+      } else if (mouseX > 20 && mouseX < 190 && mouseY > 750 && mouseY < 780) {
         speed = 3;
-      } else if (mouseX > 150 && mouseX < 350 && mouseY > 790 && mouseY < 820) {
+      } else if (mouseX > 20 && mouseX < 190 && mouseY > 790 && mouseY < 820) {
         speed = 4;
-      } else if (mouseX > 150 && mouseX < 350 && mouseY > 830 && mouseY < 860) {
+      } else if (mouseX > 20 && mouseX < 190 && mouseY > 830 && mouseY < 860) {
         speed = 5;
-      }
+      } else if (mouseX > 300 && mouseX < 425 && mouseY > 670 && mouseY < 700) {
+        mode = "arcade";
+      } else if (mouseX > 300 && mouseX < 425 && mouseY > 710 && mouseY < 740) {
+        mode = "zen";
+      } 
    }
    
 }
