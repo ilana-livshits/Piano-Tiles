@@ -32,10 +32,12 @@ float speed;
 float acceleration;
 boolean notDead = false;
 boolean begin = false;
+
 LoadingScreen introscreen;
-int counter;
+static int counter = 0;
 String mode;
 int countdown;
+
 void resetyPosition() {
   yPosition = new ArrayList<Float>();
   for (int i = -1; i < 4; i++) {
@@ -111,7 +113,9 @@ void moveDown() {
     if (yPosition.get(i) >= height) {
       if (!clickedTiles.get(i)) {
         notDead = false;
-      } else {
+      } else if(counter >= 20){
+         notDead = false;
+      }else {
         yPosition.remove(i);
         blackTiles.remove(i);
         clickedTiles.remove(i);
@@ -127,7 +131,7 @@ void moveDown() {
 
 void setup() {
   size(500, 900);
-  introscreen = new LoadingScreen();
+  introendscreen = new LoadingScreen();
   background(255);
   init();
   note1 = new SoundFile(this, "key01.wav");
@@ -160,10 +164,29 @@ void setup() {
 int time;
 void draw() {
   background(255);
-  // set up introScreen
+  
+  /*
+  float percent = 0;
+    if (record) {
+      percent = float(counterrr) / totalFrames;
+    } else {
+      percent = float(counterrr % totalFrames) / totalFrames;
+    }
+    render(percent);
+    if (record) {
+      saveFrame("output/gif-"+nf(counterrr, 3)+".png");
+      if (counterrr == totalFrames-1) {
+        exit();
+      }
+    }
+    counterrr++;
+  */
+  
+  // set up introendscreen
   if (!begin) {
     introscreen.introScreen();
     time = millis() / 1000;
+
   } else {
     drawblackTiles();
     textSize(20);
@@ -175,15 +198,42 @@ void draw() {
     moveDown();
     speed += acceleration;
   }
+
+  if(!notDead){
+    if(counter < 20){
+      introendscreen.endScreen();
+    }else if(counter >= 20){
+      introendscreen.winningScreen();
+     }
+    if(key == 'h'){ 
+      begin = false;
+      introendscreen.introScreen();
+     }
+    }
+
   if (mode.equals("zen") && notDead) {
     if ((countdown - millis() / 1000 + time) < 0) {
       notDead = false;
+
     }
   }
 }
 
+  /*
+  void render(float percent) {
+    float angle = map(percent, 0, 1, 0, TWO_PI);
+    background(0);
+    translate(width/2, height/2);
+    rotate(angle);
+    stroke(255);
+    noFill();
+    rectMode(CENTER);
+    square(0, 0, 100);
+  }
+  */
+
 void init() {
-  speed = introscreen.speed * 2;
+  speed = introendscreen.speed * 2;
   acceleration = 0.002;
   resetyPosition();
   randomizeblackTiles();
@@ -199,11 +249,15 @@ void keyPressed() {
     init();
     begin = true;
   }
+  else if(key == 'h'){
+    begin = false;
+    introendscreen.introScreen();
+  } 
 }
 
 void mouseClicked() {
   if (begin == false) {
-    introscreen.mouseClicked();
+    introendscreen.mouseClicked();
   } else {
     begin = true;
     notDead = true;
@@ -219,10 +273,12 @@ void mouseClicked() {
     }
   }
   if (notDead) {
+
     int i = (int)random(4);
     notes.get(i).play();
     counter++;
   }
   if (!notDead)
     end.play();
+
 }
