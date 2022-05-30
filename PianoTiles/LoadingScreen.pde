@@ -4,6 +4,10 @@ class LoadingScreen{
   Stars[] stars = new Stars[200];
   float speedStars;
   
+  //public static float getSpeedStars() {
+  //  return speedStars;
+  //}
+  
 
   void introScreen(){
     size(500, 900);
@@ -19,11 +23,11 @@ class LoadingScreen{
      for (int i = 0; i < stars.length; i++) {
         stars[i] = new Stars();
      }  
-      speed = map(mouseX, 0, width, 0, 50);
+      speedStars = map(mouseX, 0, width, 0, 50);
     
       background(0);
      
-      translate(width/2, height/2);
+      //translate(0, 0);
       for (int i = 0; i < stars.length; i++) {
         stars[i].movingStars();
         stars[i].show();
@@ -41,7 +45,7 @@ class LoadingScreen{
     //write the instructions in the middle of the screen 
     int allwidth = 500;
     int allheight = 900;
-    fill(0);
+    fill(250);
     textSize(30);
     text("Tap on the black tiles (in order)", 30, 300);
     text("as they appear on the screen", 30, 335);
@@ -59,27 +63,27 @@ class LoadingScreen{
     textSize(23);
     fill(144, 238, 144);
     rect(150, 670, 200, 30);
-    fill(0);
+    fill(250);
     text("1 = easy", 200, 694);
     
     fill(90, 100, 0);
     rect(150, 710, 200, 30);
-    fill(0);
+    fill(250);
     text("2 = medium", 190, 734);
     
     fill(199, 163, 23);
     rect(150, 750, 200, 30);
-    fill(0);
+    fill(250);
     text("3 = hard", 200, 774);
     
     fill(253, 88, 0);
     rect(150, 790, 200, 30);
-    fill(0);
+    fill(250);
     text("4 = very hard", 180, 814);
     
     fill(255, 0, 0);
     rect(150, 830, 200, 30);
-    fill(0);
+    fill(250);
     text("5 = impossible", 170, 854);
   }
   
