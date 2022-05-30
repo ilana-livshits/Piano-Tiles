@@ -3,6 +3,7 @@ class LoadingScreen{
   float speed = 1;
   Stars[] stars = new Stars[200];
   float speedStars;
+  PImage bckground;
   
   //public static float getSpeedStars() {
   //  return speedStars;
@@ -10,8 +11,10 @@ class LoadingScreen{
   
 
   void introScreen(){
+    bckground = loadImage("ombrerainbow.png");
+    
     size(500, 900);
-    background(250, 218, 221);  //set background to a light pink
+    //background(250, 218, 221);  //set background to a light pink
     // have a space for the username at the top left of the screen
     /*
         textSize(30);
@@ -25,7 +28,7 @@ class LoadingScreen{
      }  
       speedStars = map(mouseX, 0, width, 0, 50);
     
-      background(0);
+      background(bckground); //set background to an image
      
       //translate(0, 0);
       for (int i = 0; i < stars.length; i++) {
