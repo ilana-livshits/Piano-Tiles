@@ -12,10 +12,12 @@ float acceleration;
 boolean notDead = false;
 boolean begin = false;
 LoadingScreen introendscreen;
-static int counterrr = 0;
+static int counter = 0;
+
+PImage bg;
 
 int totalFrames = 120;
-  int counter = 0;
+  int counterrr = 0;
   boolean record = false;
 
 void resetyPosition() {
