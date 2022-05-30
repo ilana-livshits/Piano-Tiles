@@ -1,38 +1,6 @@
 class LoadingScreen{
   String username = "";
-  float speed = 0;
-  int totalFrames = 120;
-  int counter = 0;
-  boolean record = false;
-
-
-  void draw(){
-    float percent = 0;
-    if (record) {
-      percent = float(counterrr) / totalFrames;
-    } else {
-      percent = float(counterrr % totalFrames) / totalFrames;
-    }
-    render(percent);
-    if (record) {
-      saveFrame("output/gif-"+nf(counterrr, 3)+".png");
-      if (counterrr == totalFrames-1) {
-        exit();
-      }
-    }
-    counterrr++;
-  }
-  
-  void render(float percent) {
-    float angle = map(percent, 0, 1, 0, TWO_PI);
-    background(0);
-    translate(width/2, height/2);
-    rotate(angle);
-    stroke(255);
-    noFill();
-    rectMode(CENTER);
-    square(0, 0, 100);
-  }
+  float speed = 1;
 
   void introScreen(){
     background(250, 218, 221);  //set background to a light pink
