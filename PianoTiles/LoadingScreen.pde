@@ -37,6 +37,9 @@ class LoadingScreen{
         }
 
      //GAME NAME and creator names
+     fill(0);
+     rect(30, 20, 440, 200);
+     
      fill(250);
      textSize(69);
      text("PIANO TILES", 50, 100);
@@ -64,27 +67,27 @@ class LoadingScreen{
     textSize(30);
     text("Difficulty (speed) : " + (int)speed , 30, 650);
     textSize(23);
-    fill(144, 238, 144);
+    fill(117, 223, 78);
     rect(150, 670, 200, 30);
     fill(250);
     text("1 = easy", 200, 694);
     
-    fill(90, 100, 0);
+    fill(63, 165, 111);
     rect(150, 710, 200, 30);
     fill(250);
     text("2 = medium", 190, 734);
     
-    fill(199, 163, 23);
+    fill(53, 131, 139);
     rect(150, 750, 200, 30);
     fill(250);
     text("3 = hard", 200, 774);
     
-    fill(253, 88, 0);
+    fill(47, 91, 125);
     rect(150, 790, 200, 30);
     fill(250);
     text("4 = very hard", 180, 814);
     
-    fill(255, 0, 0);
+    fill(47, 47, 125);
     rect(150, 830, 200, 30);
     fill(250);
     text("5 = impossible", 170, 854);
