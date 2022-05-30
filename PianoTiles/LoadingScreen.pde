@@ -1,8 +1,12 @@
 class LoadingScreen{
   String username = "";
   float speed = 1;
+  Stars[] stars = new Stars[200];
+  float speedStars;
+  
 
   void introScreen(){
+    size(500, 900);
     background(250, 218, 221);  //set background to a light pink
     // have a space for the username at the top left of the screen
     /*
@@ -11,9 +15,22 @@ class LoadingScreen{
         textSize(20);
         text(username, 100, 30);
      */
+     //setup
+     for (int i = 0; i < stars.length; i++) {
+        stars[i] = new Stars();
+     }  
+      speed = map(mouseX, 0, width, 0, 50);
+    
+      background(0);
      
+      translate(width/2, height/2);
+      for (int i = 0; i < stars.length; i++) {
+        stars[i].movingStars();
+        stars[i].show();
+        }
+
      //GAME NAME and creator names
-     fill(0);
+     fill(250);
      textSize(69);
      text("PIANO TILES", 50, 100);
      textSize(30);
