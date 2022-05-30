@@ -37,10 +37,10 @@ class LoadingScreen{
         }
 
      //GAME NAME and creator names
-     fill(0);
+     fill(250);
      rect(30, 20, 440, 200);
      
-     fill(250);
+     fill(0);
      textSize(69);
      text("PIANO TILES", 50, 100);
      textSize(30);
@@ -51,21 +51,21 @@ class LoadingScreen{
     //write the instructions in the middle of the screen 
     int allwidth = 500;
     int allheight = 900;
-    fill(250);
+    fill(255);
     textSize(30);
-    text("Tap on the black tiles (in order)", 30, 300);
-    text("as they appear on the screen", 30, 335);
-    text("Be careful not to tap on the", 30, 385);
-    text("white tiles!", 30, 420);
-    text("To select the difficulty, choose", 30, 470);
-    text("a number from 1 to 5.", 30, 505); //1 = easy, 2 = medium, 3 = hard, 4 = very hard, 5 = impossible
-    text("Click 's' to start the game.", 30, 555); //Type in a username and click enter
-    text("Have fun!", 30, 590);
+    text("Tap on the black tiles in order", 30, 280);
+    text("as they appear on the screen", 30, 315);
+    text("Be careful not to tap on the", 30, 365);
+    text("white tiles!", 30, 400);
+    text("To select the difficulty, choose", 30, 450);
+    text("a number from 1 to 5.", 30, 485); //1 = easy, 2 = medium, 3 = hard, 4 = very hard, 5 = impossible
+    text("Click 's' to start the game.", 30, 535); //Type in a username and click enter
+    text("Have fun!", 30, 570);
     
     // have a space for the speed at the top right of the screen
     //display 5 boxes with the numbers 1-5 in it next to the speed
     textSize(30);
-    text("Difficulty (speed) : " + (int)speed , 30, 650);
+    text("Difficulty (speed) : " + (int)speed , 30, 630);
     textSize(23);
     fill(117, 223, 78);
     rect(150, 670, 200, 30);
@@ -109,21 +109,50 @@ class LoadingScreen{
    }
    
    void endScreen(){
-    background(250, 218, 221);
-    fill(0);
-    textSize(30);
-    text("Good try!", 50, 50);
-    text(PianoTiles.counter + " tiles were tapped", 50, 100);
-    text("Click 'h' to return to the home screen", 50, 150);
+    for (int i = 0; i < stars.length; i++) {
+        stars[i] = new Stars();
+     }  
+      speedStars = map(mouseX, 0, width, 0, 50);
+    
+      background(0); //set background to an image
+     
+      //translate(0, 0);
+      for (int i = 0; i < stars.length; i++) {
+        stars[i].movingStars();
+        stars[i].show();
+        }
+    fill(255);
+    textSize(60);
+    text("Good try!", 110, 360);
+    textSize(40);
+    text(PianoTiles.counter + " tiles were tapped", 55, 450);
+    textSize(40);
+    text("Click 'h' to return", 70, 520);
+    text("to the home screen", 53, 570);
+    
   }
    
-   void winningScreen(){
-    background(250, 218, 221);
-    fill(0);
-    textSize(30);
-    text("You won!", 50, 50);
-    text(PianoTiles.counter + " tiles were tapped", 50, 100);
-    text("Click 'h' to return to the home screen", 50, 150);
+   void winningScreen(){ //placeholder for now. when you reach 50 tiles, display:
+    for (int i = 0; i < stars.length; i++) {
+        stars[i] = new Stars();
+     }  
+      speedStars = map(mouseX, 0, width, 0, 50);
+    
+      background(106, 51, 154); //set background to an image
+     
+      //translate(0, 0);
+      for (int i = 0; i < stars.length; i++) {
+        stars[i].movingStars();
+        stars[i].show();
+        }
+    fill(255);
+    textSize(60);
+    text("You won!", 110, 360);
+    textSize(40);
+    text(PianoTiles.counter + " tiles were tapped", 55, 450);
+    textSize(40);
+    text("Click 'h' to return", 70, 520);
+    text("to the home screen", 53, 570);
   }
    
 }

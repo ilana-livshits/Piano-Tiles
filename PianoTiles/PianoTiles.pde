@@ -77,7 +77,9 @@ void moveDown() {
     if (yPosition.get(i) >= height) {
       if (!clickedTiles.get(i)) {
         notDead = false;
-      } else {
+      } else if(counter >= 20){
+         notDead = false;
+      }else {
         yPosition.remove(i);
         blackTiles.remove(i);
         clickedTiles.remove(i);
@@ -136,7 +138,11 @@ void draw() {
     speed += acceleration;
   }
   if(!notDead){
-    introendscreen.endScreen();
+    if(counter < 20){
+      introendscreen.endScreen();
+    }else if(counter >= 20){
+      introendscreen.winningScreen();
+     }
     if(key == 'h'){ 
       begin = false;
       introendscreen.introScreen();
