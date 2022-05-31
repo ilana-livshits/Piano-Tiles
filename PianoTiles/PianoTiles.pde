@@ -177,6 +177,18 @@ void draw() {
     moveDown();
     speed += acceleration;
   }
+   if(!notDead){
+    if(counter < 20){
+      introendscreen.endScreen();
+    }else if(counter >= 20){
+      introendscreen.winningScreen();
+     }
+    if(key == 'h'){ 
+      begin = false;
+      introendscreen.introScreen();
+    }
+  }
+  
   if (mode.equals("zen") && notDead) {
     if ((countdown - millis() / 1000 + time) < 0) {
       notDead = false;
