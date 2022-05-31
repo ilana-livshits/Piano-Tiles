@@ -114,7 +114,7 @@ void moveDown() {
       if (!clickedTiles.get(i)) {
         notDead = false;
       } else if(counter >= 20){
-        end.play();
+        //end.play();
        notDead = false;
       } else {
         yPosition.remove(i);
@@ -208,6 +208,7 @@ void draw() {
     if(key == 'h'){ 
       begin = false;
       end.pause();
+      //notes.get(0).play();
       introendscreen.introScreen();
     }
   }
