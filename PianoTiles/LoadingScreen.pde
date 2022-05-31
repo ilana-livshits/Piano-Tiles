@@ -63,9 +63,9 @@ class LoadingScreen{
 
     // have a space for the speed at the top right of the screen
     //display 5 boxes with the numbers 1-5 in it next to the speed
-    textSize(25);
+    textSize(30);
 
-    text("Difficulty (speed) : " + (int)speed , 30, 630);
+    text("Difficulty: " + (int)speed , 75, 650);
     textSize(23);
     fill(117, 223, 78);
     rect(70, 670, 200, 30);
@@ -92,8 +92,8 @@ class LoadingScreen{
     fill(250);
     text("5 = impossible", 85, 854);
     
-    textSize(20);
-    text("Mode: " + PianoTiles.mode , 300, 650);
+    textSize(30);
+    text("Mode: " + PianoTiles.mode , 310, 650);
     textSize(23);
     fill(252, 199, 215);
     rect(325, 670, 125, 30);
@@ -108,19 +108,19 @@ class LoadingScreen{
 
    void mouseClicked(){
      //if mouse is on the colors above, set the speed to that number
-      if (mouseX > 20 && mouseX < 190 && mouseY > 670 && mouseY < 700) {
+      if (mouseX > 20 && mouseX < 270 && mouseY > 670 && mouseY < 700) {
         speed = 1;
-      } else if (mouseX > 20 && mouseX < 190 && mouseY > 710 && mouseY < 740) {
+      } else if (mouseX > 20 && mouseX < 270 && mouseY > 710 && mouseY < 740) {
         speed = 2;
-      } else if (mouseX > 20 && mouseX < 190 && mouseY > 750 && mouseY < 780) {
+      } else if (mouseX > 20 && mouseX < 270 && mouseY > 750 && mouseY < 780) {
         speed = 3;
-      } else if (mouseX > 20 && mouseX < 190 && mouseY > 790 && mouseY < 820) {
+      } else if (mouseX > 20 && mouseX < 270 && mouseY > 790 && mouseY < 820) {
         speed = 4;
-      } else if (mouseX > 20 && mouseX < 190 && mouseY > 830 && mouseY < 860) {
+      } else if (mouseX > 20 && mouseX < 270 && mouseY > 830 && mouseY < 860) {
         speed = 5;
-      } else if (mouseX > 300 && mouseX < 425 && mouseY > 670 && mouseY < 700) {
+      } else if (mouseX > 325 && mouseX < 450 && mouseY > 670 && mouseY < 700) {
         mode = "arcade";
-      } else if (mouseX > 300 && mouseX < 425 && mouseY > 710 && mouseY < 740) {
+      } else if (mouseX > 325 && mouseX < 450 && mouseY > 710 && mouseY < 740) {
         mode = "zen";
       } 
    }
