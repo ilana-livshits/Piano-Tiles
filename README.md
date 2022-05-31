@@ -17,7 +17,7 @@ Our final project follows a Piano Tiles configuration of a 4 column board of bla
 *Salvina Sharipova:* I continued with yesterday's branch (name: salvinaLoadingScreen1). I continued with my attempt to find a way to store an input username, however it seems that it requires a usage of the library and dense coding in java, so I am dropping that idea for now. Instead, I worked on merging and finishing the interactive difficulty setter. I had a merge conflict, but was able to pull Ilana's work that she merged into the main. <br />
 **5/26/22** <br />
 *Ilana Livshits:* Each tile now plays a sound when pressed. However, there are issues with randomizing the piano notes played. <br />
-*Salvina Sharipova:* <br />
+*Salvina Sharipova:* Finished the aesthetics  <br />
 **5/27/22** <br />
 *Ilana Livshits:* A score counter has been implemented. Dealt with merge conflicts. <br /> 
 *Salvina Sharipova:* Looked at merges. Didn't do much, got COVID and was feeling ill looking at a screen. <br />
@@ -28,5 +28,5 @@ Relaxing Sunday off. <br />
 *Salvina Sharipova:* Added two very simple end screens for when the player beats the game (aka reaches a certain number of tiles) and for when the player loses (by tapping on a white tile, missing a tile, or skipping a tile). <br />
 **5/30/22** <br />
 *Ilana Livshits:* <br /> 
-*Salvina Sharipova:* Created a nice moving background of shooting stars on top of a rainbow color scheme. I added the same background (a bit different for each) for each end screen. I linked each end screen to the appropriate situation (where the winning end screen displays when the player reached a certain count whilst the losing end screen displays otherwise). We merged into the final branch and finished the demo aspect of the project which is due for tomorrow. <br />
+*Salvina Sharipova:* Attempted to make a background that has a moving shape to make it more interesting, but the intro text started rotating instead. Didn't know ow to fix that, so I abandoned that idea. Instead, I designed a nice moving background of shooting stars on top of a rainbow color scheme using another separate class called Stars{}. I added the same background (a bit different for each) for each end screen. I linked each end screen to the appropriate situation (where the winning end screen displays when the player reached a certain count whilst the losing end screen displays otherwise). We merged into the final branch and finished the demo aspect of the project which is due for tomorrow. <br />
 
