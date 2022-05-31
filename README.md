@@ -23,4 +23,4 @@ Our final project follows a Piano Tiles configuration of a 4 column board of bla
 *Salvina Sharipova:* <br />
 **5/29/22** <br />
 *Ilana Livshits:* Two Piano Tiles modes have been implemented: a Zen and Aracde mode. The Zen mode allows the user to click as many tiles as possible in 30 seconds, while in Arcade mode, the user continues playing until they miss a tile or press on a white tile. The Zen mode implements a timing sistem using millis(). Likewise, the piano notes for mouseClicked have been randomized. <br /> 
-*Salvina Sharipova:* <br />
+*Salvina Sharipova:* Added two very simple end screens for when the player beats the game (aka reaches a certain number of tiles) and for when the player loses (by tapping on a white tile, missing a tile, or skipping a tile). <br />
