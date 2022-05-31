@@ -34,7 +34,7 @@ boolean notDead = false;
 boolean begin = false;
 LoadingScreen introscreen;
 int counter;
-String mode;
+static String mode;
 int countdown;
 void resetyPosition() {
   yPosition = new ArrayList<Float>();
