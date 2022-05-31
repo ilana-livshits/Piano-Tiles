@@ -5,6 +5,9 @@
 Our final project follows a Piano Tiles configuration of a 4 column board of black tiles that appear to move down the screen. There will be several gameplay screens. One would instruct the player on user input in reference to their username, desired speed (which would accelerate as the game progresses), and preferred song (one or two songs would be synchronized with music, although a random assortment of tiles would initially be tested). The second screen, which would be switched to after the user presses “S” or “s”, would include the board of tiles moving down the screen. Tiles would be considered “pressed” and turn from black to gray when the user clicks on them. If a black tile touches the bottom edge of the screen, the player loses the game and their score (number of tiles they successfully clicked) is displayed. The player is able to restart the game by pressing R. <br />
 **Google Doc Link:** https://docs.google.com/document/d/1o1WsvxEHCIpvZJGfSCGDGlKxMInxzNGv7OTZE-fzk_U/edit?usp=sharing
 
+# Instructions
+Our Piano Tiles project should be compiled and run in Processing.
+
 # Daily Log
 **5/23/22** <br />
 *Ilana Livshits:* I was absent with Covid and couldn't work on the lab. <br />
@@ -29,6 +32,6 @@ Relaxing Sunday off. <br />
 *Ilana Livshits:* Two Piano Tiles modes have been implemented: a Zen and Aracde mode. The Zen mode allows the user to click as many tiles as possible in 30 seconds, while in Arcade mode, the user continues playing until they miss a tile or press on a white tile. The Zen mode implements a timing sistem using millis(). Likewise, the piano notes for mouseClicked have been randomized. <br /> 
 *Salvina Sharipova:* Added two very simple end screens for when the player beats the game (aka reaches a certain number of tiles) and for when the player loses (by tapping on a white tile, missing a tile, or skipping a tile). <br />
 **5/30/22** <br />
-*Ilana Livshits:* <br /> 
+*Ilana Livshits:* Obligatory Memorial Day weekend break. <br /> 
 *Salvina Sharipova:* Attempted to make a background that has a moving shape to make it more interesting, but the intro text started rotating instead. Didn't know ow to fix that, so I abandoned that idea. Instead, I designed a nice moving background of shooting stars on top of a rainbow color scheme using another separate class called Stars{}. I added the same background (a bit different for each) for each end screen. I linked each end screen to the appropriate situation (where the winning end screen displays when the player reached a certain count whilst the losing end screen displays otherwise). We merged into the final branch and finished the demo aspect of the project which is due for tomorrow. <br />
 
