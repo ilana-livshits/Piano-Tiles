@@ -125,4 +125,34 @@ class LoadingScreen{
       } 
    }
    
+   void endScreen(){
+    background(250, 218, 221);
+    fill(0);
+    textSize(30);
+    text("Good try!", 50, 50);
+    text(PianoTiles.counter + " tiles were tapped", 50, 100);
+    text("Click 'h' to return to the home screen", 50, 150);
+    for (int i = 0; i < stars.length; i++) {
+        stars[i] = new Stars();
+     }  
+      speedStars = map(mouseX, 0, width, 0, 50);
+
+      background(0); //set background to an image
+
+      //translate(0, 0);
+      for (int i = 0; i < stars.length; i++) {
+        stars[i].movingStars();
+        stars[i].show();
+        }
+    fill(255);
+    textSize(60);
+    text("Good try!", 110, 360);
+    textSize(40);
+    text(PianoTiles.counter + " tiles were tapped", 55, 450);
+    textSize(40);
+    text("Click 'h' to return", 70, 520);
+    text("to the home screen", 53, 570);
+
+  }
+   
 }

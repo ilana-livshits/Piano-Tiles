@@ -33,7 +33,7 @@ float acceleration;
 boolean notDead = false;
 boolean begin = false;
 LoadingScreen introscreen;
-int counter;
+static int counter;
 static String mode;
 int countdown;
 void resetyPosition() {
