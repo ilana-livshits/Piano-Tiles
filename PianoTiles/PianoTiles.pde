@@ -33,9 +33,9 @@ float acceleration;
 boolean notDead = false;
 boolean begin = false;
 
-LoadingScreen introscreen;
-static int counter = 0;
-String mode;
+LoadingScreen introendscreen;
+static int counter;
+static String mode;
 int countdown;
 
 void resetyPosition() {
@@ -114,8 +114,9 @@ void moveDown() {
       if (!clickedTiles.get(i)) {
         notDead = false;
       } else if(counter >= 20){
-         notDead = false;
-      }else {
+        end.play();
+       notDead = false;
+      } else {
         yPosition.remove(i);
         blackTiles.remove(i);
         clickedTiles.remove(i);
@@ -184,7 +185,7 @@ void draw() {
   
   // set up introendscreen
   if (!begin) {
-    introscreen.introScreen();
+    introendscreen.introScreen();
     time = millis() / 1000;
 
   } else {
@@ -198,8 +199,7 @@ void draw() {
     moveDown();
     speed += acceleration;
   }
-
-  if(!notDead){
+   if(!notDead){
     if(counter < 20){
       introendscreen.endScreen();
     }else if(counter >= 20){
@@ -207,10 +207,10 @@ void draw() {
      }
     if(key == 'h'){ 
       begin = false;
+      end.pause();
       introendscreen.introScreen();
-     }
     }
-
+  }
   if (mode.equals("zen") && notDead) {
     if ((countdown - millis() / 1000 + time) < 0) {
       notDead = false;
@@ -280,5 +280,5 @@ void mouseClicked() {
   }
   if (!notDead)
     end.play();
-
+    //notes.get(0).play();
 }
