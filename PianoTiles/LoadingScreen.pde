@@ -154,5 +154,36 @@ class LoadingScreen{
     text("to the home screen", 53, 570);
 
   }
+  
+  void winningScreen(){
+    background(250, 218, 221);
+    fill(0);
+    textSize(30);
+    text("You won!", 50, 50);
+    text(PianoTiles.counter + " tiles were tapped", 50, 100);
+    text("Click 'h' to return to the home screen", 50, 150);
+   void winningScreen(){ //placeholder for now. when you reach 50 tiles, display:
+    for (int i = 0; i < stars.length; i++) {
+        stars[i] = new Stars();
+     }  
+      speedStars = map(mouseX, 0, width, 0, 50);
+
+      background(106, 51, 154); //set background to an image
+
+      //translate(0, 0);
+      for (int i = 0; i < stars.length; i++) {
+        stars[i].movingStars();
+        stars[i].show();
+        }
+    fill(255);
+    textSize(60);
+    text("You won!", 110, 360);
+    textSize(40);
+    text(PianoTiles.counter + " tiles were tapped", 55, 450);
+    textSize(40);
+    text("Click 'h' to return", 70, 520);
+    text("to the home screen", 53, 570);
+  }
+
    
 }
