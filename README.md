@@ -21,6 +21,8 @@ Our final project follows a Piano Tiles configuration of a 4 column board of bla
 **5/27/22** <br />
 *Ilana Livshits:* A score counter has been implemented. Dealt with merge conflicts. <br /> 
 *Salvina Sharipova:* Looked at merges. Didn't do much, got COVID and was feeling ill looking at a screen. <br />
+**5/28/22** <br />
+Relaxing Saturday off. <br />
 **5/29/22** <br />
 Relaxing Sunday off. <br />
 **5/29/22** <br />
