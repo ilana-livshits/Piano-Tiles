@@ -32,7 +32,7 @@ float speed;
 float acceleration;
 boolean notDead = false;
 boolean begin = false;
-LoadingScreen introscreen;
+LoadingScreen introendscreen;
 static int counter;
 static String mode;
 int countdown;
@@ -112,6 +112,7 @@ void moveDown() {
       if (!clickedTiles.get(i)) {
         notDead = false;
       } else if(counter >= 20){
+        end.play();
        notDead = false;
       } else {
         yPosition.remove(i);
@@ -129,7 +130,7 @@ void moveDown() {
 
 void setup() {
   size(500, 900);
-  introscreen = new LoadingScreen();
+  introendscreen = new LoadingScreen();
   background(255);
   init();
   note1 = new SoundFile(this, "key01.wav");
@@ -164,7 +165,7 @@ void draw() {
   background(255);
   // set up introScreen
   if (!begin) {
-    introscreen.introScreen();
+    introendscreen.introScreen();
     time = millis() / 1000;
   } else {
     drawblackTiles();
@@ -179,12 +180,14 @@ void draw() {
   }
    if(!notDead){
     if(counter < 20){
+
       introendscreen.endScreen();
     }else if(counter >= 20){
       introendscreen.winningScreen();
      }
     if(key == 'h'){ 
       begin = false;
+      end.pause();
       introendscreen.introScreen();
     }
   }
@@ -197,7 +200,7 @@ void draw() {
 }
 
 void init() {
-  speed = introscreen.speed * 2;
+  speed = introendscreen.speed * 2;
   acceleration = 0.002;
   resetyPosition();
   randomizeblackTiles();
@@ -217,7 +220,7 @@ void keyPressed() {
 
 void mouseClicked() {
   if (begin == false) {
-    introscreen.mouseClicked();
+    introendscreen.mouseClicked();
   } else {
     begin = true;
     notDead = true;
@@ -239,4 +242,5 @@ void mouseClicked() {
   }
   if (!notDead)
     end.play();
+    //notes.get(0).play();
 }

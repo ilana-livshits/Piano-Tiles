@@ -155,13 +155,6 @@ class LoadingScreen{
 
   }
   
-  void winningScreen(){
-    background(250, 218, 221);
-    fill(0);
-    textSize(30);
-    text("You won!", 50, 50);
-    text(PianoTiles.counter + " tiles were tapped", 50, 100);
-    text("Click 'h' to return to the home screen", 50, 150);
    void winningScreen(){ //placeholder for now. when you reach 50 tiles, display:
     for (int i = 0; i < stars.length; i++) {
         stars[i] = new Stars();
