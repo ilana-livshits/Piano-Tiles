@@ -37,6 +37,7 @@ LoadingScreen introendscreen;
 static int counter;
 static String mode;
 int countdown;
+int screen;
 
 void resetyPosition() {
   yPosition = new ArrayList<Float>();
@@ -186,6 +187,7 @@ void draw() {
   // set up introendscreen
   if (!begin) {
     introendscreen.introScreen();
+    screen = 0;
     time = millis() / 1000;
 
   } else {
@@ -202,8 +204,10 @@ void draw() {
    if(!notDead){
     if(counter < 20){
       introendscreen.endScreen();
+      screen = 1;
     }else if(counter >= 20){
       introendscreen.winningScreen();
+      screen = 2;
      }
     if(key == 'h'){ 
       begin = false;
@@ -246,11 +250,11 @@ void init() {
 }
 
 void keyPressed() {
-  if (key == 's') {
+  if (screen == 0 && key == 's') {
     init();
     begin = true;
   }
-  else if(key == 'h'){
+  else if((screen == 1 || screen == 2) && key == 'h'){
     begin = false;
     introendscreen.introScreen();
   } 

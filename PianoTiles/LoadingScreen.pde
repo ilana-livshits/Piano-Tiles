@@ -167,5 +167,6 @@ class LoadingScreen{
     text("Click 'h' to return", 70, 520);
     text("to the home screen", 53, 570);
   }
+
    
 }
