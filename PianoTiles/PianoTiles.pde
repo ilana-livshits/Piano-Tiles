@@ -122,12 +122,11 @@ void moveDown() {
       yPosition.add(0, -height/4 + yPosition.get(0));
       blackTiles.add(0, int(random(0, 4)));
       clickedTiles.add(0, false);
+    } else {
+      yPosition.set(i, (float)(yPosition.get(i) + speed));
     }
-   else {
-  yPosition.set(i, (float)(yPosition.get(i) + speed));
-}
-}
   }
+}
 
 void setup() {
   size(500, 900);
@@ -232,12 +231,36 @@ void keyPressed() {
     }
   } else if (key == '2') {
     if (begin) {
+      int index = getFirstNotclickedTiles();
+      if (index != -1) {
+        if (blackTiles.get(index) == 2) {
+          setclickedTiles(index);
+        } else {
+          notDead = false;
+        }
+      }
     }
   } else if (key == '3') {
     if (begin) {
+      int index = getFirstNotclickedTiles();
+      if (index != -1) {
+        if (blackTiles.get(index) == 3) {
+          setclickedTiles(index);
+        } else {
+          notDead = false;
+        }
+      }
     }
   } else if (key == '4') {
     if (begin) {
+      int index = getFirstNotclickedTiles();
+      if (index != -1) {
+        if (blackTiles.get(index) == 4) {
+          setclickedTiles(index);
+        } else {
+          notDead = false;
+        }
+      }
     }
   }
 }
