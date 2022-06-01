@@ -113,10 +113,10 @@ void moveDown() {
     if (yPosition.get(i) >= height) {
       if (!clickedTiles.get(i)) {
         notDead = false;
-      } else if (counter >= 20) {
+      } //else if (counter >= 100) {
         //end.play();
-        notDead = false;
-      } else {
+        //notDead = false;} 
+        else {
         yPosition.remove(i);
         blackTiles.remove(i);
         clickedTiles.remove(i);
