@@ -34,4 +34,9 @@ Relaxing Sunday off. <br />
 **5/30/22** <br />
 *Ilana Livshits:* Obligatory Memorial Day weekend break. <br /> 
 *Salvina Sharipova:* Attempted to make a background that has a moving shape to make it more interesting, but the intro text started rotating instead. Didn't know ow to fix that, so I abandoned that idea. Instead, I designed a nice moving background of shooting stars on top of a rainbow color scheme using another separate class called Stars{}. I added the same background (a bit different for each) for each end screen. I linked each end screen to the appropriate situation (where the winning end screen displays when the player reached a certain count whilst the losing end screen displays otherwise). We merged into the final branch and finished the demo aspect of the project which is due for tomorrow. <br />
-
+**5/31/22** <br />
+*Ilana Livshits:* I wrote the scipt for the demo, including the part of the game that is working and necessary features we need improvement. I attempted to code a new mode (only tapping a tile moves the screen), but did not commit the idea due to frustration. <br /> 
+*Salvina Sharipova:* <br />
+**6/1/22** <br />
+*Ilana Livshits:* I fixed the zen mode that did not properly take input after merging. Likewise, I altered the winning screen to not immediately end the game when 20 tiles are reached, but instead to display a winning screen after the player loses with a score of more than 20. <br /> 
+*Salvina Sharipova:* <br />
