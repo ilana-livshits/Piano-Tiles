@@ -220,6 +220,14 @@ void keyPressed() {
   } else if (key == 'h') {
     begin = false;
     introendscreen.introScreen();
+  } else if (key == '1'){
+  
+  } else if (key == '2'){
+  
+  } else if (key == '3'){
+  
+  } else if (key == '4'){
+  
   }
 }
 
