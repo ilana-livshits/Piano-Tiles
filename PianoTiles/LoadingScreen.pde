@@ -113,9 +113,9 @@ class LoadingScreen{
       } else if (mouseX > 20 && mouseX < 270 && mouseY > 830 && mouseY < 860) {
         speed = 5;
       } else if (mouseX > 325 && mouseX < 450 && mouseY > 670 && mouseY < 700) {
-        mode = "arcade";
+        PianoTiles.mode = "arcade";
       } else if (mouseX > 325 && mouseX < 450 && mouseY > 710 && mouseY < 740) {
-        mode = "zen";
+        PianoTiles.mode = "zen";
       } 
    }
    

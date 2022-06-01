@@ -35,7 +35,7 @@ boolean begin = false;
 
 LoadingScreen introendscreen;
 static int counter;
-static String mode;
+static String mode = "";
 int countdown;
 
 void resetyPosition() {
@@ -113,9 +113,9 @@ void moveDown() {
     if (yPosition.get(i) >= height) {
       if (!clickedTiles.get(i)) {
         notDead = false;
-      } else if(counter >= 20){
+      } else if (counter >= 20) {
         //end.play();
-       notDead = false;
+        notDead = false;
       } else {
         yPosition.remove(i);
         blackTiles.remove(i);
@@ -169,13 +169,12 @@ void draw() {
   if (!begin) {
     introendscreen.introScreen();
     time = millis() / 1000;
-
   } else {
     drawblackTiles();
     textSize(20);
     text("score: " + counter, 5, 20);
-    if (mode.equals("zen")){
-      text("time",10,10);
+    textSize(20);
+    if (mode.equals("zen")) {
       text("time: " + (countdown - millis() / 1000 + time), 5, 40);
     }
   }
@@ -183,13 +182,13 @@ void draw() {
     moveDown();
     speed += acceleration;
   }
-   if(!notDead){
-    if(counter < 20){
+  if (!notDead) {
+    if (counter < 20) {
       introendscreen.endScreen();
-    }else if(counter >= 20){
+    } else if (counter >= 20) {
       introendscreen.winningScreen();
-     }
-    if(key == 'h'){ 
+    }
+    if (key == 'h') { 
       begin = false;
       end.pause();
       //notes.get(0).play();
@@ -210,7 +209,6 @@ void init() {
   randomizeblackTiles();
   notDead = true;
   begin = false;
-  mode = "";
   counter = 0;
   countdown = 30;
 }
@@ -219,11 +217,10 @@ void keyPressed() {
   if (key == 's') {
     init();
     begin = true;
-  }
-  else if(key == 'h'){
+  } else if (key == 'h') {
     begin = false;
     introendscreen.introScreen();
-  } 
+  }
 }
 
 void mouseClicked() {
@@ -251,5 +248,5 @@ void mouseClicked() {
   }
   if (!notDead)
     end.play();
-    //notes.get(0).play();
+  //notes.get(0).play();
 }
