@@ -165,24 +165,6 @@ void setup() {
 int time;
 void draw() {
   background(255);
-  
-  /*
-  float percent = 0;
-    if (record) {
-      percent = float(counterrr) / totalFrames;
-    } else {
-      percent = float(counterrr % totalFrames) / totalFrames;
-    }
-    render(percent);
-    if (record) {
-      saveFrame("output/gif-"+nf(counterrr, 3)+".png");
-      if (counterrr == totalFrames-1) {
-        exit();
-      }
-    }
-    counterrr++;
-  */
-  
   // set up introendscreen
   if (!begin) {
     introendscreen.introScreen();
@@ -192,8 +174,10 @@ void draw() {
     drawblackTiles();
     textSize(20);
     text("score: " + counter, 5, 20);
-    if (mode.equals("zen") && notDead)
+    if (mode.equals("zen")){
+      text("time",10,10);
       text("time: " + (countdown - millis() / 1000 + time), 5, 40);
+    }
   }
   if (begin && notDead) {
     moveDown();
@@ -215,23 +199,9 @@ void draw() {
   if (mode.equals("zen") && notDead) {
     if ((countdown - millis() / 1000 + time) < 0) {
       notDead = false;
-
     }
   }
 }
-
-  /*
-  void render(float percent) {
-    float angle = map(percent, 0, 1, 0, TWO_PI);
-    background(0);
-    translate(width/2, height/2);
-    rotate(angle);
-    stroke(255);
-    noFill();
-    rectMode(CENTER);
-    square(0, 0, 100);
-  }
-  */
 
 void init() {
   speed = introendscreen.speed * 2;
