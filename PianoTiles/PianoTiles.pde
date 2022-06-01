@@ -35,7 +35,7 @@ boolean begin = false;
 
 LoadingScreen introendscreen;
 static int counter;
-static String mode;
+static String mode = "";
 int countdown;
 
 void resetyPosition() {
@@ -113,10 +113,10 @@ void moveDown() {
     if (yPosition.get(i) >= height) {
       if (!clickedTiles.get(i)) {
         notDead = false;
-      } else if(counter >= 20){
+      } //else if (counter >= 100) {
         //end.play();
-       notDead = false;
-      } else {
+        //notDead = false;} 
+        else {
         yPosition.remove(i);
         blackTiles.remove(i);
         clickedTiles.remove(i);
@@ -165,47 +165,30 @@ void setup() {
 int time;
 void draw() {
   background(255);
-  
-  /*
-  float percent = 0;
-    if (record) {
-      percent = float(counterrr) / totalFrames;
-    } else {
-      percent = float(counterrr % totalFrames) / totalFrames;
-    }
-    render(percent);
-    if (record) {
-      saveFrame("output/gif-"+nf(counterrr, 3)+".png");
-      if (counterrr == totalFrames-1) {
-        exit();
-      }
-    }
-    counterrr++;
-  */
-  
   // set up introendscreen
   if (!begin) {
     introendscreen.introScreen();
     time = millis() / 1000;
-
   } else {
     drawblackTiles();
     textSize(20);
     text("score: " + counter, 5, 20);
-    if (mode.equals("zen") && notDead)
+    textSize(20);
+    if (mode.equals("zen")) {
       text("time: " + (countdown - millis() / 1000 + time), 5, 40);
+    }
   }
   if (begin && notDead) {
     moveDown();
     speed += acceleration;
   }
-   if(!notDead){
-    if(counter < 20){
+  if (!notDead) {
+    if (counter < 20) {
       introendscreen.endScreen();
-    }else if(counter >= 20){
+    } else if (counter >= 20) {
       introendscreen.winningScreen();
-     }
-    if(key == 'h'){ 
+    }
+    if (key == 'h') { 
       begin = false;
       end.pause();
       //notes.get(0).play();
@@ -215,23 +198,9 @@ void draw() {
   if (mode.equals("zen") && notDead) {
     if ((countdown - millis() / 1000 + time) < 0) {
       notDead = false;
-
     }
   }
 }
-
-  /*
-  void render(float percent) {
-    float angle = map(percent, 0, 1, 0, TWO_PI);
-    background(0);
-    translate(width/2, height/2);
-    rotate(angle);
-    stroke(255);
-    noFill();
-    rectMode(CENTER);
-    square(0, 0, 100);
-  }
-  */
 
 void init() {
   speed = introendscreen.speed * 2;
@@ -240,7 +209,6 @@ void init() {
   randomizeblackTiles();
   notDead = true;
   begin = false;
-  mode = "";
   counter = 0;
   countdown = 30;
 }
@@ -249,11 +217,10 @@ void keyPressed() {
   if (key == 's') {
     init();
     begin = true;
-  }
-  else if(key == 'h'){
+  } else if (key == 'h') {
     begin = false;
     introendscreen.introScreen();
-  } 
+  }
 }
 
 void mouseClicked() {
@@ -281,5 +248,5 @@ void mouseClicked() {
   }
   if (!notDead)
     end.play();
-    //notes.get(0).play();
+  //notes.get(0).play();
 }
