@@ -32,6 +32,7 @@ float speed;
 float acceleration;
 boolean notDead = false;
 boolean begin = false;
+int index;
 
 LoadingScreen introendscreen;
 static int counter;
@@ -220,9 +221,9 @@ void keyPressed() {
     introendscreen.introScreen();
   } else if (key == '1') {
     if (begin) {
-      int index = getFirstNotclickedTiles();
+       index = getFirstNotclickedTiles();
       if (index != -1) {
-        if (blackTiles.get(index) == 1) {
+        if (blackTiles.get(index) == 0) {
           setclickedTiles(index);
         } else {
           notDead = false;
@@ -231,9 +232,9 @@ void keyPressed() {
     }
   } else if (key == '2') {
     if (begin) {
-      int index = getFirstNotclickedTiles();
+       index = getFirstNotclickedTiles();
       if (index != -1) {
-        if (blackTiles.get(index) == 2) {
+        if (blackTiles.get(index) == 1) {
           setclickedTiles(index);
         } else {
           notDead = false;
@@ -242,9 +243,9 @@ void keyPressed() {
     }
   } else if (key == '3') {
     if (begin) {
-      int index = getFirstNotclickedTiles();
+       index = getFirstNotclickedTiles();
       if (index != -1) {
-        if (blackTiles.get(index) == 3) {
+        if (blackTiles.get(index) == 2) {
           setclickedTiles(index);
         } else {
           notDead = false;
@@ -253,9 +254,9 @@ void keyPressed() {
     }
   } else if (key == '4') {
     if (begin) {
-      int index = getFirstNotclickedTiles();
+       index = getFirstNotclickedTiles();
       if (index != -1) {
-        if (blackTiles.get(index) == 4) {
+        if (blackTiles.get(index) == 3) {
           setclickedTiles(index);
         } else {
           notDead = false;
@@ -263,6 +264,14 @@ void keyPressed() {
       }
     }
   }
+  if (notDead) {
+
+    int i = (int)random(24);
+    notes.get(i).play();
+    counter++;
+  }
+  if (!notDead)
+    end.play();
 }
 
 void mouseClicked() {
@@ -271,7 +280,7 @@ void mouseClicked() {
   } else {
     begin = true;
     notDead = true;
-    int index = getFirstNotclickedTiles();
+    index = getFirstNotclickedTiles();
     if (index != -1) {
       int l = (blackTiles.get(index) * width/4);
       int r = (blackTiles.get(index) + 1) * width/4;
