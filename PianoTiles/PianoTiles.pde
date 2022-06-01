@@ -114,21 +114,20 @@ void moveDown() {
       if (!clickedTiles.get(i)) {
         notDead = false;
       } //else if (counter >= 100) {
-        //end.play();
-        //notDead = false;} 
-        else {
-        yPosition.remove(i);
-        blackTiles.remove(i);
-        clickedTiles.remove(i);
-        yPosition.add(0, -height/4 + yPosition.get(0));
-        blackTiles.add(0, int(random(0, 4)));
-        clickedTiles.add(0, false);
-      }
-    } else {
-      yPosition.set(i, (float)(yPosition.get(i) + speed));
+      //end.play();
+      //notDead = false;} else {
+      yPosition.remove(i);
+      blackTiles.remove(i);
+      clickedTiles.remove(i);
+      yPosition.add(0, -height/4 + yPosition.get(0));
+      blackTiles.add(0, int(random(0, 4)));
+      clickedTiles.add(0, false);
     }
-  }
+   else {
+  yPosition.set(i, (float)(yPosition.get(i) + speed));
 }
+}
+  }
 
 void setup() {
   size(500, 900);
@@ -220,14 +219,26 @@ void keyPressed() {
   } else if (key == 'h') {
     begin = false;
     introendscreen.introScreen();
-  } else if (key == '1'){
-  
-  } else if (key == '2'){
-  
-  } else if (key == '3'){
-  
-  } else if (key == '4'){
-  
+  } else if (key == '1') {
+    if (begin) {
+      int index = getFirstNotclickedTiles();
+      if (index != -1) {
+        if (blackTiles.get(index) == 1) {
+          setclickedTiles(index);
+        } else {
+          notDead = false;
+        }
+      }
+    }
+  } else if (key == '2') {
+    if (begin) {
+    }
+  } else if (key == '3') {
+    if (begin) {
+    }
+  } else if (key == '4') {
+    if (begin) {
+    }
   }
 }
 
@@ -250,7 +261,7 @@ void mouseClicked() {
   }
   if (notDead) {
 
-    int i = (int)random(4);
+    int i = (int)random(24);
     notes.get(i).play();
     counter++;
   }
