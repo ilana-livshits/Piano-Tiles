@@ -203,10 +203,10 @@ void draw() {
    if(!notDead){
     if(counter < 20){
       introendscreen.endScreen();
-      screen = 1;
+      //screen = 1;
     }else if(counter >= 20){
       introendscreen.winningScreen();
-      screen = 2;
+      //screen = 2;
      }
     if(key == 'h'){ 
       begin = false;
@@ -249,11 +249,11 @@ void init() {
 }
 
 void keyPressed() {
-  if (!(screen == 1 || screen == 2) && key == 's') {
+  if (key == 's') {
     init();
     begin = true;
   }
-  else if((screen == 1 || screen == 2) && key == 'h'){
+  else if(key == 'h'){
     begin = false;
     introendscreen.introScreen();
   } 
