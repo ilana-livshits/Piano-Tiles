@@ -86,11 +86,16 @@ void drawblackTiles() {
   for (int i = 0; i < blackTiles.size(); i++) {
     int col = blackTiles.get(i);
     col *= width/4;
-    int shade = 0;
-    if (clickedTiles.get(i)) {
-      shade = 100;
+    //int shade = 0;
+    while(!clickedTiles.get(i)){
+    for(int j = 10; j <= 300; j += 10){
+       fill(j, 81, 188); 
+     }
     }
-    fill(shade);
+   //if (clickedTiles.get(i)) {
+      fill(100);
+    //}   
+    //fill(shade);
     noStroke();
     rect(col, yPosition.get(i), width/4, height/4 + 1);
   }
@@ -127,6 +132,7 @@ void moveDown() {
       }
     } else {
       yPosition.set(i, (float)(yPosition.get(i) + speed));
+      
     }
   }
 }
