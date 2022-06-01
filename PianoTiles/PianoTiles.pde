@@ -186,8 +186,7 @@ void draw() {
   
   // set up introendscreen
   if (!begin) {
-    introendscreen.introScreen();
-    screen = 0;
+    introendscreen.introScreen();  
     time = millis() / 1000;
 
   } else {
@@ -250,7 +249,7 @@ void init() {
 }
 
 void keyPressed() {
-  if (screen == 0 && key == 's') {
+  if (!(screen == 1 || screen == 2) && key == 's') {
     init();
     begin = true;
   }
