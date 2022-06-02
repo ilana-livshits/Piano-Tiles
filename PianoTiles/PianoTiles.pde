@@ -37,7 +37,6 @@ LoadingScreen introendscreen;
 static int counter;
 static String mode;
 int countdown;
-int screen;
 
 void resetyPosition() {
   yPosition = new ArrayList<Float>();
@@ -216,7 +215,7 @@ void draw() {
      }
     if(key == 'h'){ 
       begin = false;
-      end.pause();
+      //end.pause();
       //notes.get(0).play();
       introendscreen.introScreen();
     }
