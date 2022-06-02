@@ -5,7 +5,7 @@ class LoadingScreen{
   float speedStars;
   PImage bckground;
   void introScreen(){
-    bckground = loadImage("ombrerainbow.png");
+    bckground = loadImage("purpleombre (1).jpg");
     
     size(500, 900);
     //background(250, 218, 221);  //set background to a light pink
@@ -45,9 +45,11 @@ class LoadingScreen{
     //write the instructions in the middle of the screen 
     int allwidth = 500;
     int allheight = 900;
-    fill(250);
-    fill(255);
+    fill(0);
     textSize(30);
+    
+    //update colors and add lines and update buttons and aesthetic
+    //update background for tiles. make tiles appear at half of screen.
    
     text("Tap on the black tiles in order", 30, 280);
     text("as they appear on the screen", 30, 315);
@@ -88,6 +90,7 @@ class LoadingScreen{
     text("5 = impossible", 85, 854);
     
     textSize(30);
+    fill(0);
     text("Mode: " + PianoTiles.mode , 310, 650);
     textSize(23);
     fill(252, 199, 215);
