@@ -1,6 +1,6 @@
 class LoadingScreen{
   String username = "";
-  float speed = 0;
+  float speed = 1;
   Stars[] stars = new Stars[200];
   float speedStars;
   PImage bckground;
@@ -30,11 +30,9 @@ class LoadingScreen{
         stars[i].show();
         }
      //GAME NAME and creator names
-     fill(0);
      fill(250);
      rect(30, 20, 440, 200);
-     fill(250);
-     fill(0);
+     fill(75, 20, 131);
      textSize(69);
      text("PIANO TILES", 50, 100);
      textSize(30);
@@ -64,30 +62,30 @@ class LoadingScreen{
     textSize(30);
     text("Difficulty: " + (int)speed , 75, 650);
     textSize(23);
-    fill(117, 223, 78);
-    rect(70, 670, 200, 30);
+    fill(219, 196, 249);
+    rect(50, 670, 200, 30);
     fill(250);
-    text("1 = easy", 85, 694);
+    text("1 = easy", 65, 694);
     
-    fill(63, 165, 111);
-    rect(70, 710, 200, 30);
+    fill(206, 161, 250);
+    rect(50, 710, 200, 30);
     fill(250);
-    text("2 = medium", 85, 734);
+    text("2 = medium", 65, 734);
     
-    fill(53, 131, 139);
-    rect(70, 750, 200, 30);
+    fill(178, 112, 243);
+    rect(50, 750, 200, 30);
     fill(250);
-    text("3 = hard", 85, 774);
+    text("3 = hard", 65, 774);
     
-    fill(47, 91, 125);
-    rect(70, 790, 200, 30);
+    fill(154, 64, 245);
+    rect(50, 790, 200, 30);
     fill(250);
-    text("4 = very hard", 85, 814);
+    text("4 = very hard", 65, 814);
     
-    fill(47, 47, 125);
-    rect(70, 830, 200, 30);
+    fill(114, 4, 225);
+    rect(50, 830, 200, 30);
     fill(250);
-    text("5 = impossible", 85, 854);
+    text("5 = impossible", 65, 854);
     
     textSize(30);
     fill(0);
