@@ -225,7 +225,7 @@ void keyPressed() {
       if (index != -1) {
         if (blackTiles.get(index) == 0) {
           setclickedTiles(index);
-          if (blackTiles.size() > index && blackTiles.get(index+1) == 0) {
+          if (blackTiles.size()-1 > index && blackTiles.get(index+1) == 0) {
             setclickedTiles(index+1);
           }
         } else {
@@ -239,7 +239,7 @@ void keyPressed() {
       if (index != -1) {
         if (blackTiles.get(index) == 1) {
           setclickedTiles(index);
-          if (blackTiles.size() > index && blackTiles.get(index+1) == 1) {
+          if (blackTiles.size()-1 > index && blackTiles.get(index+1) == 1) {
             setclickedTiles(index+1);
           }
         } else {
@@ -253,7 +253,7 @@ void keyPressed() {
       if (index != -1) {
         if (blackTiles.get(index) == 2) {
           setclickedTiles(index);
-          if (blackTiles.size() > index && blackTiles.get(index+1) == 2) {
+          if (blackTiles.size()-1 > index && blackTiles.get(index+1) == 2) {
             setclickedTiles(index+1);
           }
         } else {
@@ -267,7 +267,7 @@ void keyPressed() {
       if (index != -1) {
         if (blackTiles.get(index) == 3) {
           setclickedTiles(index);
-          if (blackTiles.size() > index && blackTiles.get(index+1) == 3) {
+          if (blackTiles.size()-1 > index && blackTiles.get(index+1) == 3) {
             setclickedTiles(index+1);
           }
         } else {
