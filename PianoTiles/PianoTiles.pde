@@ -221,10 +221,13 @@ void keyPressed() {
     introendscreen.introScreen();
   } else if (key == '1') {
     if (begin) {
-       index = getFirstNotclickedTiles();
+      index = getFirstNotclickedTiles();
       if (index != -1) {
         if (blackTiles.get(index) == 0) {
           setclickedTiles(index);
+          if (blackTiles.size() > index && blackTiles.get(index+1) == 0) {
+            setclickedTiles(index+1);
+          }
         } else {
           notDead = false;
         }
@@ -232,10 +235,13 @@ void keyPressed() {
     }
   } else if (key == '2') {
     if (begin) {
-       index = getFirstNotclickedTiles();
+      index = getFirstNotclickedTiles();
       if (index != -1) {
         if (blackTiles.get(index) == 1) {
           setclickedTiles(index);
+          if (blackTiles.size() > index && blackTiles.get(index+1) == 1) {
+            setclickedTiles(index+1);
+          }
         } else {
           notDead = false;
         }
@@ -243,10 +249,13 @@ void keyPressed() {
     }
   } else if (key == '3') {
     if (begin) {
-       index = getFirstNotclickedTiles();
+      index = getFirstNotclickedTiles();
       if (index != -1) {
         if (blackTiles.get(index) == 2) {
           setclickedTiles(index);
+          if (blackTiles.size() > index && blackTiles.get(index+1) == 2) {
+            setclickedTiles(index+1);
+          }
         } else {
           notDead = false;
         }
@@ -254,10 +263,13 @@ void keyPressed() {
     }
   } else if (key == '4') {
     if (begin) {
-       index = getFirstNotclickedTiles();
+      index = getFirstNotclickedTiles();
       if (index != -1) {
         if (blackTiles.get(index) == 3) {
           setclickedTiles(index);
+          if (blackTiles.size() > index && blackTiles.get(index+1) == 3) {
+            setclickedTiles(index+1);
+          }
         } else {
           notDead = false;
         }
