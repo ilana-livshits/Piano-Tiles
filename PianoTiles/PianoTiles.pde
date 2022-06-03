@@ -32,6 +32,7 @@ float speed;
 float acceleration;
 boolean notDead = false;
 boolean begin = false;
+int index;
 
 LoadingScreen introendscreen;
 static int counter;
@@ -114,16 +115,14 @@ void moveDown() {
       if (!clickedTiles.get(i)) {
         notDead = false;
       } //else if (counter >= 100) {
-        //end.play();
-        //notDead = false;} 
-        else {
-        yPosition.remove(i);
-        blackTiles.remove(i);
-        clickedTiles.remove(i);
-        yPosition.add(0, -height/4 + yPosition.get(0));
-        blackTiles.add(0, int(random(0, 4)));
-        clickedTiles.add(0, false);
-      }
+      //end.play();
+      //notDead = false;} else {
+      yPosition.remove(i);
+      blackTiles.remove(i);
+      clickedTiles.remove(i);
+      yPosition.add(0, -height/4 + yPosition.get(0));
+      blackTiles.add(0, int(random(0, 4)));
+      clickedTiles.add(0, false);
     } else {
       yPosition.set(i, (float)(yPosition.get(i) + speed));
     }
@@ -220,7 +219,71 @@ void keyPressed() {
   } else if (key == 'h') {
     begin = false;
     introendscreen.introScreen();
+  } else if (key == '1') {
+    if (begin) {
+      index = getFirstNotclickedTiles();
+      if (index != -1) {
+        if (blackTiles.get(index) == 0) {
+          setclickedTiles(index);
+          if (blackTiles.size()-1 > index && blackTiles.get(index+1) == 0) {
+            setclickedTiles(index+1);
+          }
+        } else {
+          notDead = false;
+        }
+      }
+    }
+  } else if (key == '2') {
+    if (begin) {
+      index = getFirstNotclickedTiles();
+      if (index != -1) {
+        if (blackTiles.get(index) == 1) {
+          setclickedTiles(index);
+          if (blackTiles.size()-1 > index && blackTiles.get(index+1) == 1) {
+            setclickedTiles(index+1);
+          }
+        } else {
+          notDead = false;
+        }
+      }
+    }
+  } else if (key == '3') {
+    if (begin) {
+      index = getFirstNotclickedTiles();
+      if (index != -1) {
+        if (blackTiles.get(index) == 2) {
+          setclickedTiles(index);
+          if (blackTiles.size()-1 > index && blackTiles.get(index+1) == 2) {
+            setclickedTiles(index+1);
+          }
+        } else {
+          notDead = false;
+        }
+      }
+    }
+  } else if (key == '4') {
+    if (begin) {
+      index = getFirstNotclickedTiles();
+      if (index != -1) {
+        if (blackTiles.get(index) == 3) {
+          setclickedTiles(index);
+          if (blackTiles.size()-1 > index && blackTiles.get(index+1) == 3) {
+            setclickedTiles(index+1);
+          }
+        } else {
+          notDead = false;
+        }
+      }
+    }
   }
+  if (notDead) {
+
+    int i = (int)random(24);
+    notes.get(i).play();
+    counter++;
+  }
+  if (!notDead)
+    end.play();
 }
 
 void mouseClicked() {
@@ -229,7 +292,7 @@ void mouseClicked() {
   } else {
     begin = true;
     notDead = true;
-    int index = getFirstNotclickedTiles();
+    index = getFirstNotclickedTiles();
     if (index != -1) {
       int l = (blackTiles.get(index) * width/4);
       int r = (blackTiles.get(index) + 1) * width/4;
@@ -242,7 +305,7 @@ void mouseClicked() {
   }
   if (notDead) {
 
-    int i = (int)random(4);
+    int i = (int)random(24);
     notes.get(i).play();
     counter++;
   }
