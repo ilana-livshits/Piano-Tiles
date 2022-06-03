@@ -455,16 +455,22 @@ void keyPressed() {
       twinkle.get(twinkleCount).play();
       twinkleCount++;
       counter++;
+      if (twinkleCount >= twinkle.size())
+        notDead = false;
     }
     if (song.equals("fur elise")) {
       furElise.get(furEliseCount).play();
       furEliseCount++;
       counter++;
+      if (furEliseCount >= furElise.size())
+        notDead = false;
     }
     if (song.equals("happy birthday")) {
       happyBirthday.get(hbCount).play();
       hbCount++;
       counter++;
+      if (hbCount >= happyBirthday.size())
+        notDead = false;
     }
     if (song.equals("random")) {
       int i = (int)random(24);
@@ -473,7 +479,7 @@ void keyPressed() {
     }
   }
   if (!notDead)
-  end.play();
+    end.play();
 }
 
 void mouseClicked() {
@@ -494,20 +500,26 @@ void mouseClicked() {
     }
   }
   if (notDead) {
-    if (song.equals("twinkle")) {
+   if (song.equals("twinkle")) {
       twinkle.get(twinkleCount).play();
       twinkleCount++;
       counter++;
+      if (twinkleCount >= twinkle.size())
+        notDead = false;
     }
     if (song.equals("fur elise")) {
       furElise.get(furEliseCount).play();
       furEliseCount++;
       counter++;
+      if (furEliseCount >= furElise.size())
+        notDead = false;
     }
     if (song.equals("happy birthday")) {
       happyBirthday.get(hbCount).play();
       hbCount++;
       counter++;
+      if (hbCount >= happyBirthday.size())
+        notDead = false;
     }
     if (song.equals("random")) {
       int i = (int)random(24);
@@ -516,6 +528,6 @@ void mouseClicked() {
     }
   }
   if (!notDead)
-  end.play();
+    end.play();
   //notes.get(0).play();
 }
