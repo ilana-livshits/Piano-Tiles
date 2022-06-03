@@ -28,6 +28,7 @@ SoundFile a, b, c, d, dS, e, e5, f, g;
 ArrayList<SoundFile> notes = new ArrayList<SoundFile>();
 ArrayList<SoundFile> twinkle = new ArrayList<SoundFile>();
 ArrayList<SoundFile> furElise = new ArrayList<SoundFile>();
+ArrayList<SoundFile> happyBirthday = new ArrayList<SoundFile>();
 ArrayList<Float> yPosition;
 ArrayList<Integer> blackTiles;
 ArrayList<Boolean> clickedTiles;
@@ -37,11 +38,13 @@ boolean notDead = false;
 boolean begin = false;
 int index;
 int twinkleCount = 0;
+int furEliseCount = 0;
+int hbCount = 0; //need to init these later
 
 LoadingScreen introendscreen;
 static int counter;
 static String mode = "";
-static String song = "twinkle";
+static String song = "happy birthday";
 int countdown;
 
 void resetyPosition() {
@@ -120,7 +123,7 @@ void setupNotes() {
     twinkle.add(d);
     twinkle.add(c);
   }
-  if (song.equals("fur elise")){
+  if (song.equals("fur elise")) {
     furElise.add(e);
     furElise.add(dS);
     furElise.add(e);
@@ -204,6 +207,33 @@ void setupNotes() {
     furElise.add(d);
     furElise.add(e);
     furElise.add(a);
+  }
+  if (song.equals("happy birthday")) {
+    happyBirthday.add(g);
+    happyBirthday.add(g);
+    happyBirthday.add(a);
+    happyBirthday.add(g);
+    happyBirthday.add(c);
+    happyBirthday.add(b);
+    happyBirthday.add(g);
+    happyBirthday.add(g);
+    happyBirthday.add(a);
+    happyBirthday.add(g);
+    happyBirthday.add(d);
+    happyBirthday.add(c);
+    happyBirthday.add(g);
+    happyBirthday.add(g);
+    happyBirthday.add(g);
+    happyBirthday.add(e);
+    happyBirthday.add(c);
+    happyBirthday.add(b);
+    happyBirthday.add(a);
+    happyBirthday.add(f);
+    happyBirthday.add(f);
+    happyBirthday.add(e);
+    happyBirthday.add(c);
+    happyBirthday.add(d);
+    happyBirthday.add(c);
   }
 }
 
@@ -296,6 +326,9 @@ void setup() {
   a = new SoundFile(this, "a.wav");
   b = new SoundFile(this, "b.wav");
   c = new SoundFile(this, "c.wav");
+  d = new SoundFile(this, "d.wav");
+  dS = new SoundFile(this, "d#.wav");
+  e5 = new SoundFile(this, "e5.wav");
   d = new SoundFile(this, "d.wav");
   e = new SoundFile(this, "e.wav");
   f = new SoundFile(this, "f.wav");
@@ -423,6 +456,16 @@ void keyPressed() {
       twinkleCount++;
       counter++;
     }
+    if (song.equals("fur elise")) {
+      furElise.get(furEliseCount).play();
+      furEliseCount++;
+      counter++;
+    }
+    if (song.equals("happy birthday")) {
+      happyBirthday.get(hbCount).play();
+      hbCount++;
+      counter++;
+    }
     if (song.equals("random")) {
       int i = (int)random(24);
       notes.get(i).play();
@@ -454,6 +497,16 @@ void mouseClicked() {
     if (song.equals("twinkle")) {
       twinkle.get(twinkleCount).play();
       twinkleCount++;
+      counter++;
+    }
+    if (song.equals("fur elise")) {
+      furElise.get(furEliseCount).play();
+      furEliseCount++;
+      counter++;
+    }
+    if (song.equals("happy birthday")) {
+      happyBirthday.get(hbCount).play();
+      hbCount++;
       counter++;
     }
     if (song.equals("random")) {
