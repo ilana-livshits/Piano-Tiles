@@ -87,6 +87,12 @@ void drawblackTiles() {
     col *= width/4;
     int shade = 0;
     if (clickedTiles.get(i)) {
+      if( i > 0 && (blackTiles.get(i) == blackTiles.get(i-1) || blackTiles.get(i) == blackTiles.get(i+1))) {
+        shade = 100;
+      }
+      else {
+        shade = 100;
+      }
       shade = 100;
     }
     fill(shade);

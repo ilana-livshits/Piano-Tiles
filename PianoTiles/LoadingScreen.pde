@@ -90,17 +90,17 @@ class LoadingScreen{
     
     textSize(30);
     fill(0);
-    text("Mode: " + PianoTiles.mode , 310, 650);
+    text("Mode: " + PianoTiles.mode , 290, 650);
     textSize(23);
     fill(157, 223, 233);
-    rect(325, 670, 125, 30);
+    rect(300, 670, 125, 30);
     fill(0);
-    text("arcade", 354, 694);
+    text("arcade", 325, 694);
     
     fill(153, 187, 247);
-    rect(325, 710, 125, 30);
+    rect(300, 710, 125, 30);
     fill(0);
-    text("zen", 370, 734);
+    text("zen", 340, 734);
   }
    void mouseClicked(){
      //if mouse is on the colors above, set the speed to that number
