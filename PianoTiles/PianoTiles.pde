@@ -87,13 +87,24 @@ void drawblackTiles() {
     col *= width/4;
     int shade = 0;
     if (clickedTiles.get(i)) {
-      if (clickedTiles.get(i) && clickedTiles.get(i-1)) {
-        shade = 100;
-        fill(shade);
-        noStroke();
-        rect(col, yPosition.get(i), width/4, height/4 + 1);
-        rect(col, yPosition.get(i-1), width/4, height/4 + 1);
+      if (i > 0) {
+        if (blackTiles.get(i - 1) == col / width/4) {
+          shade = 209;
+        }
       }
+      //check if there is a black tile below the clicked tile
+      if (i < blackTiles.size() - 1) {
+        if (blackTiles.get(i + 1) == col / width/4) {
+          shade = 209;
+        }
+      }
+      //if (clickedTiles.get(i) && clickedTiles.get(i-1)) {
+      //  shade = 100;
+      //  fill(shade);
+      //  noStroke();
+      //  rect(col, yPosition.get(i), width/4, height/4 + 1);
+      //  rect(col - width/4, yPosition.get(i-1), width/4, height/4 + 1);
+      //}
       shade = 100; 
      }
      fill(shade);
