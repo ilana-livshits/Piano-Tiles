@@ -24,7 +24,9 @@ SoundFile note22;
 SoundFile note23;
 SoundFile note24;
 SoundFile end;
+SoundFile a, c, d, e, f, g;
 ArrayList<SoundFile> notes = new ArrayList<SoundFile>();
+ArrayList<SoundFile> twinkle = new ArrayList<SoundFile>();
 ArrayList<Float> yPosition;
 ArrayList<Integer> blackTiles;
 ArrayList<Boolean> clickedTiles;
@@ -37,6 +39,7 @@ int index;
 LoadingScreen introendscreen;
 static int counter;
 static String mode = "";
+static String song = "";
 int countdown;
 
 void resetyPosition() {
@@ -71,6 +74,50 @@ void setupNotes() {
   notes.add(note22);
   notes.add(note23);
   notes.add(note24);
+  if (song.equals("twinkle")) {
+    twinkle.add(c);
+    twinkle.add(c);
+    twinkle.add(g);
+    twinkle.add(g);
+    twinkle.add(a);
+    twinkle.add(a);
+    twinkle.add(g);
+    twinkle.add(f);
+    twinkle.add(f);
+    twinkle.add(e);
+    twinkle.add(e);
+    twinkle.add(d);
+    twinkle.add(d);
+    twinkle.add(c);
+    twinkle.add(g);
+    twinkle.add(g);
+    twinkle.add(f);
+    twinkle.add(f);
+    twinkle.add(e);
+    twinkle.add(e);
+    twinkle.add(d);
+    twinkle.add(g);
+    twinkle.add(g);
+    twinkle.add(f);
+    twinkle.add(f);
+    twinkle.add(e);
+    twinkle.add(e);
+    twinkle.add(d);
+    twinkle.add(c);
+    twinkle.add(c);
+    twinkle.add(g);
+    twinkle.add(g);
+    twinkle.add(a);
+    twinkle.add(a);
+    twinkle.add(g);
+    twinkle.add(f);
+    twinkle.add(f);
+    twinkle.add(e);
+    twinkle.add(e);
+    twinkle.add(d);
+    twinkle.add(d);
+    twinkle.add(c);
+  }
 }
 
 void randomizeblackTiles() {
@@ -159,6 +206,12 @@ void setup() {
   note23 = new SoundFile(this, "key23.wav");
   note24 = new SoundFile(this, "key24.wav");
   end = new SoundFile(this, "endNote.wav");
+  a = new SoundFile(this, "a.wav");
+  c = new SoundFile(this, "c.wav");
+  d = new SoundFile(this, "d.wav");
+  e = new SoundFile(this, "e.wav");
+  f = new SoundFile(this, "f.wav");
+  g = new SoundFile(this, "g.wav");
   setupNotes();
 }
 int time;
