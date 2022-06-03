@@ -27,6 +27,7 @@ SoundFile end;
 SoundFile a, c, d, e, f, g;
 ArrayList<SoundFile> notes = new ArrayList<SoundFile>();
 ArrayList<SoundFile> twinkle = new ArrayList<SoundFile>();
+ArrayList<SoundFile> furElise = new ArrayList<SoundFile>();
 ArrayList<Float> yPosition;
 ArrayList<Integer> blackTiles;
 ArrayList<Boolean> clickedTiles;
