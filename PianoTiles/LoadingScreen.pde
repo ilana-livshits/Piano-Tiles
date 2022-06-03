@@ -48,6 +48,7 @@ class LoadingScreen{
     
     //update colors and add lines and update buttons and aesthetic
     //update background for tiles. make tiles appear at half of screen.
+    //create instructions button which pops up the instructions
    
     text("Tap on the black tiles in order", 30, 280);
     text("as they appear on the screen", 30, 315);
@@ -60,7 +61,7 @@ class LoadingScreen{
     // have a space for the speed at the top right of the screen
     //display 5 boxes with the numbers 1-5 in it next to the speed
     textSize(30);
-    text("Difficulty: " + (int)speed , 75, 650);
+    text("Difficulty: " + (int)speed , 55, 650);
     textSize(23);
     fill(219, 196, 249);
     rect(50, 670, 200, 30);
@@ -91,12 +92,12 @@ class LoadingScreen{
     fill(0);
     text("Mode: " + PianoTiles.mode , 310, 650);
     textSize(23);
-    fill(252, 199, 215);
+    fill(157, 223, 233);
     rect(325, 670, 125, 30);
     fill(0);
     text("arcade", 354, 694);
     
-    fill(250, 107, 150);
+    fill(153, 187, 247);
     rect(325, 710, 125, 30);
     fill(0);
     text("zen", 370, 734);
