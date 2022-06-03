@@ -87,17 +87,18 @@ void drawblackTiles() {
     col *= width/4;
     int shade = 0;
     if (clickedTiles.get(i)) {
-      if( i > 0 && (blackTiles.get(i) == blackTiles.get(i-1) || blackTiles.get(i) == blackTiles.get(i+1))) {
+      if (clickedTiles.get(i) && clickedTiles.get(i-1)) {
         shade = 100;
+        fill(shade);
+        noStroke();
+        rect(col, yPosition.get(i), width/4, height/4 + 1);
+        rect(col, yPosition.get(i-1), width/4, height/4 + 1);
       }
-      else {
-        shade = 100;
-      }
-      shade = 100;
-    }
-    fill(shade);
-    noStroke();
-    rect(col, yPosition.get(i), width/4, height/4 + 1);
+      shade = 100; 
+     }
+     fill(shade);
+      noStroke();
+      rect(col, yPosition.get(i), width/4, height/4 + 1);
   }
 }
 
