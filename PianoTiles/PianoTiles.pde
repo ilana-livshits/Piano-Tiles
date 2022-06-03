@@ -35,11 +35,12 @@ float acceleration;
 boolean notDead = false;
 boolean begin = false;
 int index;
+int twinkleCount = 0;
 
 LoadingScreen introendscreen;
 static int counter;
 static String mode = "";
-static String song = "";
+static String song = "twinkle";
 int countdown;
 
 void resetyPosition() {
@@ -330,13 +331,19 @@ void keyPressed() {
     }
   }
   if (notDead) {
-
-    int i = (int)random(24);
-    notes.get(i).play();
-    counter++;
+    if (song.equals("twinkle")) {
+      twinkle.get(twinkleCount).play();
+      twinkleCount++;
+      counter++;
+    }
+    if (song.equals("random")) {
+      int i = (int)random(24);
+      notes.get(i).play();
+      counter++;
+    }
   }
   if (!notDead)
-    end.play();
+  end.play();
 }
 
 void mouseClicked() {
@@ -357,12 +364,18 @@ void mouseClicked() {
     }
   }
   if (notDead) {
-
-    int i = (int)random(24);
-    notes.get(i).play();
-    counter++;
+    if (song.equals("twinkle")) {
+      twinkle.get(twinkleCount).play();
+      twinkleCount++;
+      counter++;
+    }
+    if (song.equals("random")) {
+      int i = (int)random(24);
+      notes.get(i).play();
+      counter++;
+    }
   }
   if (!notDead)
-    end.play();
+  end.play();
   //notes.get(0).play();
 }
