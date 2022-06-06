@@ -109,7 +109,7 @@ void drawblackTiles() {
      }
      fill(shade);
      noStroke();
-     //nt rand = (int)(Math.random() * 2) + 1;
+     //int rand = (int)(Math.random() * 2) + 1;
     // if(rand == 1){
        rect(col, yPosition.get(i), width/4, height/4 + 10);
      //}else if (rand == 2){
