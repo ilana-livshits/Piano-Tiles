@@ -38,19 +38,19 @@ Relaxing Sunday off. <br />
 *Ilana Livshits:* I wrote the script for the demo, including the part of the game that is working and necessary features we need improvement. I attempted to code a new mode (only tapping a tile moves the screen), but did not commit the idea due to frustration. <br /> 
 *Salvina Sharipova:* Because of the recent merge, more buttons were added to the home screen. I changed the static instance variables and modified the screen of the loading screen to fit the new information. <br />
 **6/1/22** <br />
-*Ilana Livshits:* I fixed the zen mode that did not properly take input after merging. Likewise, I altered the winning screen to not immediately end the game when 20 tiles are reached, but instead to display a winning screen after the player loses with a score of more than 20. <br /> 
+*Ilana Livshits:* I fixed the zen mode that did not properly take input after merging. Likewise, I altered the winning screen to not immediately end the game when 20 tiles are reached, but instead to display a winning screen after the player loses with a score of more than 20. I also made user input of 1, 2, 3, or 4 be appllicable for the tiles to be considered pressed. <br /> 
 *Salvina Sharipova:* Tinkered with the new Stars class. I wanted to make it so the stars in the background were responsive to the mouses position, but the code for it didn't make the stars do anything. Perhaps I will change this later, since this is just an added aesthetic issue and not a necessary functionality. <br />
 **6/2/22** <br />
-*Ilana Livshits:* <br /> 
+*Ilana Livshits:* I attempted to make tiles that are sequentially in the same row to be considered "pressed" when only the first tile is pressed. <br /> 
 *Salvina Sharipova:* Added to the loading screen. I got inspired by an online version of piano tiles, so I imitated the aesthetics they used. Planning on adding buttons and more 'pretty' stuff. <br />
 **6/3/22** <br />
-*Ilana Livshits:* <br /> 
+*Ilana Livshits:* I created notes for three songs: Twinkle Twinkle Little Star, Happy Birthday, and Fur Elise. All three work, but there is no button as of yet for the user to select their desired song. <br /> 
 *Salvina Sharipova:* Struggled through varous ways in making it so that two blocks back to back will both turn gray after one appears. Mostly did not work. Created a separate method to check for this rather than interfering with the drawblackTiles() method. It does something... but clearly not what it is intended to do. At least it doesn't crash the game like the other ways I tried to implement. <br />
 **6/4/22** <br />
 Relaxing Saturday off. <br />
 **6/5/22** <br />
-Relaxing Sunday off.
+Relaxing Sunday off. <br />
 **6/6/22** <br />
-*Ilana Livshits:* <br /> 
+*Ilana Livshits:* Fully updated the prototype/ documentation. <br /> 
 *Salvina Sharipova:* Merged all of our branches. New branch for more functionality, where two blocks back to back should both turn gray. Made the blocks appear a few seconds after the player loads in the game. <br />
 
