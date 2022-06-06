@@ -45,7 +45,7 @@ Relaxing Sunday off. <br />
 *Salvina Sharipova:* Added to the loading screen. I got inspired by an online version of piano tiles, so I imitated the aesthetics they used. Planning on adding buttons and more 'pretty' stuff. <br />
 **6/3/22** <br />
 *Ilana Livshits:* <br /> 
-*Salvina Sharipova:*  A <br />
+*Salvina Sharipova:* Struggled through varous ways in making it so that two blocks back to back will both turn gray after one appears. Mostly did not work. Created a separate method to check for this rather than interfering with the drawblackTiles() method. It does something... but clearly not what it is intended to do. At least it doesn't crash the game like the other ways I tried to implement. <br />
 **6/4/22** <br />
 Relaxing Saturday off. <br />
 **6/5/22** <br />
