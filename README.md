@@ -40,3 +40,18 @@ Relaxing Sunday off. <br />
 **6/1/22** <br />
 *Ilana Livshits:* I fixed the zen mode that did not properly take input after merging. Likewise, I altered the winning screen to not immediately end the game when 20 tiles are reached, but instead to display a winning screen after the player loses with a score of more than 20. <br /> 
 *Salvina Sharipova:* <br />
+**6/2/22** <br />
+*Ilana Livshits:* <br /> 
+*Salvina Sharipova:* Added to the loading screen. I got inspired by an online version of piano tiles, so I imitated the aesthetics they used. Planning on adding buttons and more 'pretty' stuff. <br />
+**6/3/22** <br />
+*Ilana Livshits:* <br /> 
+*Salvina Sharipova:* A <br />
+**6/4/22** <br />
+Relaxing Saturday off. <br />
+**6/5/22** <br />
+*Ilana Livshits:* <br /> 
+*Salvina Sharipova:* <br />
+**6/6/22** <br />
+*Ilana Livshits:* <br /> 
+*Salvina Sharipova:* <br />
+
