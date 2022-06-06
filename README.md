@@ -39,7 +39,7 @@ Relaxing Sunday off. <br />
 *Salvina Sharipova:* Because of the recent merge, more buttons were added to the home screen. I changed the static instance variables and modified the screen of the loading screen to fit the new information. <br />
 **6/1/22** <br />
 *Ilana Livshits:* I fixed the zen mode that did not properly take input after merging. Likewise, I altered the winning screen to not immediately end the game when 20 tiles are reached, but instead to display a winning screen after the player loses with a score of more than 20. <br /> 
-*Salvina Sharipova:* <br />
+*Salvina Sharipova:* Tinkered with the new Stars class. I wanted to make it so the stars in the background were responsive to the mouses position, but the code for it didn't make the stars do anything. Perhaps I will change this later, since this is just an added aesthetic issue and not a necessary functionality. <br />
 **6/2/22** <br />
 *Ilana Livshits:* <br /> 
 *Salvina Sharipova:* Added to the loading screen. I got inspired by an online version of piano tiles, so I imitated the aesthetics they used. Planning on adding buttons and more 'pretty' stuff. <br />
