@@ -1,11 +1,11 @@
 class LoadingScreen{
   String username = "";
-  float speed = 0;
+  float speed = 1;
   Stars[] stars = new Stars[200];
   float speedStars;
   PImage bckground;
   void introScreen(){
-    bckground = loadImage("ombrerainbow.png");
+    bckground = loadImage("purpleombre (1).jpg");
     
     size(500, 900);
     //background(250, 218, 221);  //set background to a light pink
@@ -30,11 +30,9 @@ class LoadingScreen{
         stars[i].show();
         }
      //GAME NAME and creator names
-     fill(0);
      fill(250);
      rect(30, 20, 440, 200);
-     fill(250);
-     fill(0);
+     fill(75, 20, 131);
      textSize(69);
      text("PIANO TILES", 50, 100);
      textSize(30);
@@ -45,9 +43,12 @@ class LoadingScreen{
     //write the instructions in the middle of the screen 
     int allwidth = 500;
     int allheight = 900;
-    fill(250);
-    fill(255);
+    fill(0);
     textSize(30);
+    
+    //update colors and add lines and update buttons and aesthetic
+    //update background for tiles. make tiles appear at half of screen.
+    //create instructions button which pops up the instructions
    
     text("Tap on the black tiles in order", 30, 280);
     text("as they appear on the screen", 30, 315);
@@ -60,45 +61,46 @@ class LoadingScreen{
     // have a space for the speed at the top right of the screen
     //display 5 boxes with the numbers 1-5 in it next to the speed
     textSize(30);
-    text("Difficulty: " + (int)speed , 75, 650);
+    text("Difficulty: " + (int)speed , 55, 650);
     textSize(23);
-    fill(117, 223, 78);
-    rect(70, 670, 200, 30);
+    fill(219, 196, 249);
+    rect(50, 670, 200, 30);
     fill(250);
-    text("1 = easy", 85, 694);
+    text("1 = easy", 65, 694);
     
-    fill(63, 165, 111);
-    rect(70, 710, 200, 30);
+    fill(206, 161, 250);
+    rect(50, 710, 200, 30);
     fill(250);
-    text("2 = medium", 85, 734);
+    text("2 = medium", 65, 734);
     
-    fill(53, 131, 139);
-    rect(70, 750, 200, 30);
+    fill(178, 112, 243);
+    rect(50, 750, 200, 30);
     fill(250);
-    text("3 = hard", 85, 774);
+    text("3 = hard", 65, 774);
     
-    fill(47, 91, 125);
-    rect(70, 790, 200, 30);
+    fill(154, 64, 245);
+    rect(50, 790, 200, 30);
     fill(250);
-    text("4 = very hard", 85, 814);
+    text("4 = very hard", 65, 814);
     
-    fill(47, 47, 125);
-    rect(70, 830, 200, 30);
+    fill(114, 4, 225);
+    rect(50, 830, 200, 30);
     fill(250);
-    text("5 = impossible", 85, 854);
+    text("5 = impossible", 65, 854);
     
     textSize(30);
-    text("Mode: " + PianoTiles.mode , 310, 650);
+    fill(0);
+    text("Mode: " + PianoTiles.mode , 290, 650);
     textSize(23);
-    fill(252, 199, 215);
-    rect(325, 670, 125, 30);
+    fill(157, 223, 233);
+    rect(300, 670, 125, 30);
     fill(0);
-    text("arcade", 354, 694);
+    text("arcade", 325, 694);
     
-    fill(250, 107, 150);
-    rect(325, 710, 125, 30);
+    fill(153, 187, 247);
+    rect(300, 710, 125, 30);
     fill(0);
-    text("zen", 370, 734);
+    text("zen", 340, 734);
   }
    void mouseClicked(){
      //if mouse is on the colors above, set the speed to that number
@@ -167,5 +169,6 @@ class LoadingScreen{
     text("Click 'h' to return", 70, 520);
     text("to the home screen", 53, 570);
   }
+
    
 }

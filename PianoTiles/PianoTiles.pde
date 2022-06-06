@@ -252,11 +252,52 @@ void drawblackTiles() {
     col *= width/4;
     int shade = 0;
     if (clickedTiles.get(i)) {
-      shade = 100;
+      //if (i > 0) {
+      //  if (blackTiles.get(i - 1) == col / width/4) {
+      //    shade = 209;
+      //  }
+      //}
+      ////check if there is a black tile below the clicked tile
+      //if (i < blackTiles.size() - 1) {
+      //  if (blackTiles.get(i + 1) == col / width/4) {
+      //    shade = 209;
+      //  }
+      //}
+      //if (clickedTiles.get(i) && clickedTiles.get(i-1)) {
+      //  shade = 100;
+      //  fill(shade);
+      //  noStroke();
+      //  rect(col, yPosition.get(i), width/4, height/4 + 1);
+      //  rect(col, yPosition.get(i-1), width/4, height/4 + 1);
+      //}
+      shade = 100; 
+     }
+     fill(shade);
+     noStroke();
+     //int rand = (int)(Math.random() * 2) + 1;
+    // if(rand == 1){
+       rect(col, yPosition.get(i), width/4, height/4 + 1);
+     //}else if (rand == 2){
+     //    rect(col, yPosition.get(i), width/4, height/4 + 5);
+     //}
+  }
+}
+
+//method to check if two tiles are touching, and if so, make them both gray
+void checkTiles() {
+  for (int i = 0; i < blackTiles.size(); i++) {
+    if (clickedTiles.get(i)) {
+      for (int j = 0; j < blackTiles.size(); j++) {
+        if (i != j && clickedTiles.get(j)) {
+          if (blackTiles.get(i) == blackTiles.get(j)) {
+            clickedTiles.set(i, false);
+            clickedTiles.set(j, false);
+            blackTiles.set(i, -1);
+            blackTiles.set(j, -1);
+          }
+        }
+      }
     }
-    fill(shade);
-    noStroke();
-    rect(col, yPosition.get(i), width/4, height/4 + 1);
   }
 }
 
@@ -344,6 +385,7 @@ void draw() {
     time = millis() / 1000;
   } else {
     drawblackTiles();
+    checkTiles();
     textSize(20);
     text("score: " + counter, 5, 20);
     textSize(20);
@@ -384,6 +426,9 @@ void init() {
   begin = false;
   counter = 0;
   countdown = 30;
+  //  tint(255, 127);
+  //fill(120);
+  //rect(0, 450, 500, 500);
 }
 
 void keyPressed() {
@@ -480,6 +525,7 @@ void keyPressed() {
   }
   if (!notDead)
     end.play();
+  
 }
 
 void mouseClicked() {

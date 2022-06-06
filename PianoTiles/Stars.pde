@@ -1,10 +1,12 @@
 class Stars {
+  //stars positions
   float x;
   float y;
   float z;
   float extraz;
 
   Stars() {
+    //initialize
     x = random(-width/2, width/2);
     y = random(-height/2, height/2);
     z = random(width/2);
@@ -23,7 +25,7 @@ class Stars {
   }
   void show() {
     
-      fill(250);
+    fill(138,43,226);
     
     noStroke();
     
