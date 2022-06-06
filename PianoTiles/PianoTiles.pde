@@ -252,6 +252,7 @@ void drawblackTiles() {
     col *= width/4;
     int shade = 0;
     if (clickedTiles.get(i)) {
+      //
       //if (i > 0) {
       //  if (blackTiles.get(i - 1) == col / width/4) {
       //    shade = 209;
