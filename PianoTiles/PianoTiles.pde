@@ -111,7 +111,7 @@ void drawblackTiles() {
      noStroke();
      //int rand = (int)(Math.random() * 2) + 1;
     // if(rand == 1){
-       rect(col, yPosition.get(i), width/4, height/4 + 10);
+       rect(col, yPosition.get(i), width/4, height/4 + 1);
      //}else if (rand == 2){
      //    rect(col, yPosition.get(i), width/4, height/4 + 5);
      //}
@@ -212,6 +212,7 @@ void draw() {
     time = millis() / 1000;
   } else {
     drawblackTiles();
+    checkTiles();
     textSize(20);
     text("score: " + counter, 5, 20);
     textSize(20);
