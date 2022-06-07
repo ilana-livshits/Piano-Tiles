@@ -333,6 +333,7 @@ void drawblackTiles() {
     //    }
 }
 
+/*
 //method to check if two tiles are touching, and if so, make them both gray
 void checkTiles() {
   for (int i = 0; i < blackTiles.size(); i++) {
@@ -350,6 +351,7 @@ void checkTiles() {
     }
   }
 }
+*/
 
 public int getFirstNotclickedTiles() {
   for (int i = clickedTiles.size()-1; i >= 0; i--) {
@@ -436,7 +438,7 @@ void draw() {
     time = millis() / 1000;
   } else {
     drawblackTiles();
-    checkTiles();
+   // checkTiles();
     textSize(20);
     text("score: " + counter, 5, 20);
     textSize(20);
