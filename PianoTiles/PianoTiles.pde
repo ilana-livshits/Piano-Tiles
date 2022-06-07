@@ -272,8 +272,10 @@ void drawblackTiles() {
   }
 }
 */
-/*
 void drawblackTiles() {
+  // wait 3 seconds before starting to draw black tiles
+  int time = millis()  / 1000;
+  if ((countdown - millis() / 1000 + time) > 3) {
   for (int i = 0; i < blackTiles.size(); i++) {
     int col = blackTiles.get(i);
     col *= width/4;
@@ -310,7 +312,7 @@ void drawblackTiles() {
      //}
   }
 }
-*/
+}
 
 //method to check if two tiles are touching, and if so, make them both gray
 void checkTiles() {
