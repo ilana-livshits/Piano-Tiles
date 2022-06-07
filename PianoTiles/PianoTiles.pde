@@ -44,7 +44,7 @@ int hbCount = 0; //need to init these later
 LoadingScreen introendscreen;
 static int counter;
 static String mode = "";
-static String song = "happy birthday";
+static String song = "";
 int countdown;
 
 void resetyPosition() {
