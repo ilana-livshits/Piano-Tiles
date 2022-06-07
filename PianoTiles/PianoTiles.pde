@@ -245,7 +245,30 @@ void randomizeblackTiles() {
     clickedTiles.add(false);
   }
 }
-
+void drawblackTiles() {
+  // wait 3 seconds before starting to draw black tiles
+  if (millis() - startTime > 3000) {
+    for (int i = 0; i < yPosition.size(); i++) {
+      if (blackTiles.get(i) == 0) {
+        fill(0);
+        rect(xPosition.get(i), yPosition.get(i), tileWidth, tileHeight);
+      }
+      if (blackTiles.get(i) == 1) {
+        fill(0);
+        rect(xPosition.get(i), yPosition.get(i), tileWidth, tileHeight);
+      }
+      if (blackTiles.get(i) == 2) {
+        fill(0);
+        rect(xPosition.get(i), yPosition.get(i), tileWidth, tileHeight);
+      }
+      if (blackTiles.get(i) == 3) {
+        fill(0);
+        rect(xPosition.get(i), yPosition.get(i), tileWidth, tileHeight);
+      }
+    }
+  }
+}
+/*
 void drawblackTiles() {
   for (int i = 0; i < blackTiles.size(); i++) {
     int col = blackTiles.get(i);
@@ -283,6 +306,7 @@ void drawblackTiles() {
      //}
   }
 }
+*/
 
 //method to check if two tiles are touching, and if so, make them both gray
 void checkTiles() {
@@ -333,6 +357,7 @@ void moveDown() {
       yPosition.set(i, (float)(yPosition.get(i) + speed));
     }
   }
+  
 }
 
 void setup() {
