@@ -107,25 +107,25 @@ class LoadingScreen {
     text("Song: " + PianoTiles.song, 290, 715);
 
     textSize(15);
-    fill(153, 187, 247);
+    fill(182,225,240);
     rect(300, 730, 125, 30);
     fill(0);
     text("happy birthday", 310, 750);
 
     textSize(15);
-    fill(153, 187, 247);
+    fill(155,180,232);
     rect(300, 765, 125, 50);
     fill(0);
     text("twinkle twinkle \nlittle star", 310, 785);
 
     textSize(15);
-    fill(153, 187, 247);
+    fill(164,155,232);
     rect(300, 820, 125, 30);
     fill(0);
     text("fur elise", 310, 840);
 
     textSize(15);
-    fill(153, 187, 247);
+    fill(164,116,207);
     rect(300, 855, 125, 30);
     fill(0);
     text("random", 310, 875);
