@@ -245,9 +245,12 @@ void randomizeblackTiles() {
     clickedTiles.add(false);
   }
 }
+
+/*
 void drawblackTiles() {
   // wait 3 seconds before starting to draw black tiles
-  if (millis() - startTime > 3000) {
+  int time = millis()  / 1000;
+  if ((countdown - millis() / 1000 + time) > 3) {
     for (int i = 0; i < yPosition.size(); i++) {
       if (blackTiles.get(i) == 0) {
         fill(0);
@@ -268,6 +271,7 @@ void drawblackTiles() {
     }
   }
 }
+*/
 /*
 void drawblackTiles() {
   for (int i = 0; i < blackTiles.size(); i++) {
