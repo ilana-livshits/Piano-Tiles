@@ -272,7 +272,6 @@ void drawblackTiles() {
   }
 }
 */
-
 void drawblackTiles() {
   // wait 3 seconds before starting to draw black tiles
   int time = millis()  / 1000;
@@ -313,6 +312,9 @@ void drawblackTiles() {
      //    rect(col, yPosition.get(i), width/4, height/4 + 5);
      //}
   }
+  }
+
+
 
 for (int i = 0; i < blackTiles.size(); i++) {
       int col = blackTiles.get(i);
