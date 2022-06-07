@@ -275,17 +275,17 @@ void drawblackTiles() {
 void drawblackTiles() {
   // wait 3 seconds before starting to draw black tiles
   //int time = millis()  / 1000;
+  for (int i = 0; i < 3; i++){
+      int col = blackTiles.get(i);
+      col *= width/4;
+      fill(255);
+      rect(col, yPosition.get(i), width/4, height/4 + 1);
+   }
     
   for (int i = 0; i < blackTiles.size(); i++) {
    // if ((countdown - millis() / 1000 + time) > 3) {
     //  delay(3000);
      //draw first 3 tiles white
-    if (i < 3) {
-      int col = blackTiles.get(i);
-      col *= width/4;
-      fill(255);
-      rect(col, yPosition.get(i), width/4, height/4 + 1);
-    } else {
       int col = blackTiles.get(i);
       col *= width/4;
       int shade = 0;
@@ -331,7 +331,7 @@ void drawblackTiles() {
     //      noStroke();
     //      rect(col, yPosition.get(i), width/4, height/4 + 1);
     //    }
-}
+
 
 /*
 //method to check if two tiles are touching, and if so, make them both gray
