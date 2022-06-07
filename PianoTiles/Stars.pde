@@ -6,7 +6,7 @@ class Stars {
   float extraz;
 
   Stars() {
-    //initialize
+    //initialize the stars starting point at a middle spot
     x = random(-width/2, width/2);
     y = random(-height/2, height/2);
     z = random(width/2);

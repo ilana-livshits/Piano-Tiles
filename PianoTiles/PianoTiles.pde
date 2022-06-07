@@ -372,7 +372,6 @@ void moveDown() {
    countdown = 30;
    time = millis() / 1000; 
    if((countdown - millis() / 1000 + time) > 3){
-
   for (int i = 0; i < yPosition.size(); i++) {
     if (yPosition.get(i) >= height) {
       if (!clickedTiles.get(i)) {
@@ -389,9 +388,8 @@ void moveDown() {
     } else {
       yPosition.set(i, (float)(yPosition.get(i) + speed));
     }
+   }
   }
-  }
-  
 }
 
 void setup() {
