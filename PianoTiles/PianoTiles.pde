@@ -272,16 +272,18 @@ void drawblackTiles() {
   }
 }
 */
+
 void drawblackTiles() {
   // wait 3 seconds before starting to draw black tiles
   int time = millis()  / 1000;
-  if ((countdown - millis() / 1000 + time) > 3) {
   for (int i = 0; i < blackTiles.size(); i++) {
-    int col = blackTiles.get(i);
-    col *= width/4;
-    int shade = 0;
-    if (clickedTiles.get(i)) {
-      //
+    if ((countdown - millis() / 1000 + time) > 3) {
+
+      int col = blackTiles.get(i);
+      col *= width/4;
+      int shade = 0;
+      if (clickedTiles.get(i)) {
+        //
       //if (i > 0) {
       //  if (blackTiles.get(i - 1) == col / width/4) {
       //    shade = 209;
@@ -311,7 +313,7 @@ void drawblackTiles() {
      //    rect(col, yPosition.get(i), width/4, height/4 + 5);
      //}
   }
-}
+
 for (int i = 0; i < blackTiles.size(); i++) {
       int col = blackTiles.get(i);
       col *= width/4;
