@@ -79,7 +79,7 @@ void setupNotes() {
   notes.add(note22);
   notes.add(note23);
   notes.add(note24);
-  if (song.equals("twinkle")) {
+  //if (song.equals("twinkle")) {
     twinkle.add(c);
     twinkle.add(c);
     twinkle.add(g);
@@ -122,8 +122,8 @@ void setupNotes() {
     twinkle.add(d);
     twinkle.add(d);
     twinkle.add(c);
-  }
-  if (song.equals("fur elise")) {
+  //}
+  //if (song.equals("fur elise")) {
     furElise.add(e);
     furElise.add(dS);
     furElise.add(e);
@@ -207,8 +207,8 @@ void setupNotes() {
     furElise.add(d);
     furElise.add(e);
     furElise.add(a);
-  }
-  if (song.equals("happy birthday")) {
+  //}
+  //if (song.equals("happy birthday")) {
     happyBirthday.add(g);
     happyBirthday.add(g);
     happyBirthday.add(a);
@@ -234,7 +234,7 @@ void setupNotes() {
     happyBirthday.add(c);
     happyBirthday.add(d);
     happyBirthday.add(c);
-  }
+  //}
 }
 
 void randomizeblackTiles() {

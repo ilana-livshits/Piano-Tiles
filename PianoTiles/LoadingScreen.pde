@@ -142,10 +142,18 @@ class LoadingScreen {
       speed = 4;
     } else if (mouseX > 20 && mouseX < 270 && mouseY > 830 && mouseY < 860) {
       speed = 5;
-    } else if (mouseX > 325 && mouseX < 450 && mouseY > 670 && mouseY < 700) {
+    } else if (mouseX > 325 && mouseX < 450 && mouseY > 610 && mouseY < 640) {
       PianoTiles.mode = "arcade";
-    } else if (mouseX > 325 && mouseX < 450 && mouseY > 710 && mouseY < 740) {
+    } else if (mouseX > 325 && mouseX < 450 && mouseY > 650 && mouseY < 680) {
       PianoTiles.mode = "zen";
+    } else if (mouseX > 325 && mouseX < 450 && mouseY > 730 && mouseY < 760) {
+      PianoTiles.song = "happy birthday";
+    } else if (mouseX > 325 && mouseX < 450 && mouseY > 765 && mouseY < 815) {
+      PianoTiles.song = "twinkle";
+    } else if (mouseX > 325 && mouseX < 450 && mouseY > 820 && mouseY < 850) {
+      PianoTiles.song = "fur elise";
+    } else if (mouseX > 325 && mouseX < 450 && mouseY > 855 && mouseY < 885) {
+      PianoTiles.song = "random";
     }
   }
 
