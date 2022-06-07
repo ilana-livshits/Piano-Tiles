@@ -281,9 +281,11 @@ void drawblackTiles() {
     //  delay(3000);
      //draw first 3 tiles white
     if (i < 3) {
-      fill(0);
-      rect(0, 0, width, height);
-    }else{
+      int col = blackTiles.get(i);
+      col *= width/4;
+      fill(255);
+      rect(col, yPosition.get(i), width/4, height/4 + 1);
+    } else {
       int col = blackTiles.get(i);
       col *= width/4;
       int shade = 0;
