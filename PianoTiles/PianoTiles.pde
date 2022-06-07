@@ -312,6 +312,17 @@ void drawblackTiles() {
      //}
   }
 }
+for (int i = 0; i < blackTiles.size(); i++) {
+      int col = blackTiles.get(i);
+      col *= width/4;
+      int shade = 0;
+      if (clickedTiles.get(i)) {
+        shade = 100;
+      }
+      fill(shade);
+      noStroke();
+      rect(col, yPosition.get(i), width/4, height/4 + 1);
+    }
 }
 
 //method to check if two tiles are touching, and if so, make them both gray
