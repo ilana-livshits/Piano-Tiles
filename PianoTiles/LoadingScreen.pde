@@ -147,7 +147,7 @@ class LoadingScreen {
     } else if (mouseX > 325 && mouseX < 450 && mouseY > 650 && mouseY < 680) {
       PianoTiles.mode = "zen";
     } else if (mouseX > 325 && mouseX < 450 && mouseY > 730 && mouseY < 760) {
-      PianoTiles.song = "happy birthday";
+      PianoTiles.song = "bday";
     } else if (mouseX > 325 && mouseX < 450 && mouseY > 765 && mouseY < 815) {
       PianoTiles.song = "twinkle";
     } else if (mouseX > 325 && mouseX < 450 && mouseY > 820 && mouseY < 850) {

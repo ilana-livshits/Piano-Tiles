@@ -43,8 +43,8 @@ int hbCount = 0; //need to init these later
 
 LoadingScreen introendscreen;
 static int counter;
-static String mode = "";
-static String song = "";
+static String mode = "arcade";
+static String song = "random";
 int countdown;
 
 void resetyPosition() {
@@ -510,7 +510,7 @@ void keyPressed() {
       if (furEliseCount >= furElise.size())
         notDead = false;
     }
-    if (song.equals("happy birthday")) {
+    if (song.equals("bday")) {
       happyBirthday.get(hbCount).play();
       hbCount++;
       counter++;
@@ -560,7 +560,7 @@ void mouseClicked() {
       if (furEliseCount >= furElise.size())
         notDead = false;
     }
-    if (song.equals("happy birthday")) {
+    if (song.equals("bday")) {
       happyBirthday.get(hbCount).play();
       hbCount++;
       counter++;
