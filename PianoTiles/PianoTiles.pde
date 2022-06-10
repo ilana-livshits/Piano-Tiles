@@ -56,6 +56,13 @@ void resetyPosition() {
   }
 }
 
+void resetxPosition() {
+  xPosition = new ArrayList<Float>();
+  for (int i = 0; i < 4; i++) {
+    xPosition.add((int)(i * width/4));
+  }
+}
+
 void setupNotes() {
   notes.add(note1);
   notes.add(note2);
@@ -279,6 +286,7 @@ void drawblackTiles() {
 void generateBlackTiles(int x, float y) {
    rect(x, y, width/4, height/4 + 1);  
 }
+
 //method that generates random column of the tiles
 void generateCol(int i){
  
@@ -292,9 +300,10 @@ void generateCol(int i){
 void drawblackTiles() {
 
   for (int i = 0; i < blackTiles.size(); i++) {
-      int col = blackTiles.get(i);
-      col *= width/4;
-      xPosition.add(col);
+      //int col = blackTiles.get(i);
+      //col *= width/4;
+      //xPosition.add(col);
+      generateCol(i);
       int shade = 0;
       if (clickedTiles.get(i)) {
       shade = 100; 
@@ -514,6 +523,8 @@ void init() {
   speed = introendscreen.speed * 2;
   acceleration = 0.002;
   resetyPosition();
+  resetxPosition();
+  
   randomizeblackTiles();
   notDead = true;
   begin = false;
