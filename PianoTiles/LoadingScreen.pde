@@ -108,17 +108,6 @@ class LoadingScreen{
     fill(0);
     textSize(25);
     text("CHEATS" + PianoTiles.mode , 55, 610);
-    //fill(149, 230, 159);
-    //rect(300, 820, 125, 30);
-    //textSize(20);
-    //fill(0);
-    //text("win screen", 310, 840);
-    
-    //fill(189, 107, 89);
-    //rect(300, 855, 125, 30);
-    //textSize(20);
-    //fill(0);
-    //text("loss screen", 310, 875);
     
   }
    void mouseClicked(){
@@ -159,8 +148,20 @@ class LoadingScreen{
     background(250, 218, 221);
     fill(0);
     textSize(30);
-    text("Choose which ending screen", 50, 50);
-    text("you would like to see:", 50, 100);
+    text("Choose which ending screen", 50, 200);
+    text("you would like to see:", 50, 250);
+    
+    fill(149, 230, 159);
+    rect(50, 300, 400, 60);
+    textSize(40);
+    fill(0);
+    text("win screen", 150, 345);
+    
+    fill(189, 107, 89);
+    rect(300, 855, 125, 30);
+    textSize(20);
+    fill(0);
+    text("loss screen", 310, 875);
    }
    
    void endScreen(){
