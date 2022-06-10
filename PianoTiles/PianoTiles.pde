@@ -280,15 +280,7 @@ void generateBlackTiles(int x, int y) {
 
 
 void drawblackTiles() {
-  // wait 3 seconds before starting to draw black tiles
-  //int time = millis()  / 1000;
-  //for (int i = 0; i < 3; i++){
-  //    int col = blackTiles.get(i);
-  //    col *= width/4;
-  //    fill(255);
-  //    rect(col, yPosition.get(i), width/4, height/4 + 1);
-  // }
-   // delay(200);
+
   for (int i = 0; i < blackTiles.size(); i++) {
       int col = blackTiles.get(i);
       col *= width/4;
@@ -302,6 +294,17 @@ void drawblackTiles() {
     }
   }
   
+  
+// NOTES 
+    // wait 3 seconds before starting to draw black tiles
+  //int time = millis()  / 1000;
+  //for (int i = 0; i < 3; i++){
+  //    int col = blackTiles.get(i);
+  //    col *= width/4;
+  //    fill(255);
+  //    rect(col, yPosition.get(i), width/4, height/4 + 1);
+  // }
+   // delay(200);
      // if ((countdown - millis() / 1000 + time) > 3) {
     //  delay(3000);
      //draw first 3 tiles white
