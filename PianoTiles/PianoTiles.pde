@@ -47,6 +47,12 @@ static String mode = "arcade";
 static String song = "random";
 int countdown;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.ArrayList;
+
+
 void resetyPosition() {
   yPosition = new ArrayList<Float>();
   for (int i = -1; i < 4; i++) {
@@ -80,160 +86,160 @@ void setupNotes() {
   notes.add(note23);
   notes.add(note24);
   //if (song.equals("twinkle")) {
-    twinkle.add(c);
-    twinkle.add(c);
-    twinkle.add(g);
-    twinkle.add(g);
-    twinkle.add(a);
-    twinkle.add(a);
-    twinkle.add(g);
-    twinkle.add(f);
-    twinkle.add(f);
-    twinkle.add(e);
-    twinkle.add(e);
-    twinkle.add(d);
-    twinkle.add(d);
-    twinkle.add(c);
-    twinkle.add(g);
-    twinkle.add(g);
-    twinkle.add(f);
-    twinkle.add(f);
-    twinkle.add(e);
-    twinkle.add(e);
-    twinkle.add(d);
-    twinkle.add(g);
-    twinkle.add(g);
-    twinkle.add(f);
-    twinkle.add(f);
-    twinkle.add(e);
-    twinkle.add(e);
-    twinkle.add(d);
-    twinkle.add(c);
-    twinkle.add(c);
-    twinkle.add(g);
-    twinkle.add(g);
-    twinkle.add(a);
-    twinkle.add(a);
-    twinkle.add(g);
-    twinkle.add(f);
-    twinkle.add(f);
-    twinkle.add(e);
-    twinkle.add(e);
-    twinkle.add(d);
-    twinkle.add(d);
-    twinkle.add(c);
+  twinkle.add(c);
+  twinkle.add(c);
+  twinkle.add(g);
+  twinkle.add(g);
+  twinkle.add(a);
+  twinkle.add(a);
+  twinkle.add(g);
+  twinkle.add(f);
+  twinkle.add(f);
+  twinkle.add(e);
+  twinkle.add(e);
+  twinkle.add(d);
+  twinkle.add(d);
+  twinkle.add(c);
+  twinkle.add(g);
+  twinkle.add(g);
+  twinkle.add(f);
+  twinkle.add(f);
+  twinkle.add(e);
+  twinkle.add(e);
+  twinkle.add(d);
+  twinkle.add(g);
+  twinkle.add(g);
+  twinkle.add(f);
+  twinkle.add(f);
+  twinkle.add(e);
+  twinkle.add(e);
+  twinkle.add(d);
+  twinkle.add(c);
+  twinkle.add(c);
+  twinkle.add(g);
+  twinkle.add(g);
+  twinkle.add(a);
+  twinkle.add(a);
+  twinkle.add(g);
+  twinkle.add(f);
+  twinkle.add(f);
+  twinkle.add(e);
+  twinkle.add(e);
+  twinkle.add(d);
+  twinkle.add(d);
+  twinkle.add(c);
   //}
   //if (song.equals("fur elise")) {
-    furElise.add(e);
-    furElise.add(dS);
-    furElise.add(e);
-    furElise.add(dS);
-    furElise.add(e);
-    furElise.add(b);
-    furElise.add(d);
-    furElise.add(c);
-    furElise.add(a);
-    furElise.add(c);
-    furElise.add(e);
-    furElise.add(a);
-    furElise.add(b);
-    furElise.add(a);
-    furElise.add(d);
-    furElise.add(c);
-    furElise.add(e);
-    furElise.add(e);
-    furElise.add(dS);
-    furElise.add(e);
-    furElise.add(dS);
-    furElise.add(e);
-    furElise.add(b);
-    furElise.add(d);
-    furElise.add(c);
-    furElise.add(a);
-    furElise.add(c);
-    furElise.add(e);
-    furElise.add(a);
-    furElise.add(b);
-    furElise.add(e);
-    furElise.add(c);
-    furElise.add(b);
-    furElise.add(a);
-    furElise.add(a);
-    furElise.add(b);
-    furElise.add(c);
-    furElise.add(d);
-    furElise.add(e);
-    furElise.add(g);
-    furElise.add(f);
-    furElise.add(e);
-    furElise.add(d);
-    furElise.add(f);
-    furElise.add(e);
-    furElise.add(d);
-    furElise.add(c);
-    furElise.add(d);
-    furElise.add(e);
-    furElise.add(d);
-    furElise.add(c);
-    furElise.add(b);
-    furElise.add(e5);
-    furElise.add(e);
-    furElise.add(e5);
-    furElise.add(e5);
-    furElise.add(e);
-    furElise.add(e5);
-    furElise.add(dS);
-    furElise.add(e5);
-    furElise.add(dS);
-    furElise.add(e5);
-    furElise.add(dS);
-    furElise.add(e5);
-    furElise.add(dS);
-    furElise.add(e5);
-    furElise.add(b);
-    furElise.add(d);
-    furElise.add(c);
-    furElise.add(a);
-    furElise.add(c);
-    furElise.add(e);
-    furElise.add(a);
-    furElise.add(b);
-    furElise.add(e);
-    furElise.add(c);
-    furElise.add(b);
-    furElise.add(a);
-    furElise.add(b);
-    furElise.add(c);
-    furElise.add(d);
-    furElise.add(e);
-    furElise.add(a);
+  furElise.add(e);
+  furElise.add(dS);
+  furElise.add(e);
+  furElise.add(dS);
+  furElise.add(e);
+  furElise.add(b);
+  furElise.add(d);
+  furElise.add(c);
+  furElise.add(a);
+  furElise.add(c);
+  furElise.add(e);
+  furElise.add(a);
+  furElise.add(b);
+  furElise.add(a);
+  furElise.add(d);
+  furElise.add(c);
+  furElise.add(e);
+  furElise.add(e);
+  furElise.add(dS);
+  furElise.add(e);
+  furElise.add(dS);
+  furElise.add(e);
+  furElise.add(b);
+  furElise.add(d);
+  furElise.add(c);
+  furElise.add(a);
+  furElise.add(c);
+  furElise.add(e);
+  furElise.add(a);
+  furElise.add(b);
+  furElise.add(e);
+  furElise.add(c);
+  furElise.add(b);
+  furElise.add(a);
+  furElise.add(a);
+  furElise.add(b);
+  furElise.add(c);
+  furElise.add(d);
+  furElise.add(e);
+  furElise.add(g);
+  furElise.add(f);
+  furElise.add(e);
+  furElise.add(d);
+  furElise.add(f);
+  furElise.add(e);
+  furElise.add(d);
+  furElise.add(c);
+  furElise.add(d);
+  furElise.add(e);
+  furElise.add(d);
+  furElise.add(c);
+  furElise.add(b);
+  furElise.add(e5);
+  furElise.add(e);
+  furElise.add(e5);
+  furElise.add(e5);
+  furElise.add(e);
+  furElise.add(e5);
+  furElise.add(dS);
+  furElise.add(e5);
+  furElise.add(dS);
+  furElise.add(e5);
+  furElise.add(dS);
+  furElise.add(e5);
+  furElise.add(dS);
+  furElise.add(e5);
+  furElise.add(b);
+  furElise.add(d);
+  furElise.add(c);
+  furElise.add(a);
+  furElise.add(c);
+  furElise.add(e);
+  furElise.add(a);
+  furElise.add(b);
+  furElise.add(e);
+  furElise.add(c);
+  furElise.add(b);
+  furElise.add(a);
+  furElise.add(b);
+  furElise.add(c);
+  furElise.add(d);
+  furElise.add(e);
+  furElise.add(a);
   //}
   //if (song.equals("happy birthday")) {
-    happyBirthday.add(g);
-    happyBirthday.add(g);
-    happyBirthday.add(a);
-    happyBirthday.add(g);
-    happyBirthday.add(c);
-    happyBirthday.add(b);
-    happyBirthday.add(g);
-    happyBirthday.add(g);
-    happyBirthday.add(a);
-    happyBirthday.add(g);
-    happyBirthday.add(d);
-    happyBirthday.add(c);
-    happyBirthday.add(g);
-    happyBirthday.add(g);
-    happyBirthday.add(g);
-    happyBirthday.add(e);
-    happyBirthday.add(c);
-    happyBirthday.add(b);
-    happyBirthday.add(a);
-    happyBirthday.add(f);
-    happyBirthday.add(f);
-    happyBirthday.add(e);
-    happyBirthday.add(c);
-    happyBirthday.add(d);
-    happyBirthday.add(c);
+  happyBirthday.add(g);
+  happyBirthday.add(g);
+  happyBirthday.add(a);
+  happyBirthday.add(g);
+  happyBirthday.add(c);
+  happyBirthday.add(b);
+  happyBirthday.add(g);
+  happyBirthday.add(g);
+  happyBirthday.add(a);
+  happyBirthday.add(g);
+  happyBirthday.add(d);
+  happyBirthday.add(c);
+  happyBirthday.add(g);
+  happyBirthday.add(g);
+  happyBirthday.add(g);
+  happyBirthday.add(e);
+  happyBirthday.add(c);
+  happyBirthday.add(b);
+  happyBirthday.add(a);
+  happyBirthday.add(f);
+  happyBirthday.add(f);
+  happyBirthday.add(e);
+  happyBirthday.add(c);
+  happyBirthday.add(d);
+  happyBirthday.add(c);
   //}
 }
 
@@ -270,16 +276,16 @@ void drawblackTiles() {
       //  rect(col, yPosition.get(i), width/4, height/4 + 1);
       //  rect(col, yPosition.get(i-1), width/4, height/4 + 1);
       //}
-      shade = 100; 
-     }
-     fill(shade);
-     noStroke();
-     //int rand = (int)(Math.random() * 2) + 1;
+      shade = 100;
+    }
+    fill(shade);
+    noStroke();
+    //int rand = (int)(Math.random() * 2) + 1;
     // if(rand == 1){
-       rect(col, yPosition.get(i), width/4, height/4 + 1);
-     //}else if (rand == 2){
-     //    rect(col, yPosition.get(i), width/4, height/4 + 5);
-     //}
+    rect(col, yPosition.get(i), width/4, height/4 + 1);
+    //}else if (rand == 2){
+    //    rect(col, yPosition.get(i), width/4, height/4 + 5);
+    //}
   }
 }
 
@@ -525,7 +531,6 @@ void keyPressed() {
   }
   if (!notDead)
     end.play();
-  
 }
 
 void mouseClicked() {
@@ -546,7 +551,7 @@ void mouseClicked() {
     }
   }
   if (notDead) {
-   if (song.equals("twinkle")) {
+    if (song.equals("twinkle")) {
       twinkle.get(twinkleCount).play();
       twinkleCount++;
       counter++;
@@ -576,4 +581,10 @@ void mouseClicked() {
   if (!notDead)
     end.play();
   //notes.get(0).play();
+}
+
+void readFile(String filename) throws FileNotFoundException{
+  ArrayList<Integer> result = new ArrayList<>();
+  File text = new File(filename);
+  Scanner input = new Scanner(text);
 }
