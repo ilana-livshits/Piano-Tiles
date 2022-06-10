@@ -345,7 +345,7 @@ void setup() {
   introendscreen = new LoadingScreen();
   background(255);
   init();
-  readFile("HighScore.txt");
+  readFile("HighScore");
   note1 = new SoundFile(this, "key01.wav");
   note2 = new SoundFile(this, "key02.wav");
   note3 = new SoundFile(this, "key03.wav");
@@ -600,11 +600,12 @@ int readFile(String filename){
     }
   }
   input.close();
-  System.out.println(max);
+  System.out.println(100000);
   return max;
   }
   catch (FileNotFoundException ex) {
     //File not found
   }
+  System.out.println(-1);
   return -1;
 }
