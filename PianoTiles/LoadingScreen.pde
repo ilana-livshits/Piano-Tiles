@@ -158,10 +158,10 @@ class LoadingScreen{
     text("win screen", 150, 345);
     
     fill(189, 107, 89);
-    rect(300, 855, 125, 30);
-    textSize(20);
+    rect(50, 400, 400, 60);
+    textSize(40);
     fill(0);
-    text("loss screen", 310, 875);
+    text("losing screen", 130, 445);
    }
    
    void endScreen(){
