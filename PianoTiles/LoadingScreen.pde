@@ -107,7 +107,7 @@ class LoadingScreen{
     rect(40, 585, 125, 30);
     fill(0);
     textSize(25);
-    text("CHEATS" + PianoTiles.mode , 60, 610);
+    text("CHEATS" + PianoTiles.mode , 55, 610);
     //fill(149, 230, 159);
     //rect(300, 820, 125, 30);
     //textSize(20);
@@ -138,6 +138,9 @@ class LoadingScreen{
       } else if (mouseX > 325 && mouseX < 450 && mouseY > 710 && mouseY < 740) {
         PianoTiles.mode = "zen";
       } 
+      else if( mouseX > 40 && mouseX < 165 && mouseY > 585 && mouseY < 620){
+       cheatScreen();
+      }
       else if ( mouseX > 325 && mouseX < 450 && mouseY > 820 && mouseY < 850) {
         PianoTiles.begin = false;
         PianoTiles.notDead = false;
@@ -148,6 +151,14 @@ class LoadingScreen{
         PianoTiles.notDead = false;
         PianoTiles.counter = 21;
       }
+   }
+   
+  void cheatScreen(){
+    background(250, 218, 221);
+    fill(0);
+    textSize(30);
+    text("Choose which ending screen", 50, 50);
+    text("you would like to see:", 50, 100);
    }
    
    void endScreen(){
