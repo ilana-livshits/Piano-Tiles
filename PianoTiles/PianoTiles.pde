@@ -343,17 +343,14 @@ void drawblackTiles() {
 void checkTiles() {
   for (int i = 0; i < blackTiles.size(); i++) { 
     for (int j = 0; j < blackTiles.size(); j++) {
-      if (i != j) {
-        if (blackTiles.get(i) == blackTiles.get(j)) {
-          clickedTiles.set(i, true);
-          clickedTiles.set(j, true);
-        }
+      if (i != j && (blackTiles.get(i) - blackTiles.get(j) == 0)) {
+        clickedTiles.set(i, true);
+        clickedTiles.set(j, true);
+      }
+     
       }
     }
   }
-  
-}
-
 /*
 //method to check if two tiles are touching, and if so, make them both gray
 void checkTiles() {
@@ -462,7 +459,7 @@ void draw() {
     time = millis() / 1000;
   } else {
     drawblackTiles();
-   // checkTiles();
+    checkTiles();
     textSize(20);
     text("score: " + counter, 5, 20);
     textSize(20);
