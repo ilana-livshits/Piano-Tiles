@@ -289,7 +289,6 @@ void generateBlackTiles(int x, float y) {
 
 //method that generates random column of the tiles
 void generateCol(int i){
- 
     int col = blackTiles.get(i);
     col *= width/4;
    //put col into xposition arraylist
@@ -313,6 +312,8 @@ void drawblackTiles() {
         rect(col, yPosition.get(i), width/4, height/4 + 1);
     }
   }
+  
+  
   
   
 // NOTES 

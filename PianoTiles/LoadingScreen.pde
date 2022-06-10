@@ -102,20 +102,22 @@ class LoadingScreen{
     fill(0);
     text("zen", 340, 734);
     
-    textSize(30);
+    textSize(25);
     fill(0);
-    text("Cheats: " + PianoTiles.mode , 290, 800);
     fill(149, 230, 159);
-    rect(300, 820, 125, 30);
-    textSize(20);
-    fill(0);
-    text("win screen", 310, 840);
+    rect(60, 580, 125, 30);
+    text("Cheats: " + PianoTiles.mode , 60, 610);
+    //fill(149, 230, 159);
+    //rect(300, 820, 125, 30);
+    //textSize(20);
+    //fill(0);
+    //text("win screen", 310, 840);
     
-    fill(189, 107, 89);
-    rect(300, 855, 125, 30);
-    textSize(20);
-    fill(0);
-    text("loss screen", 310, 875);
+    //fill(189, 107, 89);
+    //rect(300, 855, 125, 30);
+    //textSize(20);
+    //fill(0);
+    //text("loss screen", 310, 875);
     
   }
    void mouseClicked(){
@@ -136,11 +138,14 @@ class LoadingScreen{
         PianoTiles.mode = "zen";
       } 
       else if ( mouseX > 325 && mouseX < 450 && mouseY > 820 && mouseY < 850) {
-        PianoTiles.begin == 
-        endScreen();
+        PianoTiles.begin = false;
+        PianoTiles.notDead = false;
+        PianoTiles.counter = 10;
       }
       else if ( mouseX > 325 && mouseX < 450 && mouseY > 855 && mouseY < 875) {
-        winningScreen();
+        PianoTiles.begin = false;
+        PianoTiles.notDead = false;
+        PianoTiles.counter = 21;
       }
    }
    
