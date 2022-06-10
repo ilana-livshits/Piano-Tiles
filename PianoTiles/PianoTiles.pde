@@ -30,7 +30,7 @@ ArrayList<SoundFile> twinkle = new ArrayList<SoundFile>();
 ArrayList<SoundFile> furElise = new ArrayList<SoundFile>();
 ArrayList<SoundFile> happyBirthday = new ArrayList<SoundFile>();
 ArrayList<Float> yPosition;
-static ArrayList<Float> xPosition;
+static ArrayList<Integer> xPosition;
 ArrayList<Integer> blackTiles;
 ArrayList<Boolean> clickedTiles;
 float speed;
@@ -276,9 +276,17 @@ void drawblackTiles() {
 */
 
 ////write a method that generates the tiles at the middle of the screen
-//void generateBlackTiles(int x, int y) {
-//   rect(x, y, width/4, height/4 + 1);  
-//}
+void generateBlackTiles(int x, float y) {
+   rect(x, y, width/4, height/4 + 1);  
+}
+//method that generates random column of the tiles
+void generateCol(int i){
+ 
+    int col = blackTiles.get(i);
+    col *= width/4;
+   //put col into xposition arraylist
+    xPosition.add(col);
+}
 
 
 void drawblackTiles() {
@@ -286,6 +294,7 @@ void drawblackTiles() {
   for (int i = 0; i < blackTiles.size(); i++) {
       int col = blackTiles.get(i);
       col *= width/4;
+      xPosition.add(col);
       int shade = 0;
       if (clickedTiles.get(i)) {
       shade = 100; 
