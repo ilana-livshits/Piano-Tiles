@@ -102,11 +102,12 @@ class LoadingScreen{
     fill(0);
     text("zen", 340, 734);
     
-    textSize(25);
-    fill(0);
+    
     fill(149, 230, 159);
-    rect(60, 580, 125, 30);
-    text("Cheats: " + PianoTiles.mode , 60, 610);
+    rect(40, 585, 125, 30);
+    fill(0);
+    textSize(25);
+    text("CHEATS" + PianoTiles.mode , 60, 610);
     //fill(149, 230, 159);
     //rect(300, 820, 125, 30);
     //textSize(20);
