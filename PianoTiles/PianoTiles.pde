@@ -47,6 +47,7 @@ static int counter;
 static String mode = "";
 static String song = "happy birthday";
 static int col;
+static boolean cheatScreenYoN = false;
 int countdown;
 
 void resetyPosition() {
@@ -504,9 +505,12 @@ void draw() {
   if (!notDead) {
     if (counter < 20 && counter >= 0) {
       introendscreen.endScreen();
+      //cheatScreenYoN = false;
     } else if (counter >= 20) {
       introendscreen.winningScreen();
+      //cheatScreenYoN = false;
     } else if (counter < 0){
+      cheatScreenYoN = true;
       introendscreen.cheatScreen();
     }
     if (key == 'h') { 

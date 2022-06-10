@@ -4,6 +4,7 @@ class LoadingScreen{
   Stars[] stars = new Stars[200];
   float speedStars;
   PImage bckground;
+  
   void introScreen(){
     bckground = loadImage("purpleombre (1).jpg");
     
@@ -132,12 +133,12 @@ class LoadingScreen{
         PianoTiles.notDead = false;
         PianoTiles.counter = -3;
       }
-      else if ( mouseX > 325 && mouseX < 450 && mouseY > 820 && mouseY < 850) {
+      else if ((PianoTiles.cheatScreenYoN == true) && mouseX > 50 && mouseX < 110 && mouseY > 300 && mouseY < 360) {
         PianoTiles.begin = false;
         PianoTiles.notDead = false;
         PianoTiles.counter = 10;
       }
-      else if ( mouseX > 325 && mouseX < 450 && mouseY > 855 && mouseY < 875) {
+      else if ((PianoTiles.cheatScreenYoN == true) && mouseX > 50 && mouseX < 110 && mouseY > 400 && mouseY < 460) {
         PianoTiles.begin = false;
         PianoTiles.notDead = false;
         PianoTiles.counter = 21;
