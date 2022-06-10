@@ -57,8 +57,8 @@ void resetyPosition() {
 }
 
 void resetxPosition() {
-  xPosition = new ArrayList<Float>();
-  for (int i = 0; i < 4; i++) {
+  xPosition = new ArrayList<Integer>();
+  for (int i = -1; i < 4; i++) {
     xPosition.add((int)(i * width/4));
   }
 }
@@ -424,6 +424,7 @@ void moveDown() {
       //end.play();
       //notDead = false;} else {
       yPosition.remove(i);
+      xPosition.remove(i);
       blackTiles.remove(i);
       clickedTiles.remove(i);
       yPosition.add(0, -height/4 + yPosition.get(0));
