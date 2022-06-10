@@ -273,26 +273,9 @@ void drawblackTiles() {
 }
 */
 
-//write a method that generates the tiles
-void generateBlackTiles(){
-  for (int i = 0; i < yPosition.size(); i++) {
-    if (blackTiles.get(i) == 0) {
-      fill(0);
-      rect(xPosition.get(i), yPosition.get(i), tileSize, tileSize);
-    }
-    if (blackTiles.get(i) == 1) {
-      fill(0);
-      rect(xPosition.get(i), yPosition.get(i), tileSize, tileSize);
-    }
-    if (blackTiles.get(i) == 2) {
-      fill(0);
-      rect(xPosition.get(i), yPosition.get(i), tileSize, tileSize);
-    }
-    if (blackTiles.get(i) == 3) {
-      fill(0);
-      rect(xPosition.get(i), yPosition.get(i), tileSize, tileSize);
-    }
-  }
+//write a method that generates the tiles at the middle of the screen
+void generateBlackTiles(int x, int y) {
+   rect(x, y, width/4, height/4 + 1);  
 }
 
 
