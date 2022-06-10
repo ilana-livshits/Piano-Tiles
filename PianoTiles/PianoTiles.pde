@@ -586,8 +586,10 @@ void mouseClicked() {
 }
 
 int readFile() {
+  try{
   ArrayList<String> result = new ArrayList<String>();
-  Scanner input = new Scanner("HighScore.txt");
+  File f = new File("Highscore.txt");
+  Scanner input = new Scanner(f);
   while (input.hasNextLine()) {
     String line = input.nextLine();
     result.add(line);
@@ -603,10 +605,17 @@ int readFile() {
     //    max = result.get(i);
     //  }
     //}
+    System.out.println(100000);
     input.close();
+    return 1;
     //for (int i = 0; i < result.size(); i++) {
     //  System.out.print(result.get(i));
     //}
-    System.out.println(100000);
+    
+  }
+  catch (FileNotFoundException ex) {
+    //File not found
+  }
+  System.out.print(-10);
     return -1;
   }
