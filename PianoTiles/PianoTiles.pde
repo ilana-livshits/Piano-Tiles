@@ -45,6 +45,7 @@ LoadingScreen introendscreen;
 static int counter;
 static String mode = "";
 static String song = "happy birthday";
+static int col;
 int countdown;
 
 void resetyPosition() {
@@ -343,14 +344,22 @@ void drawblackTiles() {
 void checkTiles() {
   for (int i = 0; i < blackTiles.size(); i++) { 
     for (int j = 0; j < blackTiles.size(); j++) {
-      if (i != j && (blackTiles.get(i) - blackTiles.get(j) == 0)) {
-        clickedTiles.set(i, true);
-        clickedTiles.set(j, true);
-      }
+      //check if tiles are in same column
+      if (xPosition.get(i) == xPosition.get(j)) {
+        //check if tiles are touching top and bottom
+        if (yPosition.get(i) == yPosition.get(j) + height/4 || yPosition.get(i) == yPosition.get(j) - height/4) {
+          //if so, make them gray when clicked
+          if (clickedTiles.get(i) && clickedTiles.get(j)) {
+            fill(100);
+            noStroke();
+            generateBlackTiles(xPosition.get(i), yPosition.get(i));
+          }
+        }
      
       }
     }
   }
+}
 /*
 //method to check if two tiles are touching, and if so, make them both gray
 void checkTiles() {
