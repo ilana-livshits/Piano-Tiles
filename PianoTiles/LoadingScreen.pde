@@ -105,6 +105,17 @@ class LoadingScreen{
     textSize(30);
     fill(0);
     text("Cheats: " + PianoTiles.mode , 290, 800);
+    fill(149, 230, 159);
+    rect(300, 820, 125, 30);
+    textSize(20);
+    fill(0);
+    text("win screen", 310, 840);
+    
+    fill(189, 107, 89);
+    rect(300, 855, 125, 30);
+    textSize(20);
+    fill(0);
+    text("loss screen", 310, 875);
     
   }
    void mouseClicked(){
@@ -124,7 +135,12 @@ class LoadingScreen{
       } else if (mouseX > 325 && mouseX < 450 && mouseY > 710 && mouseY < 740) {
         PianoTiles.mode = "zen";
       } 
-      //else if ()
+      else if ( mouseX > 325 && mouseX < 450 && mouseY > 820 && mouseY < 850) {
+        PianoTiles.mode = "win";
+      }
+      else if ( mouseX > 325 && mouseX < 450 && mouseY > 855 && mouseY < 875) {
+        PianoTiles.mode = "loss";
+      }
    }
    
    void endScreen(){
