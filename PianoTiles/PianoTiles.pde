@@ -273,6 +273,28 @@ void drawblackTiles() {
 }
 */
 
+//write a method that generates the tiles
+void generateBlackTiles(){
+  for (int i = 0; i < yPosition.size(); i++) {
+    if (blackTiles.get(i) == 0) {
+      fill(0);
+      rect(xPosition.get(i), yPosition.get(i), tileSize, tileSize);
+    }
+    if (blackTiles.get(i) == 1) {
+      fill(0);
+      rect(xPosition.get(i), yPosition.get(i), tileSize, tileSize);
+    }
+    if (blackTiles.get(i) == 2) {
+      fill(0);
+      rect(xPosition.get(i), yPosition.get(i), tileSize, tileSize);
+    }
+    if (blackTiles.get(i) == 3) {
+      fill(0);
+      rect(xPosition.get(i), yPosition.get(i), tileSize, tileSize);
+    }
+  }
+}
+
 
 void drawblackTiles() {
   // wait 3 seconds before starting to draw black tiles
@@ -285,14 +307,22 @@ void drawblackTiles() {
   // }
    // delay(200);
   for (int i = 0; i < blackTiles.size(); i++) {
-   // if ((countdown - millis() / 1000 + time) > 3) {
-    //  delay(3000);
-     //draw first 3 tiles white
       int col = blackTiles.get(i);
       col *= width/4;
       int shade = 0;
       if (clickedTiles.get(i)) {
-      //if (i > 0) {
+      shade = 100; 
+     }
+     fill(shade);
+     noStroke();
+        rect(col, yPosition.get(i), width/4, height/4 + 1);
+    }
+  }
+  
+     // if ((countdown - millis() / 1000 + time) > 3) {
+    //  delay(3000);
+     //draw first 3 tiles white
+        //if (i > 0) {
       //  if (blackTiles.get(i - 1) == col / width/4) {
       //    shade = 209;
       //  }
@@ -310,22 +340,7 @@ void drawblackTiles() {
       //  rect(col, yPosition.get(i), width/4, height/4 + 1);
       //  rect(col, yPosition.get(i-1), width/4, height/4 + 1);
       //}
-      shade = 100; 
-     }
-     fill(shade);
-     noStroke();
-     //int rand = (int)(Math.random() * 2) + 1;
-    // if(rand == 1){
-      //if(i < 3){
-        rect(col, yPosition.get(i) + 103, width/4, height/4 + 1);
-      //}else{
-      // rect(col, yPosition.get(i), width/4, height/4 + 1);
-     //}else if (rand == 2){
-     //    rect(col, yPosition.get(i), width/4, height/4 + 5);
-     //}
-    }
-  }
- }
+ 
     //for (int i = 0; i < blackTiles.size(); i++) {
     //      int col = blackTiles.get(i);
     //      col *= width/4;

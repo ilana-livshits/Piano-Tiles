@@ -101,6 +101,11 @@ class LoadingScreen{
     rect(300, 710, 125, 30);
     fill(0);
     text("zen", 340, 734);
+    
+    textSize(30);
+    fill(0);
+    text("Cheats: " + PianoTiles.mode , 290, 800);
+    
   }
    void mouseClicked(){
      //if mouse is on the colors above, set the speed to that number
@@ -119,6 +124,7 @@ class LoadingScreen{
       } else if (mouseX > 325 && mouseX < 450 && mouseY > 710 && mouseY < 740) {
         PianoTiles.mode = "zen";
       } 
+      //else if ()
    }
    
    void endScreen(){
