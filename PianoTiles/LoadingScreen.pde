@@ -136,10 +136,11 @@ class LoadingScreen{
         PianoTiles.mode = "zen";
       } 
       else if ( mouseX > 325 && mouseX < 450 && mouseY > 820 && mouseY < 850) {
-        PianoTiles.mode = "win";
+        PianoTiles.begin == 
+        endScreen();
       }
       else if ( mouseX > 325 && mouseX < 450 && mouseY > 855 && mouseY < 875) {
-        PianoTiles.mode = "loss";
+        winningScreen();
       }
    }
    
