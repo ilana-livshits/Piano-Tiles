@@ -583,8 +583,16 @@ void mouseClicked() {
   //notes.get(0).play();
 }
 
-void readFile(String filename) throws FileNotFoundException{
+void readFile(String filename) throws FileNotFoundException {
   ArrayList<Integer> result = new ArrayList<>();
-  File text = new File(filename);
-  Scanner input = new Scanner(text);
+  File f = new File(filename);
+  Scanner input = new Scanner(f);
+  while (input.hasNextLine()) {
+    String line = input.nextLine();
+    result.add(Integer.parseInt(line));
+  }
+  input.close();
+  catch (FileNotFoundException ex) {
+    //File not found
+  }
 }
