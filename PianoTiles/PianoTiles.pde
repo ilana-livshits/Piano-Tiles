@@ -346,7 +346,7 @@ void setup() {
   introendscreen = new LoadingScreen();
   background(255);
   init();
-  readFile();
+  readFile("HighScore.txt");
   note1 = new SoundFile(this, "key01.wav");
   note2 = new SoundFile(this, "key02.wav");
   note3 = new SoundFile(this, "key03.wav");
@@ -585,10 +585,10 @@ void mouseClicked() {
   //notes.get(0).play();
 }
 
-int readFile() {
+int readFile(String file) {
   try{
   ArrayList<String> result = new ArrayList<String>();
-  File f = new File("Highscore.txt");
+  File f = new File(file);
   Scanner input = new Scanner(f);
   while (input.hasNextLine()) {
     String line = input.nextLine();
