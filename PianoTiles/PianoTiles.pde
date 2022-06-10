@@ -502,10 +502,12 @@ void draw() {
     speed += acceleration;
   }
   if (!notDead) {
-    if (counter < 20) {
+    if (counter < 20 && counter >= 0) {
       introendscreen.endScreen();
     } else if (counter >= 20) {
       introendscreen.winningScreen();
+    } else if (counter < 0){
+      introendscreen.cheatScreen();
     }
     if (key == 'h') { 
       begin = false;

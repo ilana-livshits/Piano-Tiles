@@ -139,7 +139,9 @@ class LoadingScreen{
         PianoTiles.mode = "zen";
       } 
       else if( mouseX > 40 && mouseX < 165 && mouseY > 585 && mouseY < 620){
-       cheatScreen();
+       PianoTiles.begin = false;
+        PianoTiles.notDead = false;
+        PianoTiles.counter = -3;
       }
       else if ( mouseX > 325 && mouseX < 450 && mouseY > 820 && mouseY < 850) {
         PianoTiles.begin = false;
