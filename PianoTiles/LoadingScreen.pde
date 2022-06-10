@@ -133,14 +133,12 @@ class LoadingScreen{
         PianoTiles.notDead = false;
         PianoTiles.counter = -3;
       }
-      //else if ((PianoTiles.cheatScreenYoN == true) && mouseX > 50 && mouseX < 110 && mouseY > 300 && mouseY < 360) {
+      else if ((PianoTiles.cheatScreenYoN == true) && mouseX > 50 && mouseX < 110 && mouseY > 300 && mouseY < 360) {
         PianoTiles.begin = false;
         PianoTiles.notDead = false;
         PianoTiles.counter = 10;
       }
-      //else if ((PianoTiles.cheatScreenYoN == true) && mouseX > 50 && mouseX < 110 && mouseY > 400 && mouseY < 460) {
-        else if (mouseX > 50 && mouseX < 200 && mouseY > 570 && mouseY < 605) {
-       
+      else if ((PianoTiles.cheatScreenYoN == true) && mouseX > 50 && mouseX < 110 && mouseY > 400 && mouseY < 460) {
         PianoTiles.begin = false;
         PianoTiles.notDead = false;
         PianoTiles.counter = 21;
