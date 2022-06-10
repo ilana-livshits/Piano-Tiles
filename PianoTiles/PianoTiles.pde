@@ -1,4 +1,11 @@
 import processing.sound.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.*;
+import java.io.*;
+
 SoundFile note1;
 SoundFile note2;
 SoundFile note3;
@@ -46,12 +53,6 @@ static int counter;
 static String mode = "arcade";
 static String song = "random";
 int countdown;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-import java.util.ArrayList;
-
 
 void resetyPosition() {
   yPosition = new ArrayList<Float>();
@@ -584,23 +585,28 @@ void mouseClicked() {
   //notes.get(0).play();
 }
 
-int readFile(){
-  ArrayList<Integer> result = new ArrayList<Integer>();
-  Scanner input = new Scanner("HighScore");
+int readFile() {
+  ArrayList<String> result = new ArrayList<String>();
+  Scanner input = new Scanner("HighScore.txt");
   while (input.hasNextLine()) {
     String line = input.nextLine();
-    result.add(Integer.parseInt(line));
-  }
-  int max = result.get(0);
-  for (int i = 0; i < result.size(); i++) {
-    if (result.get(i) > max) {
-      max = result.get(i);
+    result.add(line);
+    //Scanner input = new Scanner("tester.txt");
+    //while (input.hasNextLine()) {
+    //  String line = input.nextLine();
+      System.out.print(line);
+    //  //result.add(Integer.parseInt(line));
     }
+    //int max = result.get(0);
+    //for (int i = 0; i < result.size(); i++) {
+    //  if (result.get(i) > max) {
+    //    max = result.get(i);
+    //  }
+    //}
+    input.close();
+    //for (int i = 0; i < result.size(); i++) {
+    //  System.out.print(result.get(i));
+    //}
+    System.out.println(100000);
+    return -1;
   }
-  input.close();
-  for (int i = 0; i < result.size(); i++) {
-    System.out.print(result.get(i));
-  }
-  System.out.println(100000);
-  return max;
-}
