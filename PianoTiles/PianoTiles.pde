@@ -345,6 +345,7 @@ void setup() {
   introendscreen = new LoadingScreen();
   background(255);
   init();
+  readFile("HighScore.txt");
   note1 = new SoundFile(this, "key01.wav");
   note2 = new SoundFile(this, "key02.wav");
   note3 = new SoundFile(this, "key03.wav");
@@ -583,16 +584,27 @@ void mouseClicked() {
   //notes.get(0).play();
 }
 
-void readFile(String filename) throws FileNotFoundException {
-  ArrayList<Integer> result = new ArrayList<>();
+int readFile(String filename){
+  try {
+  ArrayList<Integer> result = new ArrayList<Integer>();
   File f = new File(filename);
   Scanner input = new Scanner(f);
   while (input.hasNextLine()) {
     String line = input.nextLine();
     result.add(Integer.parseInt(line));
   }
+  int max = result.get(0);
+  for (int i = 0; i < result.size(); i++) {
+    if (result.get(i) > max) {
+      max = result.get(i);
+    }
+  }
   input.close();
+  System.out.println(max);
+  return max;
+  }
   catch (FileNotFoundException ex) {
     //File not found
   }
+  return -1;
 }
