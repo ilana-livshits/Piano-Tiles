@@ -146,6 +146,7 @@ class LoadingScreen{
    }
    
   void cheatScreen(){
+    PianoTiles.cheatScreenYoN = true;
     background(250, 218, 221);
     fill(0);
     textSize(30);
