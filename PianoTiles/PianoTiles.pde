@@ -346,7 +346,7 @@ void setup() {
   introendscreen = new LoadingScreen();
   background(255);
   init();
-  readFile("HighScore.txt");
+  //readFile("HighScore.txt");
   note1 = new SoundFile(this, "key01.wav");
   note2 = new SoundFile(this, "key02.wav");
   note3 = new SoundFile(this, "key03.wav");
@@ -585,37 +585,37 @@ void mouseClicked() {
   //notes.get(0).play();
 }
 
-int readFile(String file) {
-  try{
-  ArrayList<String> result = new ArrayList<String>();
-  File f = new File(file);
-  Scanner input = new Scanner(f);
-  while (input.hasNextLine()) {
-    String line = input.nextLine();
-    result.add(line);
-    //Scanner input = new Scanner("tester.txt");
-    //while (input.hasNextLine()) {
-    //  String line = input.nextLine();
-      System.out.print(line);
-    //  //result.add(Integer.parseInt(line));
-    }
-    //int max = result.get(0);
-    //for (int i = 0; i < result.size(); i++) {
-    //  if (result.get(i) > max) {
-    //    max = result.get(i);
-    //  }
-    //}
-    System.out.println(100000);
-    input.close();
-    return 1;
-    //for (int i = 0; i < result.size(); i++) {
-    //  System.out.print(result.get(i));
-    //}
+//int readFile(String file) {
+//  try{
+//  ArrayList<String> result = new ArrayList<String>();
+//  File f = new File(file);
+//  Scanner input = new Scanner(f);
+//  while (input.hasNextLine()) {
+//    String line = input.nextLine();
+//    result.add(line);
+//    //Scanner input = new Scanner("tester.txt");
+//    //while (input.hasNextLine()) {
+//    //  String line = input.nextLine();
+//      System.out.print(line);
+//    //  //result.add(Integer.parseInt(line));
+//    }
+//    //int max = result.get(0);
+//    //for (int i = 0; i < result.size(); i++) {
+//    //  if (result.get(i) > max) {
+//    //    max = result.get(i);
+//    //  }
+//    //}
+//    System.out.println(100000);
+//    input.close();
+//    return 1;
+//    //for (int i = 0; i < result.size(); i++) {
+//    //  System.out.print(result.get(i));
+//    //}
     
-  }
-  catch (FileNotFoundException ex) {
-    //File not found
-  }
-  System.out.print(-10);
-    return -1;
-  }
+//  }
+//  catch (FileNotFoundException ex) {
+//    //File not found
+//  }
+//  System.out.print(-10);
+//    return -1;
+//  }
