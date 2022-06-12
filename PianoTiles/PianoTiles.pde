@@ -256,6 +256,8 @@ void randomizeblackTiles() {
   }
 }
 
+//you need to know both how far down the screen the tile is and in what row
+
 
 void drawblackTiles() { 
  for (int i = 0; i < blackTiles.size(); i++) {
