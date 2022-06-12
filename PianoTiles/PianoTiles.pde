@@ -30,7 +30,6 @@ ArrayList<SoundFile> twinkle = new ArrayList<SoundFile>();
 ArrayList<SoundFile> furElise = new ArrayList<SoundFile>();
 ArrayList<SoundFile> happyBirthday = new ArrayList<SoundFile>();
 ArrayList<Float> yPosition;
-static ArrayList<Integer> xPosition;
 ArrayList<Integer> blackTiles;
 ArrayList<Boolean> clickedTiles;
 float speed;
@@ -57,12 +56,14 @@ void resetyPosition() {
   }
 }
 
+/*
 void resetxPosition() {
   xPosition = new ArrayList<Integer>();
   for (int i = -1; i < 4; i++) {
     xPosition.add((int)(i * width/4));
   }
 }
+*/
 
 void setupNotes() {
   notes.add(note1);
@@ -256,38 +257,6 @@ void randomizeblackTiles() {
   }
 }
 
-/*
-void drawblackTiles() {
-  // wait 3 seconds before starting to draw black tiles
-  int time = millis()  / 1000;
-  if ((countdown - millis() / 1000 + time) > 3) {
-    for (int i = 0; i < yPosition.size(); i++) {
-      if (blackTiles.get(i) == 0) {
-        fill(0);
-        rect(xPosition.get(i), yPosition.get(i), tileWidth, tileHeight);
-      }
-      if (blackTiles.get(i) == 1) {
-        fill(0);
-        rect(xPosition.get(i), yPosition.get(i), tileWidth, tileHeight);
-      }
-      if (blackTiles.get(i) == 2) {
-        fill(0);
-        rect(xPosition.get(i), yPosition.get(i), tileWidth, tileHeight);
-      }
-      if (blackTiles.get(i) == 3) {
-        fill(0);
-        rect(xPosition.get(i), yPosition.get(i), tileWidth, tileHeight);
-      }
-    }
-  }
-}
-*/
-
-////write a method that generates the tiles at the middle of the screen
-void generateBlackTiles(int x, float y) {
-   rect(x, y, width/4, height/4 + 1);  
-}
-
 
 void drawblackTiles() { 
  for (int i = 0; i < blackTiles.size(); i++) {
@@ -299,56 +268,11 @@ void drawblackTiles() {
      }
      fill(shade);
      noStroke();
-        rect(col, yPosition.get(i), width/4, height/4 + 1);
+      rect(col, yPosition.get(i), width/4, height/4 + 1);
     }
   }
   
-  
-  
-  
-// NOTES 
-    // wait 3 seconds before starting to draw black tiles
-  //int time = millis()  / 1000;
-  //for (int i = 0; i < 3; i++){
-  //    int col = blackTiles.get(i);
-  //    col *= width/4;
-  //    fill(255);
-  //    rect(col, yPosition.get(i), width/4, height/4 + 1);
-  // }
-   // delay(200);
-     // if ((countdown - millis() / 1000 + time) > 3) {
-    //  delay(3000);
-     //draw first 3 tiles white
-        //if (i > 0) {
-      //  if (blackTiles.get(i - 1) == col / width/4) {
-      //    shade = 209;
-      //  }
-      //}
-      ////check if there is a black tile below the clicked tile
-      //if (i < blackTiles.size() - 1) {
-      //  if (blackTiles.get(i + 1) == col / width/4) {
-      //    shade = 209;
-      //  }
-      //}
-      //if (clickedTiles.get(i) && clickedTiles.get(i-1)) {
-      //  shade = 100;
-      //  fill(shade);
-      //  noStroke();
-      //  rect(col, yPosition.get(i), width/4, height/4 + 1);
-      //  rect(col, yPosition.get(i-1), width/4, height/4 + 1);
-      //}
- 
-    //for (int i = 0; i < blackTiles.size(); i++) {
-    //      int col = blackTiles.get(i);
-    //      col *= width/4;
-    //      int shade = 0;
-    //      if (clickedTiles.get(i)) {
-    //        shade = 100;
-    //      }
-    //      fill(shade);
-    //      noStroke();
-    //      rect(col, yPosition.get(i), width/4, height/4 + 1);
-    //    }
+  /*
 
 //method to check if two tiles are touching, and if so, make them both gray
 void checkTiles() {
@@ -370,6 +294,7 @@ void checkTiles() {
     }
   }
 }
+*/
 /*
 //method to check if two tiles are touching, and if so, make them both gray
 void checkTiles() {
@@ -411,11 +336,9 @@ void moveDown() {
     if (yPosition.get(i) >= height) {
       if (!clickedTiles.get(i)) {
         notDead = false;
-      } //else if (counter >= 100) {
-      //end.play();
-      //notDead = false;} else {
+      }
       yPosition.remove(i);
-      xPosition.remove(i);
+      //xPosition.remove(i);
       blackTiles.remove(i);
       clickedTiles.remove(i);
       yPosition.add(0, -height/4 + yPosition.get(0));
@@ -478,9 +401,9 @@ void draw() {
     introendscreen.introScreen();
     time = millis() / 1000;
   } else {
-    generateBlackTiles();
+   // generateBlackTiles();
     drawblackTiles();
-    checkTiles();
+    //checkTiles();
     textSize(20);
     text("score: " + counter, 5, 20);
     textSize(20);
@@ -521,16 +444,12 @@ void init() {
   speed = introendscreen.speed * 2;
   acceleration = 0.002;
   resetyPosition();
-  resetxPosition();
   
   randomizeblackTiles();
   notDead = true;
   begin = false;
   counter = 0;
   countdown = 30;
-  //  tint(255, 127);
-  //fill(120);
-  //rect(0, 450, 500, 500);
 }
 
 void keyPressed() {
@@ -677,5 +596,4 @@ void mouseClicked() {
   }
   if (!notDead)
     end.play();
-  //notes.get(0).play();
 }
