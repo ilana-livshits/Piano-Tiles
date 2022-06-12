@@ -47,7 +47,7 @@ static int counter;
 static String mode = "";
 static String song = "happy birthday";
 static int col;
-static boolean cheatScreenYoN = false;
+//static boolean cheatScreenYoN;
 int countdown;
 
 void resetyPosition() {
@@ -288,22 +288,11 @@ void generateBlackTiles(int x, float y) {
    rect(x, y, width/4, height/4 + 1);  
 }
 
-//method that generates random column of the tiles
-void generateCol(int i){
-    int col = blackTiles.get(i);
-    col *= width/4;
-   //put col into xposition arraylist
-    xPosition.add(col);
-}
 
-
-void drawblackTiles() {
-
-  for (int i = 0; i < blackTiles.size(); i++) {
-      //int col = blackTiles.get(i);
-      //col *= width/4;
-      //xPosition.add(col);
-      generateCol(i);
+void drawblackTiles() { 
+ for (int i = 0; i < blackTiles.size(); i++) {
+      int col = blackTiles.get(i);
+      col *= width/4;
       int shade = 0;
       if (clickedTiles.get(i)) {
       shade = 100; 
@@ -489,6 +478,7 @@ void draw() {
     introendscreen.introScreen();
     time = millis() / 1000;
   } else {
+    generateBlackTiles();
     drawblackTiles();
     checkTiles();
     textSize(20);
@@ -508,9 +498,9 @@ void draw() {
       //cheatScreenYoN = false;
     } else if (counter >= 20) {
       introendscreen.winningScreen();
-      //cheatScreenYoN = false;
+     // cheatScreenYoN = false;
     } else if (counter < 0){
-      cheatScreenYoN = true;
+      //cheatScreenYoN = true;
       introendscreen.cheatScreen();
     }
     if (key == 'h') { 
