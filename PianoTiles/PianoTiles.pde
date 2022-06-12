@@ -46,7 +46,6 @@ static int counter;
 static String mode = "";
 static String song = "happy birthday";
 static int col;
-//static boolean cheatScreenYoN;
 int countdown;
 
 void resetyPosition() {
@@ -295,25 +294,6 @@ void checkTiles() {
   }
 }
 */
-/*
-//method to check if two tiles are touching, and if so, make them both gray
-void checkTiles() {
-  for (int i = 0; i < blackTiles.size(); i++) {
-    if (clickedTiles.get(i)) {
-      for (int j = 0; j < blackTiles.size(); j++) {
-        if (i != j && clickedTiles.get(j)) {
-          if (blackTiles.get(i) == blackTiles.get(j)) {
-            clickedTiles.set(i, false);
-            clickedTiles.set(j, false);
-            blackTiles.set(i, -1);
-            blackTiles.set(j, -1);
-          }
-        }
-      }
-    }
-  }
-}
-*/
 
 public int getFirstNotclickedTiles() {
   for (int i = clickedTiles.size()-1; i >= 0; i--) {
@@ -338,7 +318,6 @@ void moveDown() {
         notDead = false;
       }
       yPosition.remove(i);
-      //xPosition.remove(i);
       blackTiles.remove(i);
       clickedTiles.remove(i);
       yPosition.add(0, -height/4 + yPosition.get(0));
@@ -418,18 +397,14 @@ void draw() {
   if (!notDead) {
     if (counter < 20 && counter >= 0) {
       introendscreen.endScreen();
-      //cheatScreenYoN = false;
     } else if (counter >= 20) {
       introendscreen.winningScreen();
-     // cheatScreenYoN = false;
     } else if (counter < 0){
-      //cheatScreenYoN = true;
       introendscreen.cheatScreen();
     }
     if (key == 'h') { 
       begin = false;
       end.pause();
-      //notes.get(0).play();
       introendscreen.introScreen();
     }
   }
