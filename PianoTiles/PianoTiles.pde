@@ -1,4 +1,11 @@
 import processing.sound.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.*;
+import java.io.*;
+
 SoundFile note1;
 SoundFile note2;
 SoundFile note3;
@@ -43,8 +50,8 @@ int hbCount = 0; //need to init these later
 
 LoadingScreen introendscreen;
 static int counter;
-static String mode = "";
-static String song = "happy birthday";
+static String mode = "arcade";
+static String song = "random";
 int countdown;
 
 void resetyPosition() {
@@ -79,162 +86,162 @@ void setupNotes() {
   notes.add(note22);
   notes.add(note23);
   notes.add(note24);
-  if (song.equals("twinkle")) {
-    twinkle.add(c);
-    twinkle.add(c);
-    twinkle.add(g);
-    twinkle.add(g);
-    twinkle.add(a);
-    twinkle.add(a);
-    twinkle.add(g);
-    twinkle.add(f);
-    twinkle.add(f);
-    twinkle.add(e);
-    twinkle.add(e);
-    twinkle.add(d);
-    twinkle.add(d);
-    twinkle.add(c);
-    twinkle.add(g);
-    twinkle.add(g);
-    twinkle.add(f);
-    twinkle.add(f);
-    twinkle.add(e);
-    twinkle.add(e);
-    twinkle.add(d);
-    twinkle.add(g);
-    twinkle.add(g);
-    twinkle.add(f);
-    twinkle.add(f);
-    twinkle.add(e);
-    twinkle.add(e);
-    twinkle.add(d);
-    twinkle.add(c);
-    twinkle.add(c);
-    twinkle.add(g);
-    twinkle.add(g);
-    twinkle.add(a);
-    twinkle.add(a);
-    twinkle.add(g);
-    twinkle.add(f);
-    twinkle.add(f);
-    twinkle.add(e);
-    twinkle.add(e);
-    twinkle.add(d);
-    twinkle.add(d);
-    twinkle.add(c);
-  }
-  if (song.equals("fur elise")) {
-    furElise.add(e);
-    furElise.add(dS);
-    furElise.add(e);
-    furElise.add(dS);
-    furElise.add(e);
-    furElise.add(b);
-    furElise.add(d);
-    furElise.add(c);
-    furElise.add(a);
-    furElise.add(c);
-    furElise.add(e);
-    furElise.add(a);
-    furElise.add(b);
-    furElise.add(a);
-    furElise.add(d);
-    furElise.add(c);
-    furElise.add(e);
-    furElise.add(e);
-    furElise.add(dS);
-    furElise.add(e);
-    furElise.add(dS);
-    furElise.add(e);
-    furElise.add(b);
-    furElise.add(d);
-    furElise.add(c);
-    furElise.add(a);
-    furElise.add(c);
-    furElise.add(e);
-    furElise.add(a);
-    furElise.add(b);
-    furElise.add(e);
-    furElise.add(c);
-    furElise.add(b);
-    furElise.add(a);
-    furElise.add(a);
-    furElise.add(b);
-    furElise.add(c);
-    furElise.add(d);
-    furElise.add(e);
-    furElise.add(g);
-    furElise.add(f);
-    furElise.add(e);
-    furElise.add(d);
-    furElise.add(f);
-    furElise.add(e);
-    furElise.add(d);
-    furElise.add(c);
-    furElise.add(d);
-    furElise.add(e);
-    furElise.add(d);
-    furElise.add(c);
-    furElise.add(b);
-    furElise.add(e5);
-    furElise.add(e);
-    furElise.add(e5);
-    furElise.add(e5);
-    furElise.add(e);
-    furElise.add(e5);
-    furElise.add(dS);
-    furElise.add(e5);
-    furElise.add(dS);
-    furElise.add(e5);
-    furElise.add(dS);
-    furElise.add(e5);
-    furElise.add(dS);
-    furElise.add(e5);
-    furElise.add(b);
-    furElise.add(d);
-    furElise.add(c);
-    furElise.add(a);
-    furElise.add(c);
-    furElise.add(e);
-    furElise.add(a);
-    furElise.add(b);
-    furElise.add(e);
-    furElise.add(c);
-    furElise.add(b);
-    furElise.add(a);
-    furElise.add(b);
-    furElise.add(c);
-    furElise.add(d);
-    furElise.add(e);
-    furElise.add(a);
-  }
-  if (song.equals("happy birthday")) {
-    happyBirthday.add(g);
-    happyBirthday.add(g);
-    happyBirthday.add(a);
-    happyBirthday.add(g);
-    happyBirthday.add(c);
-    happyBirthday.add(b);
-    happyBirthday.add(g);
-    happyBirthday.add(g);
-    happyBirthday.add(a);
-    happyBirthday.add(g);
-    happyBirthday.add(d);
-    happyBirthday.add(c);
-    happyBirthday.add(g);
-    happyBirthday.add(g);
-    happyBirthday.add(g);
-    happyBirthday.add(e);
-    happyBirthday.add(c);
-    happyBirthday.add(b);
-    happyBirthday.add(a);
-    happyBirthday.add(f);
-    happyBirthday.add(f);
-    happyBirthday.add(e);
-    happyBirthday.add(c);
-    happyBirthday.add(d);
-    happyBirthday.add(c);
-  }
+  //if (song.equals("twinkle")) {
+  twinkle.add(c);
+  twinkle.add(c);
+  twinkle.add(g);
+  twinkle.add(g);
+  twinkle.add(a);
+  twinkle.add(a);
+  twinkle.add(g);
+  twinkle.add(f);
+  twinkle.add(f);
+  twinkle.add(e);
+  twinkle.add(e);
+  twinkle.add(d);
+  twinkle.add(d);
+  twinkle.add(c);
+  twinkle.add(g);
+  twinkle.add(g);
+  twinkle.add(f);
+  twinkle.add(f);
+  twinkle.add(e);
+  twinkle.add(e);
+  twinkle.add(d);
+  twinkle.add(g);
+  twinkle.add(g);
+  twinkle.add(f);
+  twinkle.add(f);
+  twinkle.add(e);
+  twinkle.add(e);
+  twinkle.add(d);
+  twinkle.add(c);
+  twinkle.add(c);
+  twinkle.add(g);
+  twinkle.add(g);
+  twinkle.add(a);
+  twinkle.add(a);
+  twinkle.add(g);
+  twinkle.add(f);
+  twinkle.add(f);
+  twinkle.add(e);
+  twinkle.add(e);
+  twinkle.add(d);
+  twinkle.add(d);
+  twinkle.add(c);
+  //}
+  //if (song.equals("fur elise")) {
+  furElise.add(e);
+  furElise.add(dS);
+  furElise.add(e);
+  furElise.add(dS);
+  furElise.add(e);
+  furElise.add(b);
+  furElise.add(d);
+  furElise.add(c);
+  furElise.add(a);
+  furElise.add(c);
+  furElise.add(e);
+  furElise.add(a);
+  furElise.add(b);
+  furElise.add(a);
+  furElise.add(d);
+  furElise.add(c);
+  furElise.add(e);
+  furElise.add(e);
+  furElise.add(dS);
+  furElise.add(e);
+  furElise.add(dS);
+  furElise.add(e);
+  furElise.add(b);
+  furElise.add(d);
+  furElise.add(c);
+  furElise.add(a);
+  furElise.add(c);
+  furElise.add(e);
+  furElise.add(a);
+  furElise.add(b);
+  furElise.add(e);
+  furElise.add(c);
+  furElise.add(b);
+  furElise.add(a);
+  furElise.add(a);
+  furElise.add(b);
+  furElise.add(c);
+  furElise.add(d);
+  furElise.add(e);
+  furElise.add(g);
+  furElise.add(f);
+  furElise.add(e);
+  furElise.add(d);
+  furElise.add(f);
+  furElise.add(e);
+  furElise.add(d);
+  furElise.add(c);
+  furElise.add(d);
+  furElise.add(e);
+  furElise.add(d);
+  furElise.add(c);
+  furElise.add(b);
+  furElise.add(e5);
+  furElise.add(e);
+  furElise.add(e5);
+  furElise.add(e5);
+  furElise.add(e);
+  furElise.add(e5);
+  furElise.add(dS);
+  furElise.add(e5);
+  furElise.add(dS);
+  furElise.add(e5);
+  furElise.add(dS);
+  furElise.add(e5);
+  furElise.add(dS);
+  furElise.add(e5);
+  furElise.add(b);
+  furElise.add(d);
+  furElise.add(c);
+  furElise.add(a);
+  furElise.add(c);
+  furElise.add(e);
+  furElise.add(a);
+  furElise.add(b);
+  furElise.add(e);
+  furElise.add(c);
+  furElise.add(b);
+  furElise.add(a);
+  furElise.add(b);
+  furElise.add(c);
+  furElise.add(d);
+  furElise.add(e);
+  furElise.add(a);
+  //}
+  //if (song.equals("happy birthday")) {
+  happyBirthday.add(g);
+  happyBirthday.add(g);
+  happyBirthday.add(a);
+  happyBirthday.add(g);
+  happyBirthday.add(c);
+  happyBirthday.add(b);
+  happyBirthday.add(g);
+  happyBirthday.add(g);
+  happyBirthday.add(a);
+  happyBirthday.add(g);
+  happyBirthday.add(d);
+  happyBirthday.add(c);
+  happyBirthday.add(g);
+  happyBirthday.add(g);
+  happyBirthday.add(g);
+  happyBirthday.add(e);
+  happyBirthday.add(c);
+  happyBirthday.add(b);
+  happyBirthday.add(a);
+  happyBirthday.add(f);
+  happyBirthday.add(f);
+  happyBirthday.add(e);
+  happyBirthday.add(c);
+  happyBirthday.add(d);
+  happyBirthday.add(c);
+  //}
 }
 
 void randomizeblackTiles() {
@@ -270,16 +277,16 @@ void drawblackTiles() {
       //  rect(col, yPosition.get(i), width/4, height/4 + 1);
       //  rect(col, yPosition.get(i-1), width/4, height/4 + 1);
       //}
-      shade = 100; 
-     }
-     fill(shade);
-     noStroke();
-     //int rand = (int)(Math.random() * 2) + 1;
+      shade = 100;
+    }
+    fill(shade);
+    noStroke();
+    //int rand = (int)(Math.random() * 2) + 1;
     // if(rand == 1){
-       rect(col, yPosition.get(i), width/4, height/4 + 1);
-     //}else if (rand == 2){
-     //    rect(col, yPosition.get(i), width/4, height/4 + 5);
-     //}
+    rect(col, yPosition.get(i), width/4, height/4 + 1);
+    //}else if (rand == 2){
+    //    rect(col, yPosition.get(i), width/4, height/4 + 5);
+    //}
   }
 }
 
@@ -339,6 +346,7 @@ void setup() {
   introendscreen = new LoadingScreen();
   background(255);
   init();
+  //readFile("HighScore.txt");
   note1 = new SoundFile(this, "key01.wav");
   note2 = new SoundFile(this, "key02.wav");
   note3 = new SoundFile(this, "key03.wav");
@@ -510,7 +518,7 @@ void keyPressed() {
       if (furEliseCount >= furElise.size())
         notDead = false;
     }
-    if (song.equals("happy birthday")) {
+    if (song.equals("bday")) {
       happyBirthday.get(hbCount).play();
       hbCount++;
       counter++;
@@ -525,7 +533,6 @@ void keyPressed() {
   }
   if (!notDead)
     end.play();
-  
 }
 
 void mouseClicked() {
@@ -546,7 +553,7 @@ void mouseClicked() {
     }
   }
   if (notDead) {
-   if (song.equals("twinkle")) {
+    if (song.equals("twinkle")) {
       twinkle.get(twinkleCount).play();
       twinkleCount++;
       counter++;
@@ -560,7 +567,7 @@ void mouseClicked() {
       if (furEliseCount >= furElise.size())
         notDead = false;
     }
-    if (song.equals("happy birthday")) {
+    if (song.equals("bday")) {
       happyBirthday.get(hbCount).play();
       hbCount++;
       counter++;
@@ -577,3 +584,38 @@ void mouseClicked() {
     end.play();
   //notes.get(0).play();
 }
+
+//int readFile(String file) {
+//  try{
+//  ArrayList<String> result = new ArrayList<String>();
+//  File f = new File(file);
+//  Scanner input = new Scanner(f);
+//  while (input.hasNextLine()) {
+//    String line = input.nextLine();
+//    result.add(line);
+//    //Scanner input = new Scanner("tester.txt");
+//    //while (input.hasNextLine()) {
+//    //  String line = input.nextLine();
+//      System.out.print(line);
+//    //  //result.add(Integer.parseInt(line));
+//    }
+//    //int max = result.get(0);
+//    //for (int i = 0; i < result.size(); i++) {
+//    //  if (result.get(i) > max) {
+//    //    max = result.get(i);
+//    //  }
+//    //}
+//    System.out.println(100000);
+//    input.close();
+//    return 1;
+//    //for (int i = 0; i < result.size(); i++) {
+//    //  System.out.print(result.get(i));
+//    //}
+    
+//  }
+//  catch (FileNotFoundException ex) {
+//    //File not found
+//  }
+//  System.out.print(-10);
+//    return -1;
+//  }

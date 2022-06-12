@@ -1,55 +1,55 @@
-class LoadingScreen{
+class LoadingScreen {
   String username = "";
   float speed = 1;
   Stars[] stars = new Stars[200];
   float speedStars;
   PImage bckground;
-  void introScreen(){
+  void introScreen() {
     bckground = loadImage("purpleombre (1).jpg");
-    
+
     size(500, 900);
     //background(250, 218, 221);  //set background to a light pink
     // have a space for the username at the top left of the screen
     /*
         textSize(30);
-        text("Username:", 10, 30);
-        textSize(20);
-        text(username, 100, 30);
+     text("Username:", 10, 30);
+     textSize(20);
+     text(username, 100, 30);
      */
-     //setup
-     for (int i = 0; i < stars.length; i++) {
-        stars[i] = new Stars();
-     }  
-      speedStars = map(mouseX, 0, width, 0, 50);
-    
-      background(bckground); //set background to an image
-     
-      //translate(0, 0);
-      for (int i = 0; i < stars.length; i++) {
-        stars[i].movingStars();
-        stars[i].show();
-        }
-     //GAME NAME and creator names
-     fill(250);
-     rect(30, 20, 440, 200);
-     fill(75, 20, 131);
-     textSize(69);
-     text("PIANO TILES", 50, 100);
-     textSize(30);
-     text("Made by: Ilana Livshits", 80, 150);
-     text("& Salvina Sharipova", 100, 185);
-     
-    
+    //setup
+    for (int i = 0; i < stars.length; i++) {
+      stars[i] = new Stars();
+    }  
+    speedStars = map(mouseX, 0, width, 0, 50);
+
+    background(bckground); //set background to an image
+
+    //translate(0, 0);
+    for (int i = 0; i < stars.length; i++) {
+      stars[i].movingStars();
+      stars[i].show();
+    }
+    //GAME NAME and creator names
+    fill(250);
+    rect(30, 20, 440, 200);
+    fill(75, 20, 131);
+    textSize(69);
+    text("PIANO TILES", 50, 100);
+    textSize(30);
+    text("Made by: Ilana Livshits", 80, 150);
+    text("& Salvina Sharipova", 100, 185);
+
+
     //write the instructions in the middle of the screen 
     int allwidth = 500;
     int allheight = 900;
     fill(0);
     textSize(30);
-    
+
     //update colors and add lines and update buttons and aesthetic
     //update background for tiles. make tiles appear at half of screen.
     //create instructions button which pops up the instructions
-   
+
     text("Tap on the black tiles in order", 30, 280);
     text("as they appear on the screen", 30, 315);
     text("Be careful not to tap on the", 30, 365);
@@ -61,67 +61,103 @@ class LoadingScreen{
     // have a space for the speed at the top right of the screen
     //display 5 boxes with the numbers 1-5 in it next to the speed
     textSize(30);
-    text("Difficulty: " + (int)speed , 55, 650);
+    text("Difficulty: " + (int)speed, 55, 650);
     textSize(23);
     fill(219, 196, 249);
     rect(50, 670, 200, 30);
     fill(250);
     text("1 = easy", 65, 694);
-    
+
     fill(206, 161, 250);
     rect(50, 710, 200, 30);
     fill(250);
     text("2 = medium", 65, 734);
-    
+
     fill(178, 112, 243);
     rect(50, 750, 200, 30);
     fill(250);
     text("3 = hard", 65, 774);
-    
+
     fill(154, 64, 245);
     rect(50, 790, 200, 30);
     fill(250);
     text("4 = very hard", 65, 814);
-    
+
     fill(114, 4, 225);
     rect(50, 830, 200, 30);
     fill(250);
     text("5 = impossible", 65, 854);
-    
+
     textSize(30);
     fill(0);
-    text("Mode: " + PianoTiles.mode , 290, 650);
+    text("Mode: " + PianoTiles.mode, 290, 590);
     textSize(23);
     fill(157, 223, 233);
-    rect(300, 670, 125, 30);
+    rect(300, 610, 125, 30);
     fill(0);
-    text("arcade", 325, 694);
-    
+    text("arcade", 325, 634);
+
     fill(153, 187, 247);
-    rect(300, 710, 125, 30);
+    rect(300, 650, 125, 30);
     fill(0);
-    text("zen", 340, 734);
+    text("zen", 340, 674);
+
+    textSize(30);
+    fill(0);
+    text("Song: " + PianoTiles.song, 290, 715);
+
+    textSize(15);
+    fill(182,225,240);
+    rect(300, 730, 125, 30);
+    fill(0);
+    text("happy birthday", 310, 750);
+
+    textSize(15);
+    fill(155,180,232);
+    rect(300, 765, 125, 50);
+    fill(0);
+    text("twinkle twinkle \nlittle star", 310, 785);
+
+    textSize(15);
+    fill(164,155,232);
+    rect(300, 820, 125, 30);
+    fill(0);
+    text("fur elise", 310, 840);
+
+    textSize(15);
+    fill(164,116,207);
+    rect(300, 855, 125, 30);
+    fill(0);
+    text("random", 310, 875);
   }
-   void mouseClicked(){
-     //if mouse is on the colors above, set the speed to that number
-      if (mouseX > 20 && mouseX < 270 && mouseY > 670 && mouseY < 700) {
-        speed = 1;
-      } else if (mouseX > 20 && mouseX < 270 && mouseY > 710 && mouseY < 740) {
-        speed = 2;
-      } else if (mouseX > 20 && mouseX < 270 && mouseY > 750 && mouseY < 780) {
-        speed = 3;
-      } else if (mouseX > 20 && mouseX < 270 && mouseY > 790 && mouseY < 820) {
-        speed = 4;
-      } else if (mouseX > 20 && mouseX < 270 && mouseY > 830 && mouseY < 860) {
-        speed = 5;
-      } else if (mouseX > 325 && mouseX < 450 && mouseY > 670 && mouseY < 700) {
-        PianoTiles.mode = "arcade";
-      } else if (mouseX > 325 && mouseX < 450 && mouseY > 710 && mouseY < 740) {
-        PianoTiles.mode = "zen";
-      } 
-   }
-   
-   void endScreen(){
+  void mouseClicked() {
+    //if mouse is on the colors above, set the speed to that number
+    if (mouseX > 20 && mouseX < 270 && mouseY > 670 && mouseY < 700) {
+      speed = 1;
+    } else if (mouseX > 20 && mouseX < 270 && mouseY > 710 && mouseY < 740) {
+      speed = 2;
+    } else if (mouseX > 20 && mouseX < 270 && mouseY > 750 && mouseY < 780) {
+      speed = 3;
+    } else if (mouseX > 20 && mouseX < 270 && mouseY > 790 && mouseY < 820) {
+      speed = 4;
+    } else if (mouseX > 20 && mouseX < 270 && mouseY > 830 && mouseY < 860) {
+      speed = 5;
+    } else if (mouseX > 325 && mouseX < 450 && mouseY > 610 && mouseY < 640) {
+      PianoTiles.mode = "arcade";
+    } else if (mouseX > 325 && mouseX < 450 && mouseY > 650 && mouseY < 680) {
+      PianoTiles.mode = "zen";
+    } else if (mouseX > 325 && mouseX < 450 && mouseY > 730 && mouseY < 760) {
+      PianoTiles.song = "bday";
+    } else if (mouseX > 325 && mouseX < 450 && mouseY > 765 && mouseY < 815) {
+      PianoTiles.song = "twinkle";
+    } else if (mouseX > 325 && mouseX < 450 && mouseY > 820 && mouseY < 850) {
+      PianoTiles.song = "fur elise";
+    } else if (mouseX > 325 && mouseX < 450 && mouseY > 855 && mouseY < 885) {
+      PianoTiles.song = "random";
+    }
+  }
+
+  void endScreen() {
     background(250, 218, 221);
     fill(0);
     textSize(30);
@@ -129,15 +165,15 @@ class LoadingScreen{
     text(PianoTiles.counter + " tiles were tapped", 50, 100);
     text("Click 'h' to return to the home screen", 50, 150);
     for (int i = 0; i < stars.length; i++) {
-        stars[i] = new Stars();
-     }  
-      speedStars = map(mouseX, 0, width, 0, 50);
-      background(0); //set background to an image
-      //translate(0, 0);
-      for (int i = 0; i < stars.length; i++) {
-        stars[i].movingStars();
-        stars[i].show();
-        }
+      stars[i] = new Stars();
+    }  
+    speedStars = map(mouseX, 0, width, 0, 50);
+    background(0); //set background to an image
+    //translate(0, 0);
+    for (int i = 0; i < stars.length; i++) {
+      stars[i].movingStars();
+      stars[i].show();
+    }
     fill(255);
     textSize(60);
     text("Good try!", 110, 360);
@@ -146,20 +182,19 @@ class LoadingScreen{
     textSize(40);
     text("Click 'h' to return", 70, 520);
     text("to the home screen", 53, 570);
-
   }
 
-   void winningScreen(){ //placeholder for now. when you reach 50 tiles, display:
+  void winningScreen() { //placeholder for now. when you reach 50 tiles, display:
     for (int i = 0; i < stars.length; i++) {
-        stars[i] = new Stars();
-     }  
-      speedStars = map(mouseX, 0, width, 0, 50);
-      background(106, 51, 154); //set background to an image
-      //translate(0, 0);
-      for (int i = 0; i < stars.length; i++) {
-        stars[i].movingStars();
-        stars[i].show();
-        }
+      stars[i] = new Stars();
+    }  
+    speedStars = map(mouseX, 0, width, 0, 50);
+    background(106, 51, 154); //set background to an image
+    //translate(0, 0);
+    for (int i = 0; i < stars.length; i++) {
+      stars[i].movingStars();
+      stars[i].show();
+    }
     fill(255);
     textSize(60);
     text("You won!", 110, 360);
@@ -169,6 +204,4 @@ class LoadingScreen{
     text("Click 'h' to return", 70, 520);
     text("to the home screen", 53, 570);
   }
-
-   
 }
