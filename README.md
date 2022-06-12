@@ -53,4 +53,18 @@ Relaxing Sunday off. <br />
 **6/6/22** <br />
 *Ilana Livshits:* Fully updated the prototype/ documentation. <br /> 
 *Salvina Sharipova:* Merged all of our branches. New branch for more functionality, where two blocks back to back should both turn gray. Made the blocks appear a few seconds after the player loads in the game. <br />
-
+**6/7/22** <br />
+*Ilana Livshits:* I created buttons that allow the user to select the songs they wish to play, including "Twinkle Twinkle Little Star," "Happy Birthday," "Fur Elise." and random piano notes. <br /> 
+*Salvina Sharipova:* <br />
+**6/8/22** <br />
+*Ilana Livshits:*  I fixed issues with a default song not being set up. Previously, notes were only played when a song was chosen. Now, the song defaults to random and can later be chosen. <br /> 
+*Salvina Sharipova:* <br />
+**6/9/22** <br />
+Obligatory Chancellor's Day break <br /> 
+**6/10/22** <br />
+*Ilana Livshits:* Attempted to make a txt file that stores high scores. However, this did not properly function due to issues with the scanner. This idea will not be implemented in the final version. <br /> 
+*Salvina Sharipova:* <br />
+**6/11/22** <br />
+Relaxing Saturday off <br />
+**6/12/22** <br />
+Final fix of code and merging! We're finally done!
