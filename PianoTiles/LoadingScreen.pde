@@ -226,11 +226,13 @@ class LoadingScreen { //<>//
   if(PianoTiles.chooser == "win screen"){
    // while( (cheatCountdown - millis() / 1000 + cheatTime) > 0){
     winningScreen();
+    PianoTiles.chooser = "";
    // }
   }
   else if(PianoTiles.chooser == "losing screen"){
   //  while( (cheatCountdown - millis() / 1000 + cheatTime) > 0){
       endScreen();
+      PianoTiles.chooser = "";
      // }
   }
 }

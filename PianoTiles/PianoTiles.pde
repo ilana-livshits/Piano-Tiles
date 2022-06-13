@@ -550,7 +550,9 @@ void keyPressed() {
       }
     }
   }
+  try{
   if (notDead) {
+
     if (song.equals("twinkle")) {
       twinkle.get(twinkleCount).play();
       twinkleCount++;
@@ -558,6 +560,7 @@ void keyPressed() {
       if (twinkleCount >= twinkle.size())
         notDead = false;
     }
+   
     if (song.equals("fur elise")) {
       furElise.get(furEliseCount).play();
       furEliseCount++;
@@ -578,6 +581,10 @@ void keyPressed() {
       counter++;
     }
   }
+  }catch(Exception e){
+      introendscreen.introScreen();
+      
+    }
   //if (!notDead)
   //  end.play();
 }
@@ -600,6 +607,7 @@ void mouseClicked() {
       }
     }
   }
+  try{
   if (notDead) {
     if (song.equals("twinkle")) {
       twinkle.get(twinkleCount).play();
@@ -608,6 +616,7 @@ void mouseClicked() {
       if (twinkleCount >= twinkle.size())
         notDead = false;
     }
+    
     if (song.equals("fur elise")) {
       furElise.get(furEliseCount).play();
       furEliseCount++;
@@ -628,7 +637,11 @@ void mouseClicked() {
       counter++;
     }
   }
-  if (!notDead )
+}catch(Exception e){
+      introendscreen.introScreen();
+      
+    }
+  if (!notDead && chooser != "win screen" && chooser != "losing screen")
     end.play();
 }
 
