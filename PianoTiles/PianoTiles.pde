@@ -72,6 +72,10 @@ void resetxPosition() {
 }
 */
 
+void resetCounter() {
+  counter = 0;
+}
+
 void setupNotes() {
   notes.add(note1);
   notes.add(note2);
@@ -359,14 +363,13 @@ void setclickedTiles(int n) {
 }
 
 void moveDown() {
-   countdown = 30;
-   time = millis() / 1000; 
-   if((countdown - millis() / 1000 + time) > 3){
   for (int i = 0; i < yPosition.size(); i++) {
     if (yPosition.get(i) >= height) {
       if (!clickedTiles.get(i)) {
         notDead = false;
-      }
+      } //else if (counter >= 100) {
+      //end.play();
+      //notDead = false;} else {
       yPosition.remove(i);
       blackTiles.remove(i);
       clickedTiles.remove(i);
@@ -376,7 +379,6 @@ void moveDown() {
     } else {
       yPosition.set(i, (float)(yPosition.get(i) + speed));
     }
-   }
   }
 }
 
@@ -424,7 +426,7 @@ void setup() {
   setupNotes();
 }
 
-static int time;
+int time;
 void draw() {
   background(255);
   // set up introendscreen
@@ -460,6 +462,8 @@ void draw() {
     }
     if (key == 'h') { 
       begin = false;
+      notDead = false;
+      resetCounter();
       end.pause();
       introendscreen.introScreen();
     }

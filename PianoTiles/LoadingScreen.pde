@@ -52,10 +52,10 @@ class LoadingScreen {
 
     text("Tap on the black tiles in order", 30, 270);
     text("as they appear on the screen", 30, 305);
-    text("Be careful not to tap on the", 30, 355);
-    text("white tiles!", 30, 390);
-    text("To select the difficulty, choose", 30, 440);
-    text("a number from 1 to 5.", 30, 475); //1 = easy, 2 = medium, 3 = hard, 4 = very hard, 5 = impossible
+    text("You can also use 1, 2, 3, 4", 30, 355);
+    text("keys for the 4 columns.", 30, 390);
+    text("Select the difficulty, mode,", 30, 440);
+    text("and song.", 30, 475); //1 = easy, 2 = medium, 3 = hard, 4 = very hard, 5 = impossible
     text("Click 's' to start the game.", 30, 525); //Type in a username and click enter
     text("Have fun!", 30, 560);
     // have a space for the speed at the top right of the screen
@@ -184,13 +184,15 @@ class LoadingScreen {
         PianoTiles.begin = false;
         PianoTiles.notDead = false;
         PianoTiles.counter = 10;
-        PianoTiles.picker = false;
+       // PianoTiles.picker = false;
+         end.pause();
       }
       else if (mouseX > 145 && mouseX < 275 && mouseY > 600 && mouseY < 620) {
         PianoTiles.begin = false;
         PianoTiles.notDead = false;
         PianoTiles.counter = 21;
-        PianoTiles.picker = false;
+        //PianoTiles.picker = false;
+        end.pause();
       }
   } //<>//
   
