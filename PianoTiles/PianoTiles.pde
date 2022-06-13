@@ -55,6 +55,7 @@ static String mode = "arcade";
 static String song = "random";
 static int col;
 int countdown;
+static String chooser;
 
 void resetyPosition() {
   yPosition = new ArrayList<Float>();
@@ -425,6 +426,8 @@ void setup() {
   setupNotes();
 }
 
+   
+
 int time;
 void draw() {
   background(255);
@@ -580,6 +583,7 @@ void keyPressed() {
 }
 
 void mouseClicked() {
+  introendscreen.cheatScreen();
   if (begin == false) {
     introendscreen.mouseClicked();
   } else {
