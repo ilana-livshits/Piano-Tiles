@@ -47,7 +47,7 @@ int index;
 int twinkleCount = 0;
 int furEliseCount = 0;
 int hbCount = 0; //need to init these later
-//static boolean picker = false;
+static boolean picker = false;
 
 LoadingScreen introendscreen;
 static int counter;
@@ -55,8 +55,6 @@ static String mode = "arcade";
 static String song = "random";
 static int col;
 int countdown;
-
-static String cheatsMode;
 
 void resetyPosition() {
   yPosition = new ArrayList<Float>();
@@ -327,7 +325,6 @@ void drawblackTiles() {
   */
   
   /*
-
 //method to check if two tiles are touching, and if so, make them both gray
 void checkTiles() {
   for (int i = 0; i < blackTiles.size(); i++) { 
@@ -447,14 +444,17 @@ void draw() {
     }
   }
   if (begin && notDead) {
+    picker = true;
     moveDown();
     speed += acceleration;
   }
   if (!notDead) {
-    if ((counter < 20 && counter >= 0) || cheatsMode == "losing screen") {
+    if (counter < 20 && counter >= 0) {
       introendscreen.endScreen();
-    } else if (counter >= 20 || cheatsMode == "win screen") {
+      picker = false;
+    } else if (counter >= 20) {
       introendscreen.winningScreen();
+      picker = false;
     //} else if (counter < 0){
     //  introendscreen.cheatScreen();
     //  picker = false;
@@ -463,7 +463,6 @@ void draw() {
       begin = false;
       notDead = true;
       resetCounter();
-    //  note1.play();
       //end.pause();
       introendscreen.introScreen();
     }
@@ -579,8 +578,8 @@ void keyPressed() {
       counter++;
     }
   }
-  if (!notDead)
-    end.play();
+  //if (!notDead)
+  //  end.play();
 }
 
 void mouseClicked() {

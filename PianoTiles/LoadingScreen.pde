@@ -1,4 +1,4 @@
-class LoadingScreen {
+class LoadingScreen { //<>//
   String username = "";
   float speed = 1;
   Stars[] stars = new Stars[200];
@@ -182,21 +182,18 @@ class LoadingScreen {
     //    PianoTiles.picker = false;
     //  }
       else if (mouseX > 145 && mouseX < 275 && mouseY > 570 && mouseY < 590) {
-        //PianoTiles.begin = false;
-        //PianoTiles.notDead = true;
-        //PianoTiles.counter = 100;
-        PianoTiles.cheatsMode = "win screen";
+        PianoTiles.begin = false;
+        PianoTiles.notDead = false;
+        PianoTiles.counter = 10;
        // PianoTiles.picker = false;
         // end.pause();
       }
       else if (mouseX > 145 && mouseX < 275 && mouseY > 600 && mouseY < 620) {
-        PianoTiles.cheatsMode = "losing screen";
-        //PianoTiles.begin = false;
-        //PianoTiles.notDead = true;
-        //PianoTiles.counter = 0;
-        //endScreen();   
+        PianoTiles.begin = false;
+        PianoTiles.notDead = false;
+        PianoTiles.counter = 21;
         //PianoTiles.picker = false;
-       // end.pause();
+      ///  end.pause();
       }
   } //<>//
   
