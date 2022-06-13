@@ -184,16 +184,17 @@ class LoadingScreen {
       else if (mouseX > 145 && mouseX < 275 && mouseY > 570 && mouseY < 590) {
         PianoTiles.begin = false;
         PianoTiles.notDead = false;
-        PianoTiles.counter = 10;
+        PianoTiles.counter = 100;
        // PianoTiles.picker = false;
-         end.pause();
+        // end.pause();
       }
       else if (mouseX > 145 && mouseX < 275 && mouseY > 600 && mouseY < 620) {
-        PianoTiles.begin = false;
+        //PianoTiles.begin = false;
         PianoTiles.notDead = false;
-        PianoTiles.counter = 21;
+        PianoTiles.counter = 0;
+        //endScreen();   
         //PianoTiles.picker = false;
-        end.pause();
+       // end.pause();
       }
   } //<>//
   
