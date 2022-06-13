@@ -56,6 +56,8 @@ static String song = "random";
 static int col;
 int countdown;
 
+static String cheatsMode;
+
 void resetyPosition() {
   yPosition = new ArrayList<Float>();
   for (int i = -1; i < 4; i++) {
@@ -449,9 +451,9 @@ void draw() {
     speed += acceleration;
   }
   if (!notDead) {
-    if (counter < 20 && counter >= 0) {
+    if ((counter < 20 && counter >= 0) || cheatsMode == "losing screen") {
       introendscreen.endScreen();
-    } else if (counter >= 20) {
+    } else if (counter >= 20 || cheatsMode == "win screen") {
       introendscreen.winningScreen();
     //} else if (counter < 0){
     //  introendscreen.cheatScreen();
@@ -461,6 +463,7 @@ void draw() {
       begin = false;
       notDead = true;
       resetCounter();
+    //  note1.play();
       //end.pause();
       introendscreen.introScreen();
     }
