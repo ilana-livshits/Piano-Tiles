@@ -102,11 +102,16 @@ class LoadingScreen {
     fill(0);
     text("zen", 340, 674);
     
+    //cheats
     fill(223, 148, 148);
-    rect(55, 585, 125, 30);
+    rect(145, 600, 60, 20);
+    
+    
+    fill(223, 148, 148);
+    rect(145, 600, 60, 20);
     fill(0);
-    textSize(25);
-    text("CHEATS" , 68, 610);
+    textSize(23);
+    text("CHEATS: " , 30, 600);
 
     textSize(30);
     fill(0);
@@ -181,9 +186,9 @@ class LoadingScreen {
         PianoTiles.picker = false;
       }
   } //<>//
-   
+  
+   /*
   void cheatScreen(){
-    //PianoTiles.cheatScreenYoN = true;
     background(250, 218, 221);
     fill(0);
     textSize(30);
@@ -202,6 +207,7 @@ class LoadingScreen {
     fill(0);
     text("losing screen", 130, 445);
    }
+   */
    
    void endScreen(){
     background(250, 218, 221);
