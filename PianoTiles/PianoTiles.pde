@@ -461,7 +461,7 @@ void draw() {
       begin = false;
       notDead = true;
       resetCounter();
-      end.pause();
+      //end.pause();
       introendscreen.introScreen();
     }
   }
