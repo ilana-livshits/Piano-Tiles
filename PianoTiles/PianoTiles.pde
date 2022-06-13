@@ -47,7 +47,7 @@ int index;
 int twinkleCount = 0;
 int furEliseCount = 0;
 int hbCount = 0; //need to init these later
-static boolean picker = false;
+//static boolean picker = false;
 
 LoadingScreen introendscreen;
 static int counter;
@@ -444,17 +444,14 @@ void draw() {
     }
   }
   if (begin && notDead) {
-    picker = true;
     moveDown();
     speed += acceleration;
   }
   if (!notDead) {
     if (counter < 20 && counter >= 0) {
       introendscreen.endScreen();
-      picker = false;
     } else if (counter >= 20) {
       introendscreen.winningScreen();
-      picker = false;
     //} else if (counter < 0){
     //  introendscreen.cheatScreen();
     //  picker = false;

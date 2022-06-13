@@ -4,6 +4,7 @@ class LoadingScreen { //<>//
   Stars[] stars = new Stars[200];
   float speedStars;
   PImage bckground;
+  String chooser;
   void introScreen() {
     bckground = loadImage("purpleombre (1).jpg");
 
@@ -182,20 +183,19 @@ class LoadingScreen { //<>//
     //    PianoTiles.picker = false;
     //  }
       else if (mouseX > 145 && mouseX < 275 && mouseY > 570 && mouseY < 590) {
-        PianoTiles.begin = false;
-        PianoTiles.notDead = false;
-        PianoTiles.counter = 10;
-       // PianoTiles.picker = false;
-        // end.pause();
+        //PianoTiles.begin = false;
+        //PianoTiles.notDead = false;
+        //PianoTiles.counter = 99;
+        chooser = "win screen";
+        
       }
       else if (mouseX > 145 && mouseX < 275 && mouseY > 600 && mouseY < 620) {
-        PianoTiles.begin = false;
-        PianoTiles.notDead = false;
-        PianoTiles.counter = 21;
-        //PianoTiles.picker = false;
-      ///  end.pause();
+        //PianoTiles.begin = false;
+        //PianoTiles.notDead = false;
+        //PianoTiles.counter = 0;
+        chooser = "losing screen";
       }
-  } //<>//
+  }
   
    /*
   void cheatScreen(){
@@ -218,6 +218,10 @@ class LoadingScreen { //<>//
     text("losing screen", 130, 445);
    }
    */
+   
+   void cheatScreen(){
+     if()
+   }
    
    void endScreen(){
     background(250, 218, 221);
