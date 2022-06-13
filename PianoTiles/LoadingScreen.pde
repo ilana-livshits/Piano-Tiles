@@ -50,14 +50,14 @@ class LoadingScreen {
     //update background for tiles. make tiles appear at half of screen.
     //create instructions button which pops up the instructions
 
-    text("Tap on the black tiles in order", 30, 280);
-    text("as they appear on the screen", 30, 315);
-    text("Be careful not to tap on the", 30, 365);
-    text("white tiles!", 30, 400);
-    text("To select the difficulty, choose", 30, 450);
-    text("a number from 1 to 5.", 30, 485); //1 = easy, 2 = medium, 3 = hard, 4 = very hard, 5 = impossible
-    text("Click 's' to start the game.", 30, 535); //Type in a username and click enter
-    text("Have fun!", 30, 570);
+    text("Tap on the black tiles in order", 30, 270);
+    text("as they appear on the screen", 30, 305);
+    text("Be careful not to tap on the", 30, 355);
+    text("white tiles!", 30, 390);
+    text("To select the difficulty, choose", 30, 440);
+    text("a number from 1 to 5.", 30, 475); //1 = easy, 2 = medium, 3 = hard, 4 = very hard, 5 = impossible
+    text("Click 's' to start the game.", 30, 525); //Type in a username and click enter
+    text("Have fun!", 30, 560);
     // have a space for the speed at the top right of the screen
     //display 5 boxes with the numbers 1-5 in it next to the speed
     textSize(30);
@@ -101,6 +101,12 @@ class LoadingScreen {
     rect(300, 650, 125, 30);
     fill(0);
     text("zen", 340, 674);
+    
+    fill(223, 148, 148);
+    rect(55, 585, 125, 30);
+    fill(0);
+    textSize(25);
+    text("CHEATS" , 68, 610);
 
     textSize(30);
     fill(0);
@@ -155,9 +161,49 @@ class LoadingScreen {
     } else if (mouseX > 325 && mouseX < 450 && mouseY > 855 && mouseY < 885) {
       PianoTiles.song = "random";
     }
-  }
-
-  void endScreen() {
+    else if(mouseX > 40 && mouseX < 165 && mouseY > 585 && mouseY < 620){
+       PianoTiles.begin = false;
+        PianoTiles.notDead = false;
+        PianoTiles.counter = -3;
+        //PianoTiles.cheatScreenYoN = true;
+        PianoTiles.picker = false;
+      }
+      else if (mouseX > 50 && mouseX < 110 && mouseY > 300 && mouseY < 360) {
+        PianoTiles.begin = false;
+        PianoTiles.notDead = false;
+        PianoTiles.counter = 10;
+        PianoTiles.picker = false;
+      }
+      else if (mouseX > 50 && mouseX < 110 && mouseY > 400 && mouseY < 460) {
+        PianoTiles.begin = false;
+        PianoTiles.notDead = false;
+        PianoTiles.counter = 21;
+        PianoTiles.picker = false;
+      }
+  } //<>//
+   
+  void cheatScreen(){
+    //PianoTiles.cheatScreenYoN = true;
+    background(250, 218, 221);
+    fill(0);
+    textSize(30);
+    text("Choose which ending screen", 50, 200);
+    text("you would like to see:", 50, 250);
+    
+    fill(149, 230, 159);
+    rect(50, 300, 400, 60);
+    textSize(40);
+    fill(0);
+    text("win screen", 150, 345);
+    
+    fill(189, 107, 89);
+    rect(50, 400, 400, 60);
+    textSize(40);
+    fill(0);
+    text("losing screen", 130, 445);
+   }
+   
+   void endScreen(){
     background(250, 218, 221);
     fill(0);
     textSize(30);

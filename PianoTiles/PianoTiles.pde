@@ -41,17 +41,19 @@ ArrayList<Integer> blackTiles;
 ArrayList<Boolean> clickedTiles;
 float speed;
 float acceleration;
-boolean notDead = false;
-boolean begin = false;
+static boolean notDead = false;
+static boolean begin = false;
 int index;
 int twinkleCount = 0;
 int furEliseCount = 0;
 int hbCount = 0; //need to init these later
+static boolean picker = false;
 
 LoadingScreen introendscreen;
 static int counter;
 static String mode = "arcade";
 static String song = "random";
+static int col;
 int countdown;
 
 void resetyPosition() {
@@ -60,6 +62,15 @@ void resetyPosition() {
     yPosition.add((float)(i * height/4));
   }
 }
+
+/*
+void resetxPosition() {
+  xPosition = new ArrayList<Integer>();
+  for (int i = -1; i < 4; i++) {
+    xPosition.add((int)(i * width/4));
+  }
+}
+*/
 
 void setupNotes() {
   notes.add(note1);
@@ -289,24 +300,50 @@ void drawblackTiles() {
     //}
   }
 }
+    
+    
+//you need to know both how far down the screen the tile is and in what row
+
+/*
+void drawblackTiles() { 
+ for (int i = 0; i < blackTiles.size(); i++) {
+      int col = blackTiles.get(i);
+      col *= width/4;
+      int shade = 0;
+      if (clickedTiles.get(i)) {
+      shade = 100; 
+     }
+     fill(shade);
+     noStroke();
+      rect(col, yPosition.get(i), width/4, height/4 + 1);
+    }
+  }
+  */
+  
+  /*
 
 //method to check if two tiles are touching, and if so, make them both gray
 void checkTiles() {
-  for (int i = 0; i < blackTiles.size(); i++) {
-    if (clickedTiles.get(i)) {
-      for (int j = 0; j < blackTiles.size(); j++) {
-        if (i != j && clickedTiles.get(j)) {
-          if (blackTiles.get(i) == blackTiles.get(j)) {
-            clickedTiles.set(i, false);
-            clickedTiles.set(j, false);
-            blackTiles.set(i, -1);
-            blackTiles.set(j, -1);
+  for (int i = 0; i < blackTiles.size(); i++) { 
+    for (int j = 0; j < blackTiles.size(); j++) {
+      //check if tiles are in same column
+      if (xPosition.get(i) == xPosition.get(j)) {
+        //check if tiles are touching top and bottom
+        if (yPosition.get(i) == yPosition.get(j) + height/4 || yPosition.get(i) == yPosition.get(j) - height/4) {
+          //if so, make them gray when clicked
+          if (clickedTiles.get(i) && clickedTiles.get(j)) {
+            fill(100);
+            noStroke();
+            generateBlackTiles(xPosition.get(i), yPosition.get(i));
           }
         }
+     
       }
     }
   }
 }
+*/
+
 
 public int getFirstNotclickedTiles() {
   for (int i = clickedTiles.size()-1; i >= 0; i--) {
@@ -322,13 +359,14 @@ void setclickedTiles(int n) {
 }
 
 void moveDown() {
+   countdown = 30;
+   time = millis() / 1000; 
+   if((countdown - millis() / 1000 + time) > 3){
   for (int i = 0; i < yPosition.size(); i++) {
     if (yPosition.get(i) >= height) {
       if (!clickedTiles.get(i)) {
         notDead = false;
-      } //else if (counter >= 100) {
-      //end.play();
-      //notDead = false;} else {
+      }
       yPosition.remove(i);
       blackTiles.remove(i);
       clickedTiles.remove(i);
@@ -338,6 +376,7 @@ void moveDown() {
     } else {
       yPosition.set(i, (float)(yPosition.get(i) + speed));
     }
+   }
   }
 }
 
@@ -384,7 +423,8 @@ void setup() {
   g = new SoundFile(this, "g.wav");
   setupNotes();
 }
-int time;
+
+static int time;
 void draw() {
   background(255);
   // set up introendscreen
@@ -392,8 +432,9 @@ void draw() {
     introendscreen.introScreen();
     time = millis() / 1000;
   } else {
+   // generateBlackTiles();
     drawblackTiles();
-    checkTiles();
+    //checkTiles();
     textSize(20);
     text("score: " + counter, 5, 20);
     textSize(20);
@@ -402,19 +443,24 @@ void draw() {
     }
   }
   if (begin && notDead) {
+    picker = true;
     moveDown();
     speed += acceleration;
   }
   if (!notDead) {
-    if (counter < 20) {
+    if (counter < 20 && counter >= 0) {
       introendscreen.endScreen();
+      picker = false;
     } else if (counter >= 20) {
       introendscreen.winningScreen();
+      picker = false;
+    } else if (counter < 0){
+      introendscreen.cheatScreen();
+      picker = false;
     }
     if (key == 'h') { 
       begin = false;
       end.pause();
-      //notes.get(0).play();
       introendscreen.introScreen();
     }
   }
@@ -429,14 +475,12 @@ void init() {
   speed = introendscreen.speed * 2;
   acceleration = 0.002;
   resetyPosition();
+  
   randomizeblackTiles();
   notDead = true;
   begin = false;
   counter = 0;
   countdown = 30;
-  //  tint(255, 127);
-  //fill(120);
-  //rect(0, 450, 500, 500);
 }
 
 void keyPressed() {
@@ -531,7 +575,7 @@ void keyPressed() {
       counter++;
     }
   }
-  if (!notDead)
+  if (!notDead && picker == true)
     end.play();
 }
 
@@ -580,9 +624,8 @@ void mouseClicked() {
       counter++;
     }
   }
-  if (!notDead)
+  if (!notDead )
     end.play();
-  //notes.get(0).play();
 }
 
 //int readFile(String file) {
@@ -618,4 +661,4 @@ void mouseClicked() {
 //  }
 //  System.out.print(-10);
 //    return -1;
-//  }
+//  }import processing.sound.*;
