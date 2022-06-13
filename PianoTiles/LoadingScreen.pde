@@ -1,4 +1,4 @@
-class LoadingScreen { //<>//
+class LoadingScreen { //<>// //<>//
   String username = "";
   float speed = 1;
   Stars[] stars = new Stars[200];
