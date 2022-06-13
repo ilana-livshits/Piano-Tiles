@@ -454,9 +454,9 @@ void draw() {
     } else if (counter >= 20) {
       introendscreen.winningScreen();
       picker = false;
-    } else if (counter < 0){
-      introendscreen.cheatScreen();
-      picker = false;
+    //} else if (counter < 0){
+    //  introendscreen.cheatScreen();
+    //  picker = false;
     }
     if (key == 'h') { 
       begin = false;

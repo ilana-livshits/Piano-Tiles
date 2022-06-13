@@ -103,12 +103,19 @@ class LoadingScreen {
     text("zen", 340, 674);
     
     //cheats
-    fill(223, 148, 148);
-    rect(145, 600, 60, 20);
+    fill(180, 227, 170);
+    rect(145, 570, 120, 20);
+    fill(0);
+    textSize(18);
+    text("winning screen", 150, 575);
     
     
-    fill(223, 148, 148);
-    rect(145, 600, 60, 20);
+    fill(204, 143, 118);
+    rect(145, 600, 120, 20);
+    textSize(18);
+    fill(0);
+    text("losing screen", 150, 615);
+    
     fill(0);
     textSize(23);
     text("CHEATS: " , 30, 600);
