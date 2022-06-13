@@ -45,10 +45,8 @@ class LoadingScreen {
     int allheight = 900;
     fill(0);
     textSize(30);
-
-    //update colors and add lines and update buttons and aesthetic
-    //update background for tiles. make tiles appear at half of screen.
-    //create instructions button which pops up the instructions
+    
+    //instructions
 
     text("Tap on the black tiles in order", 30, 270);
     text("as they appear on the screen", 30, 305);
@@ -58,6 +56,9 @@ class LoadingScreen {
     text("and song.", 30, 475); //1 = easy, 2 = medium, 3 = hard, 4 = very hard, 5 = impossible
     text("Click 's' to start the game.", 30, 525); //Type in a username and click enter
     text("Have fun!", 30, 560);
+    
+    //buttons
+    
     // have a space for the speed at the top right of the screen
     //display 5 boxes with the numbers 1-5 in it next to the speed
     textSize(30);
