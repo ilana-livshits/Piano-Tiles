@@ -104,17 +104,17 @@ class LoadingScreen {
     
     //cheats
     fill(180, 227, 170);
-    rect(145, 570, 120, 20);
+    rect(145, 570, 130, 20);
     fill(0);
     textSize(18);
-    text("winning screen", 150, 575);
+    text("win screen", 150, 586);
     
     
     fill(204, 143, 118);
-    rect(145, 600, 120, 20);
+    rect(145, 600, 130, 20);
     textSize(18);
     fill(0);
-    text("losing screen", 150, 615);
+    text("losing screen", 150, 616);
     
     fill(0);
     textSize(23);
@@ -173,20 +173,20 @@ class LoadingScreen {
     } else if (mouseX > 325 && mouseX < 450 && mouseY > 855 && mouseY < 885) {
       PianoTiles.song = "random";
     }
-    else if(mouseX > 40 && mouseX < 165 && mouseY > 585 && mouseY < 620){
-       PianoTiles.begin = false;
-        PianoTiles.notDead = false;
-        PianoTiles.counter = -3;
-        //PianoTiles.cheatScreenYoN = true;
-        PianoTiles.picker = false;
-      }
-      else if (mouseX > 50 && mouseX < 110 && mouseY > 300 && mouseY < 360) {
+    //else if(mouseX > 40 && mouseX < 165 && mouseY > 585 && mouseY < 620){
+    //   PianoTiles.begin = false;
+    //    PianoTiles.notDead = false;
+    //    PianoTiles.counter = -3;
+    //    //PianoTiles.cheatScreenYoN = true;
+    //    PianoTiles.picker = false;
+    //  }
+      else if (mouseX > 145 && mouseX < 275 && mouseY > 570 && mouseY < 590) {
         PianoTiles.begin = false;
         PianoTiles.notDead = false;
         PianoTiles.counter = 10;
         PianoTiles.picker = false;
       }
-      else if (mouseX > 50 && mouseX < 110 && mouseY > 400 && mouseY < 460) {
+      else if (mouseX > 145 && mouseX < 275 && mouseY > 600 && mouseY < 620) {
         PianoTiles.begin = false;
         PianoTiles.notDead = false;
         PianoTiles.counter = 21;
